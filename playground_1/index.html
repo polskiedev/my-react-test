@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My React Project</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+        const rootElem = document.getElementById("root");
+
+        function Greet(prop) {
+            return (
+                <div>{prop.name}</div>
+            )
+        }
+
+        const innerElem = (
+            <div className="myClass">
+                Hello World
+                <Greet name="pong" />
+                <Greet name="polskie" />
+            </div>
+        );
+        ReactDOM.createRoot(rootElem).render(innerElem);
+    </script>
+</body>
+</html>
