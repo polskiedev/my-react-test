@@ -1,0 +1,11 @@
+.component.HeaderBar {
+    padding-inline: 12px;
+    height: 54px;
+
+    align-items: center;
+}
+
+.component.HeaderBar .header-buttons {
+    display: flex;
+    gap: 8px;
+}
