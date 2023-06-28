@@ -1,10 +1,15 @@
 # Source
 https://www.youtube.com/watch?v=SqcY0GlETPk
+https://www.youtube.com/watch?v=1WNYYippEr0
 
 # Installs
 x npm install react react-dom
 npm create vite@4.1.0
 npm i bootstrap@5.2.3
+npm i -D tailwindcss postcss autoprefixer
+npx tailwind init
+npm install -g postcss-cli
+
 
 # vscode plugin 
 - [ ] es7+ => to use type `rafce` on a file
