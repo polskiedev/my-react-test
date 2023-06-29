@@ -1,4 +1,4 @@
-.component.HeaderBar {
+.component.headerbar {
     padding-inline: 12px;
     height: 54px;
     display: flex;
@@ -10,12 +10,12 @@
     background: linear-gradient(to bottom,#009ce4 0%,#0094d5 100%);
 }
 
-.component.HeaderBar .header-buttons {
+.component.headerbar .header-buttons {
     display: flex;
     gap: 8px;
 }
 
-.component.HeaderBar .header-logo {
+.component.headerbar .header-logo {
     height: 96px;
     width: 96px;
     background-image: url('../../assets/logo.png');

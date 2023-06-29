@@ -7,9 +7,9 @@ function HeaderBar() {
 
   return (
     <>
-        <header className="component HeaderBar">
+        <header className="component headerbar">
             <div className="header-buttons float-left">
-                <Button className="btn-icon icon-hamburger" color="tertiary" onClick={() => console.log('Menu') }>Menu</Button>
+                <Button label="Menu" className="btn-icon icon-hamburger" color="tertiary" onClick={() => console.log('Menu') } />
             </div>
 
             <div className="header-logo">

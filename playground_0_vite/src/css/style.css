@@ -1,6 +1,6 @@
 @import './variables.css';
-@import './components/Button.css';
-@import './components/HeaderBar.css';
+@import './components/button.css';
+@import './components/headerbar.css';
 
 body {
     margin:0;

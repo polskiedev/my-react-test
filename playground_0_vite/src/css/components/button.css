@@ -23,6 +23,7 @@
     background-color: var(--btn-bg-color);
     border-radius: var(--btn-border-radius);
     border: var(--btn-border);
+    white-space: break-spaces;
 }
 
 .component.btn:active {
@@ -61,8 +62,13 @@
     background: var(--btn-bg-color-tertiary-hover);
 }
 
-.component.btn-icon {
-    text-indent: 30px;
+.component.btn.btn-icon {
+    min-width: 46px;
+}
+
+.component.btn.btn-icon .btn-label {
+    display: inline;
+    margin-left: 30px;
 }
 
 .component.btn.btn-icon:before {
@@ -75,4 +81,11 @@
 
 .component.btn-icon.icon-hamburger:before {
     background-image: url(../src/assets/icon-hamburger.svg);
+}
+
+/* ----------------- RESPONSIVE SECTION ----------------- */
+@media screen and (max-width: 1023px) {
+    .component.btn.btn-icon .btn-label {
+        display: none;
+    }
 }
