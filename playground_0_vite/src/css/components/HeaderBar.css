@@ -1,11 +1,23 @@
 .component.HeaderBar {
     padding-inline: 12px;
     height: 54px;
-
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    background: linear-gradient(to bottom,#009ce4 0%,#0094d5 100%);
 }
 
 .component.HeaderBar .header-buttons {
     display: flex;
     gap: 8px;
+}
+
+.component.HeaderBar .header-logo {
+    height: 96px;
+    width: 96px;
+    background-image: url('../../assets/logo.png');
+    background-size: 100%;
 }

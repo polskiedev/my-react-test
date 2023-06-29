@@ -12,6 +12,7 @@
     --btn-bg-color-secondary-hover: linear-gradient(180deg,#ff5fe7,#ff4bd4 26.85%,#ff32b9 51.39%,#ff1ea2 83.64%,#dd067f);
     --btn-bg-color-tertiary-hover: #00648f;
     
+    --btn-focus-outline: 1px solid #fff;
 }
 
 .component.btn {
@@ -26,6 +27,14 @@
 
 .component.btn:active {
     color: var(--btn-color);
+}
+
+
+.component.btn:active:focus, 
+.component.btn.active:focus, 
+.component.btn:active.focus, 
+.component.btn.active.focus {
+    outline: var(--btn-focus-outline);
 }
 
 .component.btn-primary {
@@ -52,3 +61,18 @@
     background: var(--btn-bg-color-tertiary-hover);
 }
 
+.component.btn-icon {
+    text-indent: 30px;
+}
+
+.component.btn.btn-icon:before {
+    display: block;
+    content: "";
+    width: 24px;
+    height: 24px;
+    position: fixed;
+}
+
+.component.btn-icon.icon-hamburger:before {
+    background-image: url(../src/assets/icon-hamburger.svg);
+}
