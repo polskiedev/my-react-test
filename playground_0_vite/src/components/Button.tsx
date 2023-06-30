@@ -15,7 +15,7 @@ const Button = ({children, onClick, icon, color = 'primary', className = '', lab
   classList.push("btn btn-" + color);
 
   //Tailwind
-  classList.push("text-center no-underline align-middle");
+  classList.push("flex text-center no-underline align-middle");
 
   return (<>
       <button className={classList.join(" ")} onClick={onClick}>
