@@ -4,13 +4,7 @@ import Alert from "./components/Alert";
 import HeaderBar from "./components/HeaderBar";
 import TopNavigation from "./components/TopNavigation";
 
-function testTailwind() {
-  return <div>
-  <h1 className="text-3xl font-bold underline">
-    Hello world!
-  </h1>
-  </div>
-}
+import dataTopNavigationMenu from "./hooks/useTopNavigationMenu";
 
 function testBootstrap() {
   const [alertVisible, setAlertVisibility] = useState(false);
@@ -23,28 +17,12 @@ function testBootstrap() {
 }
 
 function App() {
-  let items = [
-    {
-      label: 'Home',
-      className: '--icn-home',
-      url: '/home'
-    },
-    {
-      label: 'Slots',
-      className: '--icn-slots',
-      url: '/slots'
-    },
-    {
-      label: 'Live Casino',
-      className: '--icn-livecasino',
-      url: '/livecasino'
-    },
-  ];
+  let menuItems = dataTopNavigationMenu();
 
   return <>
     <header className="fixed w-full h-28 -top-0 -left-0">
       <HeaderBar className="h-14"></HeaderBar>
-      <TopNavigation items={items} className="h-14"></TopNavigation>
+      <TopNavigation className="h-14" items={menuItems}></TopNavigation>
     </header>
     
     <main className="my-28">

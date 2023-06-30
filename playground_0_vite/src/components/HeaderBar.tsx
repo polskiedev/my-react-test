@@ -12,7 +12,7 @@ function HeaderBar({className = ''}: Props) {
     <>
         <div className={"--ac-headerbar" + " " + className}>
             <div className="--flx-grp">
-                <Button label="Menu" className="btn-icon icon-hamburger" color="tertiary" onClick={() => console.log('Menu') } />
+                <Button label="Menu" icon="hamburger" color="tertiary" onClick={() => console.log('Menu') } />
             </div>
 
             <div className="--flx-grp">
