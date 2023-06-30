@@ -8,14 +8,14 @@ const useTopNavigationMenu = () => {
       url: '/home'
     },
     {
-      label: 'Slots',
-      className: '--icn-slots',
-      url: '/slots'
+      label: 'About',
+      className: '--icn-about',
+      url: '/about'
     },
     {
-      label: 'Live Casino',
-      className: '--icn-livecasino',
-      url: '/livecasino'
+      label: 'Contact Us',
+      className: '--icn-contactus',
+      url: '/contactus'
     },
   ];
 }
