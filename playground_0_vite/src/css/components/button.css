@@ -17,9 +17,6 @@
 
 .--ac-btn {
     color: var(--btn-color);
-    text-align: center;
-    text-decoration: none;
-    vertical-align: middle;
     background-color: var(--btn-bg-color);
     border-radius: var(--btn-border-radius);
     border: var(--btn-border);

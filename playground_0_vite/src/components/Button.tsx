@@ -11,8 +11,11 @@ interface Props {
 
 const Button = ({children, onClick, icon, color = 'primary', className = '', label}: Props) => {
   let classList: string[] = ["--ac-btn"];
-  
+
   classList.push("btn btn-" + color);
+
+  //Tailwind
+  classList.push("text-center no-underline align-middle");
 
   return (<>
       <button className={classList.join(" ")} onClick={onClick}>
