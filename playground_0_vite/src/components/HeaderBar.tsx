@@ -16,7 +16,7 @@ function HeaderBar({className = ''}: Props) {
             </div>
 
             <div className="--flx-grp">
-                <a href="#" className="--site-logo">Logo</a>
+                <a href="#" className="--site-logo -hue-rotate-30">Logo</a>
             </div>
 
             <div className="--flx-grp">

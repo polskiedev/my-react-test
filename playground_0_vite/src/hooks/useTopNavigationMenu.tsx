@@ -5,17 +5,17 @@ const useTopNavigationMenu = () => {
     {
       label: 'Home',
       className: '--icn-home',
-      url: '/home'
+      url: '#'
     },
     {
       label: 'About',
       className: '--icn-about',
-      url: '/about'
+      url: '#'
     },
     {
       label: 'Contact Us',
       className: '--icn-contactus',
-      url: '/contactus'
+      url: '#'
     },
   ];
 }
