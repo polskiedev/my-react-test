@@ -18,14 +18,14 @@ const TopNavigation = ({items, className = ''}: Props) => {
     if(className) classList.push(className);
 
     //Tailwind
-    classList.push("flex flex-row justify-center content-center items-center text-white");
+    classList.push("flex flex-row justify-center");
 
     return (<>
         <nav className={classList.join(" ")}>
-            <ul className="list-group flex flex-row p-2">
+            <ul className="list-group flex flex-row">
             {items.map((item, index) => (
                 <li className="list-group-item" key={index}>
-                    <a className={"block py-2 pl-3 pr-4 " + item.className} href={item.url}>
+                    <a className={"list-group-item-link flex flex-row justify-center content-center items-center pl-3 pr-4 text-white " + item.className} href={item.url}>
                         {item.label}
                     </a>
                 </li>

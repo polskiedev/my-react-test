@@ -5,3 +5,13 @@
 .--ac-topnavigation {
     background: var(--topnav-bg);
 }
+
+.--ac-topnavigation .list-group-item.active {
+    box-shadow: inset 0px -5px 0px #004766;
+}
+
+.--ac-topnavigation .list-group,
+.--ac-topnavigation .list-group .list-group-item,
+.--ac-topnavigation .list-group .list-group-item-link {
+    height: 100%;
+}
