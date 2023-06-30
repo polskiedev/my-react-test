@@ -25,3 +25,7 @@ npm install -g postcss-cli
 
 #Chrome addons
 React Developer Tools
+
+
+#Others
+"build-css": "tailwindcss build src/css/style.css -o public/style.css",

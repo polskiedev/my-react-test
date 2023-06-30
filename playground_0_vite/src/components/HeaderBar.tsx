@@ -1,26 +1,29 @@
 import { useState } from "react";
 import Button from "./Button";
 
+interface Props {
+    className?: string;
+}
 
-function HeaderBar() {
+function HeaderBar({className = ''}: Props) {
   const [selectedIndex, setSelectedIndex] = useState(-1);
 
   return (
     <>
-        <header className="component headerbar">
-            <div className="header-buttons float-left">
+        <div className={"--ac-headerbar" + " " + className}>
+            <div className="--flx-grp">
                 <Button label="Menu" className="btn-icon icon-hamburger" color="tertiary" onClick={() => console.log('Menu') } />
             </div>
 
-            <div className="header-logo">
-                <a href="#">Site Logo</a>
+            <div className="--flx-grp">
+                <a href="#" className="--site-logo">Logo</a>
             </div>
 
-            <div className="header-buttons float-right">
+            <div className="--flx-grp">
                 <Button color="secondary" onClick={() => console.log('Login') }>Login</Button>
                 <Button color="primary" onClick={() => console.log('Join now') }>Join now</Button>
             </div>
-        </header>
+        </div>
     </>
   );
 }

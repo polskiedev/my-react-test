@@ -15,7 +15,7 @@
     --btn-focus-outline: 1px solid #fff;
 }
 
-.component.btn {
+.--ac-btn {
     color: var(--btn-color);
     text-align: center;
     text-decoration: none;
@@ -24,54 +24,55 @@
     border-radius: var(--btn-border-radius);
     border: var(--btn-border);
     white-space: break-spaces;
+    padding: 6px 12px;
 }
 
-.component.btn:active {
+.--ac-btn:active {
     color: var(--btn-color);
 }
 
 
-.component.btn:active:focus, 
-.component.btn.active:focus, 
-.component.btn:active.focus, 
-.component.btn.active.focus {
+.--ac-btn:active:focus, 
+.--ac-btn.active:focus, 
+.--ac-btn:active.focus, 
+.--ac-btn.active.focus {
     outline: var(--btn-focus-outline);
 }
 
-.component.btn-primary {
+.--ac-btn.btn-primary {
     background: var(--btn-bg-color-primary);
 }
 
-.component.btn-secondary {
+.--ac-btn.btn-secondary {
     background: var(--btn-bg-color-secondary);
 }
 
-.component.btn-tertiary {
+.--ac-btn.btn-tertiary {
     background: var(--btn-bg-color-tertiary);
 }
 
-.component.btn-primary:hover:not(:disabled) {
+.--ac-btn.btn-primary:hover:not(:disabled) {
     background: var(--btn-bg-color-primary-hover);
 }
 
-.component.btn-secondary:hover:not(:disabled) {
+.--ac-btn.btn-secondary:hover:not(:disabled) {
     background: var(--btn-bg-color-secondary-hover);
 }
 
-.component.btn-tertiary:hover:not(:disabled) {
+.--ac-btn.btn-tertiary:hover:not(:disabled) {
     background: var(--btn-bg-color-tertiary-hover);
 }
 
-.component.btn.btn-icon {
+.--ac-btn.btn-icon {
     min-width: 46px;
 }
 
-.component.btn.btn-icon .btn-label {
-    display: inline;
+.--ac-btn.btn-icon .btn-label {
+    display: inline-block;
     margin-left: 30px;
 }
 
-.component.btn.btn-icon:before {
+.--ac-btn.btn-icon:before {
     display: block;
     content: "";
     width: 24px;
@@ -79,13 +80,13 @@
     position: fixed;
 }
 
-.component.btn-icon.icon-hamburger:before {
+.--ac-btn.btn-icon.icon-hamburger:before {
     background-image: url(../src/assets/icon-hamburger.svg);
 }
 
 /* ----------------- RESPONSIVE SECTION ----------------- */
 @media screen and (max-width: 1023px) {
-    .component.btn.btn-icon .btn-label {
+    .--ac-btn.btn-icon .btn-label {
         display: none;
     }
 }

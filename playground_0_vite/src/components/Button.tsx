@@ -11,7 +11,7 @@ interface Props {
 const Button = ({children, onClick, color = 'primary', className = '', label}: Props) => {
 
   return (
-    <button className={"component btn btn-" + color + " " + className} onClick={onClick}>
+    <button className={"--ac-btn btn btn-" + color + " " + className} onClick={onClick}>
       {label && <label className="btn-label">{label}</label>} {children}
     </button>  
   )

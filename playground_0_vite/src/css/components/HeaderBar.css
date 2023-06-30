@@ -1,6 +1,5 @@
-.component.headerbar {
-    padding-inline: 12px;
-    height: 54px;
+.--ac-headerbar {
+    padding-inline: 0.25rem;
     display: flex;
     align-content: center;
     flex-wrap: wrap;
@@ -10,14 +9,14 @@
     background: linear-gradient(to bottom,#009ce4 0%,#0094d5 100%);
 }
 
-.component.headerbar .header-buttons {
-    display: flex;
-    gap: 8px;
-}
-
-.component.headerbar .header-logo {
+.--ac-headerbar .--site-logo {
     height: 96px;
     width: 96px;
     background-image: url('../../assets/logo.png');
     background-size: 100%;
+}
+
+.--ac-headerbar .--flx-grp {
+    display: flex;
+    gap: 0.25rem;
 }

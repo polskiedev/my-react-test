@@ -1,0 +1,7 @@
+:root {
+    --topnav-bg: #00648f;
+}
+
+.--ac-topnavigation {
+    background: var(--topnav-bg);
+}
