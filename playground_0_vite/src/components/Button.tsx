@@ -16,7 +16,7 @@ const Button = ({children, onClick, icon, color = 'primary', className = '', lab
 
   return (<>
       <button className={classList.join(" ")} onClick={onClick}>
-        {icon && <span className={"btn-icon icon-" + icon}></span>}
+        {icon && <span className={"btn-icon icon-" + icon + " w-6 h-6"}></span>}
         {label && <label className="btn-label">{label}</label>} {children}
       </button>  
     </>)

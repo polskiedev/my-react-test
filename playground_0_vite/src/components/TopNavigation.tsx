@@ -9,6 +9,7 @@ interface Item {
     label: string;
     className: string;
     url: string;
+    type?: "divider"
 }
 
 const TopNavigation = ({items, className = ''}: Props) => {
