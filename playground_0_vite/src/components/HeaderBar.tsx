@@ -7,19 +7,25 @@ interface Props {
 
 function HeaderBar({className = ''}: Props) {
   const [selectedIndex, setSelectedIndex] = useState(-1);
+  let classList: string[] = ["--ac-headerbar"];
+
+  if(className) classList.push(className);
+
+  //Tailwind
+  classList.push("flex flex-row justify-center content-center items-center justify-between overflow-hidden");
 
   return (
     <>
-        <div className={"--ac-headerbar" + " " + className}>
-            <div className="--flx-grp">
+        <div className={classList.join(" ")}>
+            <div className="--ac-grp">
                 <Button label="Menu" icon="hamburger" color="tertiary" onClick={() => console.log('Menu') } />
             </div>
 
-            <div className="--flx-grp">
-                <a href="#" className="--site-logo -hue-rotate-30">Logo</a>
+            <div className="--ac-grp">
+                <a href="#" className="--site-logo -hue-rotate-30 flex items-center justify-center text-white">Logo</a>
             </div>
 
-            <div className="--flx-grp">
+            <div className="--ac-grp">
                 <Button color="secondary" onClick={() => console.log('Login') }>Login</Button>
                 <Button color="primary" onClick={() => console.log('Join now') }>Join now</Button>
             </div>

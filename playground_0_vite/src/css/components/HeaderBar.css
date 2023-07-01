@@ -1,11 +1,5 @@
 .--ac-headerbar {
     padding-inline: 0.25rem;
-    display: flex;
-    align-content: center;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    overflow: hidden;
     background: linear-gradient(to bottom,#009ce4 0%,#0094d5 100%);
 }
 
@@ -16,7 +10,7 @@
     background-size: 100%;
 }
 
-.--ac-headerbar .--flx-grp {
+.--ac-headerbar .--ac-grp {
     display: flex;
     gap: 0.25rem;
 }

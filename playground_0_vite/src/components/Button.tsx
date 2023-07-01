@@ -15,11 +15,11 @@ const Button = ({children, onClick, icon, color = 'primary', className = '', lab
   classList.push("btn btn-" + color);
 
   //Tailwind
-  classList.push("flex text-center no-underline align-middle");
+  classList.push("flex text-center no-underline align-middle px-3 py-1");
 
   return (<>
       <button className={classList.join(" ")} onClick={onClick}>
-        {icon && <span className={"btn-icon icon-" + icon + " w-6 h-6"}></span>}
+        {icon && <span className={"btn-icon icon-" + icon + " w-6 h-6 inline-block"}></span>}
         {label && <label className="btn-label">{label}</label>} {children}
       </button>  
     </>)
