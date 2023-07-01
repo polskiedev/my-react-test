@@ -6,10 +6,11 @@ interface Props {
     icon?: string;
     color?: 'primary' | 'secondary' | 'tertiary';
     className?: string;
+    labelClassName?: string;
     onClick: () => void;
 }
 
-const Button = ({children, onClick, icon, color = 'primary', className = '', label}: Props) => {
+const Button = ({children, onClick, icon, color = 'primary', className = '', label, labelClassName = ""}: Props) => {
   let classList: string[] = ["--ac-btn"];
   let labelClassList: string[] = ["btn-label"];
 
@@ -19,6 +20,8 @@ const Button = ({children, onClick, icon, color = 'primary', className = '', lab
 
   //If no icon dont hide label
   if(icon) labelClassList.push("hidden 2sm:block");
+
+  labelClassList.push(labelClassName);
 
   //Tailwind
   classList.push("flex text-center gap-1 no-underline align-middle rounded-md p-1 text-sm 2sm:px-3 2sm:py-1 2sm:text-base");

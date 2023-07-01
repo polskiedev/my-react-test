@@ -1,3 +1,8 @@
+.btn-icon {
+    width: 24px;
+    height: 24px;
+}
+
 .btn-icon.icon-hamburger {
     background-image: url(../src/assets/icon-hamburger.svg);
 }

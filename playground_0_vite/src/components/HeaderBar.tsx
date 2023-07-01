@@ -17,15 +17,15 @@ function HeaderBar({className = ''}: Props) {
   return (
     <>
         <div className={classList.join(" ")}>
-            <div className="--ac-grp">
+            <div>
                 <Button label="Menu" icon="hamburger" color="tertiary" onClick={() => console.log('Menu') } />
             </div>
 
-            <div className="--ac-grp hidden sm:inline-block">
+            <div className="hidden sm:inline-block">
                 <a href="#" className="--site-logo -hue-rotate-30 flex items-center justify-center text-white">Logo</a>
             </div>
 
-            <div className="--ac-grp flex flex-row gap-1">
+            <div className="flex flex-row gap-1">
                 <Button className="bg-secondary-100" color="secondary" onClick={() => console.log('Login') }>Login</Button>
                 <Button color="primary" onClick={() => console.log('Join now') }>Join now</Button>
             </div>

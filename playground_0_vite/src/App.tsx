@@ -2,7 +2,7 @@ import { useState } from "react";
 import Button from "./components/Button";
 import Alert from "./components/Alert";
 import HeaderBar from "./components/HeaderBar";
-import TopNavigation from "./components/TopNavigation";
+import TopNavigation, {Item as TopNavigationItem} from "./components/TopNavigation";
 
 import dataTopNavigationMenu from "./hooks/useTopNavigationMenu";
 
@@ -22,7 +22,7 @@ function App() {
   return <>
     <header className="fixed w-full h-28 -top-0 -left-0">
       <HeaderBar className="h-14"></HeaderBar>
-      <TopNavigation className="h-14" items={menuItems}></TopNavigation>
+      <TopNavigation className="h-14" items={menuItems as TopNavigationItem[]}></TopNavigation>
     </header>
     
     <main className="my-28">

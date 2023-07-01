@@ -8,12 +8,13 @@ interface Props {
     icon?: string;
     color?: 'primary' | 'secondary' | 'tertiary';
     className?: string;
+    labelClassName?: string;
     onClick?: () => void;
 }
 
-const Link = ({children, onClick, icon, color = 'primary', className = '', label, type, href}: Props) => {
-  let classList: string[] = ["--ac-link"];
-  let labelClassList: string[] = ["btn-label"];
+const Link = ({children, onClick, icon, color = 'primary', className = '', labelClassName = '', label, type, href}: Props) => {
+  let classList: string[] = ["--ac-link block"];
+  let labelClassList: string[] = ["btn-label cursor-pointer"];
 
   if(type == 'button') {
     classList.push("--ac-btn");
@@ -23,6 +24,8 @@ const Link = ({children, onClick, icon, color = 'primary', className = '', label
     classList.push("rounded-md p-1 text-sm 2sm:text-base inline-block m-1");
   }
 
+  labelClassList.push(labelClassName);
+
   //If no icon dont hide label
   if(icon) labelClassList.push("hidden 2sm:block");
 
@@ -31,7 +34,7 @@ const Link = ({children, onClick, icon, color = 'primary', className = '', label
   return (<>
       <a className={classList.join(" ")} onClick={onClick} href={href}>
         <div className="flex text-center gap-1 align-middle">
-          {icon && <span className={"btn-icon icon-" + icon + " w-6 h-6"}></span>}
+          {icon && <span className={"btn-icon icon-" + icon}></span>}
           {label && <label className={labelClassList.join(" ")}>{label}</label>} {children}
         </div>
       </a>  

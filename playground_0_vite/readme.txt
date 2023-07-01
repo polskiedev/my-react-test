@@ -21,7 +21,8 @@ npm install -g postcss-cli
     - [ ] Ctrl + “
 - [ ] CodeSnap by adpyke
     - [ ] Ctrl + shift + P; Select CodeSnap
-
+- [ ] Inline fold
+    - [ ] For tailwindcss dev
 
 #Chrome addons
 React Developer Tools
