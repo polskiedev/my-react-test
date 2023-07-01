@@ -26,7 +26,7 @@ function HeaderBar({className = ''}: Props) {
             </div>
 
             <div className="flex flex-row gap-1">
-                <Button className="bg-secondary-100" color="secondary" onClick={() => console.log('Login') }>Login</Button>
+                <Button color="secondary" onClick={() => console.log('Login') }>Login</Button>
                 <Button color="primary" onClick={() => console.log('Join now') }>Join now</Button>
             </div>
         </div>
