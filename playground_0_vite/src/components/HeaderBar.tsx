@@ -21,12 +21,12 @@ function HeaderBar({className = ''}: Props) {
                 <Button label="Menu" icon="hamburger" color="tertiary" onClick={() => console.log('Menu') } />
             </div>
 
-            <div className="--ac-grp">
+            <div className="--ac-grp hidden tablet:inline-block">
                 <a href="#" className="--site-logo -hue-rotate-30 flex items-center justify-center text-white">Logo</a>
             </div>
 
-            <div className="--ac-grp">
-                <Button color="secondary" onClick={() => console.log('Login') }>Login</Button>
+            <div className="--ac-grp flex flex-row gap-1">
+                <Button className="bg-secondary-100" color="secondary" onClick={() => console.log('Login') }>Login</Button>
                 <Button color="primary" onClick={() => console.log('Join now') }>Join now</Button>
             </div>
         </div>

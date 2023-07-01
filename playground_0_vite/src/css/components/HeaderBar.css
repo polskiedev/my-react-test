@@ -9,8 +9,3 @@
     background-image: url('../../assets/logo.png');
     background-size: 100%;
 }
-
-.--ac-headerbar .--ac-grp {
-    display: flex;
-    gap: 0.25rem;
-}

@@ -18,11 +18,8 @@
 .--ac-btn {
     color: var(--btn-color);
     background-color: var(--btn-bg-color);
-    border-radius: var(--btn-border-radius);
     border: var(--btn-border);
     white-space: break-spaces;
-    padding: 6px 12px;
-    gap: 2px;
 }
 
 .--ac-btn:active {
@@ -62,11 +59,4 @@
 
 .--ac-btn .btn-icon.icon-hamburger {
     background-image: url(../src/assets/icon-hamburger.svg);
-}
-
-/* ----------------- RESPONSIVE SECTION ----------------- */
-@media screen and (max-width: 1023px) {
-    .--ac-btn .btn-label {
-        display: none;
-    }
 }

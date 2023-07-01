@@ -14,13 +14,15 @@ const Button = ({children, onClick, icon, color = 'primary', className = '', lab
 
   classList.push("btn btn-" + color);
 
+  if(className) classList.push(className);
+
   //Tailwind
-  classList.push("flex text-center no-underline align-middle px-3 py-1");
+  classList.push("flex text-center gap-1 no-underline align-middle rounded-md p-1 text-sm mobile:px-3 mobile:py-1 mobile:text-base");
 
   return (<>
       <button className={classList.join(" ")} onClick={onClick}>
         {icon && <span className={"btn-icon icon-" + icon + " w-6 h-6 inline-block"}></span>}
-        {label && <label className="btn-label">{label}</label>} {children}
+        {label && <label className="btn-label hidden tablet:block">{label}</label>} {children}
       </button>  
     </>)
 }
