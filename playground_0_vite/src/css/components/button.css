@@ -6,9 +6,9 @@
     white-space: break-spaces;
 }
 
-.--ac-btn:active:focus, 
-.--ac-btn.active:focus, 
-.--ac-btn:active.focus, 
-.--ac-btn.active.focus {
+.--ac-btn.outlined:active:focus, 
+.--ac-btn.outlined.active:focus, 
+.--ac-btn.outlined:active.focus, 
+.--ac-btn.outlined.active.focus {
     outline: var(--btn-focus-outline);
 }

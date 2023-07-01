@@ -7,16 +7,18 @@ interface Props {
     color?: 'primary' | 'secondary' | 'tertiary';
     className?: string;
     labelClassName?: string;
+    hasStates?: boolean;
     onClick: () => void;
 }
 
-const Button = ({children, onClick, icon, color = 'primary', className = '', label, labelClassName = ""}: Props) => {
+const Button = ({children, onClick, icon, color = 'primary', className = '', label, labelClassName = "", hasStates = true}: Props) => {
   let classList: string[] = ["--ac-btn text-white"];
   let labelClassList: string[] = ["btn-label cursor-pointer"];
 
   // classList.push(`bg-primary bg-secondary bg-tertiary hover:bg-primary-hover hover:bg-secondary-hover hover:bg-tertiary-hover active:bg-primary-active active:bg-secondary-active active:bg-tertiary-active`);
-  classList.push(`btn bg-${color} hover:bg-${color}-hover active:bg-${color}-active`);
-
+  classList.push(`btn bg-${color}`);
+  
+  if(hasStates) classList.push(`hover:bg-${color}-hover active:bg-${color}-active`);
   if(className) classList.push(className);
 
   //If no icon dont hide label

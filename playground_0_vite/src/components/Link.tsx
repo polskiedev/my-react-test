@@ -6,19 +6,23 @@ interface Props {
     type?: 'button';
     href?: string;
     icon?: string;
+    hasStates?: boolean;
     color?: 'primary' | 'secondary' | 'tertiary';
     className?: string;
     labelClassName?: string;
     onClick?: () => void;
 }
 
-const Link = ({children, onClick, icon, color = 'primary', className = '', labelClassName = '', label, type, href}: Props) => {
+const Link = ({children, onClick, icon, color = 'primary', className = '', labelClassName = '', label, type, href, hasStates = true}: Props) => {
   let classList: string[] = ["--ac-link block"];
   let labelClassList: string[] = ["btn-label cursor-pointer"];
 
   if(type == 'button') {
     classList.push("--ac-btn");
-    classList.push("btn btn-" + color);
+    // classList.push("btn btn-" + color);
+    classList.push(`btn bg-${color}`);
+  
+    if(hasStates) classList.push(`hover:bg-${color}-hover active:bg-${color}-active`);
     
     //Tailwind
     classList.push("rounded-md p-1 text-sm 2sm:text-base inline-block m-1");
