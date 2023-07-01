@@ -1,0 +1,23 @@
+.btn-icon.icon-hamburger {
+    background-image: url(../src/assets/icon-hamburger.svg);
+}
+
+.btn-icon.icon-home {
+    background-image: url(../src/assets/icon-home.svg);
+}
+
+.btn-icon.icon-slots {
+    background-image: url(../src/assets/icon-slots.svg);
+}
+
+.btn-icon.icon-cards {
+    background-image: url(../src/assets/icon-cards.svg);
+}
+
+.btn-icon.icon-announcement {
+    background-image: url(../src/assets/icon-announcement.svg);
+}
+
+.btn-icon.icon-shop {
+    background-image: url(../src/assets/icon-shop.svg);
+}

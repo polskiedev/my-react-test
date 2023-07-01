@@ -21,7 +21,7 @@ function HeaderBar({className = ''}: Props) {
                 <Button label="Menu" icon="hamburger" color="tertiary" onClick={() => console.log('Menu') } />
             </div>
 
-            <div className="--ac-grp hidden tablet:inline-block">
+            <div className="--ac-grp hidden sm:inline-block">
                 <a href="#" className="--site-logo -hue-rotate-30 flex items-center justify-center text-white">Logo</a>
             </div>
 

@@ -56,7 +56,3 @@
 .--ac-btn.btn-tertiary:hover:not(:disabled) {
     background: var(--btn-bg-color-tertiary-hover);
 }
-
-.--ac-btn .btn-icon.icon-hamburger {
-    background-image: url(../src/assets/icon-hamburger.svg);
-}

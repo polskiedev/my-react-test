@@ -4,17 +4,17 @@ const useTopNavigationMenu = () => {
   return [
     {
       label: 'Home',
-      className: '--icn-home',
+      icon: 'home',
       url: '#'
     },
     {
       label: 'About',
-      className: '--icn-about',
+      icon: 'slots',
       url: '#'
     },
     {
       label: 'Contact Us',
-      className: '--icn-contactus',
+      icon: 'cards',
       url: '#'
     },
   ];
