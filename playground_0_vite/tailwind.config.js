@@ -21,24 +21,27 @@ export default {
       // 'desktop': '1280px', //xl
     },
     extend: {
-      // gradientColorStops: {
-      //   'custom-gradient': ['rgb(255, 0, 0)', 'rgb(0, 255, 0)', 'rgb(0, 0, 255)'],
-      // },
-      // colors: {
-      //   primary: {
-      //     100: '#fff',
-      //     200: '#fff'
-      //   },
-      //   secondary: {
-      //     100: '#fff',
-      //     200: '#fff'
-      //   },
-      //   tertiary: {
-      //     100: '#00648f',
-      //     200: '#00648f'
-      //   }
-      // }
-    }
+      backgroundImage: {
+        'primary': 'linear-gradient(180deg,#ffc933,#f7901d)',
+        'secondary': 'linear-gradient(180deg,#fa57cc,#f444b8 26.85%,#ed30a3 51.39%,#e51e8d 85.97%,#bb116d)',
+        'tertiary': 'linear-gradient(180deg,rgba(0,161,229,.2),rgba(0,100,143,.2))',
+
+        'primary-hover': 'linear-gradient(180deg,#ffe246,#ffc933 34.95%,#ffb22f)',
+        'secondary-hover': 'linear-gradient(180deg,#ff5fe7,#ff4bd4 26.85%,#ff32b9 51.39%,#ff1ea2 83.64%,#dd067f)',
+        'tertiary-hover': 'linear-gradient(180deg,rgba(0,161,229,.2),rgba(0,100,143,.2))',
+
+        'primary-active': 'linear-gradient(180deg,#f7901d,#ffc933)',
+        'secondary-active': 'linear-gradient(180deg,#c31473,#e51f8e 16.01%,#ef36aa 57.87%,#f154c2)',
+        'tertiary-active': 'linear-gradient(180deg,rgba(0,100,143,.2),rgba(0,161,229,.2))'
+      },
+      colors: {
+        tertiary: {
+          DEFAULT: '#00648f',
+          hover: '#004766',
+          active: '#00374f'
+        },
+      },
+    },
   },
   plugins: [],
 }
