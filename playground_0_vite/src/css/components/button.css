@@ -12,3 +12,27 @@
 .--ac-btn.outlined.active.focus {
     outline: var(--btn-focus-outline);
 }
+/* --Tailwind-- */
+.--ac-btn {
+    @apply text-white flex text-center gap-1 no-underline align-middle rounded-md p-1 text-sm 2sm:px-3 2sm:py-1 2sm:text-base;
+}
+
+.--ac-btn-\[primary\] {
+    @apply bg-primary hover:bg-primary-hover active:bg-primary-active;
+}
+
+.--ac-btn-\[secondary\] {
+    @apply bg-secondary hover:bg-secondary-hover active:bg-secondary-active;
+}
+
+.--ac-btn-\[tertiary\] {
+    @apply bg-tertiary hover:bg-tertiary-hover active:bg-tertiary-active;
+}
+
+.--ac-btn .btn-label {
+    @apply  cursor-pointer;
+}
+
+.--ac-btn .btn-icon {
+    @apply  inline-block;
+}

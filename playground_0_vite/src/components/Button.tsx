@@ -12,26 +12,25 @@ interface Props {
 }
 
 const Button = ({children, onClick, icon, color = 'primary', className = '', label, labelClassName = "", hasStates = true}: Props) => {
-  let classList: string[] = ["--ac-btn text-white"];
-  let labelClassList: string[] = ["btn-label cursor-pointer"];
+  let classList: string[] = ["--ac-btn"];
+  let labelClassList: string[] = ["btn-label"];
 
   // classList.push(`bg-primary bg-secondary bg-tertiary hover:bg-primary-hover hover:bg-secondary-hover hover:bg-tertiary-hover active:bg-primary-active active:bg-secondary-active active:bg-tertiary-active`);
-  classList.push(`btn bg-${color}`);
+  classList.push(`--ac-btn-[${color}]`);
   
-  if(hasStates) classList.push(`hover:bg-${color}-hover active:bg-${color}-active`);
-  if(className) classList.push(className);
+  if(!!className) classList.push(className);
 
   //If no icon dont hide label
-  if(icon) labelClassList.push("hidden 2sm:block");
+  if(!!icon) labelClassList.push("hidden 2sm:block");
 
   labelClassList.push(labelClassName);
 
   //Tailwind
-  classList.push("flex text-center gap-1 no-underline align-middle rounded-md p-1 text-sm 2sm:px-3 2sm:py-1 2sm:text-base");
+  // classList.push("flex text-center gap-1 no-underline align-middle rounded-md p-1 text-sm 2sm:px-3 2sm:py-1 2sm:text-base");
 
   return (<>
       <button className={classList.join(" ")} onClick={onClick}>
-        {icon && <span className={"btn-icon icon-" + icon + " w-6 h-6 inline-block"}></span>}
+        {icon && <span className={"btn-icon icon-" + icon}></span>}
         {label && <label className={labelClassList.join(" ")}>{label}</label>} {children}
       </button>  
     </>)

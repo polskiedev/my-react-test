@@ -9,3 +9,8 @@
     background-image: url('../../assets/logo.png');
     background-size: 100%;
 }
+
+/* --Tailwind-- */
+.--ac-headerbar {
+    @apply flex flex-row justify-center content-center items-center justify-between overflow-hidden;
+}

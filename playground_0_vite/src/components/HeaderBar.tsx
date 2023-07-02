@@ -9,10 +9,7 @@ function HeaderBar({className = ''}: Props) {
   const [selectedIndex, setSelectedIndex] = useState(-1);
   let classList: string[] = ["--ac-headerbar"];
 
-  if(className) classList.push(className);
-
-  //Tailwind
-  classList.push("flex flex-row justify-center content-center items-center justify-between overflow-hidden");
+  if(!!className) classList.push(className);
 
   return (
     <>

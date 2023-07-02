@@ -1,7 +1,3 @@
-# Source
-https://www.youtube.com/watch?v=SqcY0GlETPk
-https://www.youtube.com/watch?v=1WNYYippEr0
-
 # Installs
 x npm install react react-dom
 npm create vite@4.1.0
@@ -30,3 +26,6 @@ React Developer Tools
 
 #Others
 "build-css": "tailwindcss build src/css/style.css -o public/style.css",
+
+
+

@@ -1,0 +1,15 @@
+.--ac-link {
+    @apply block text-white;
+}
+
+.--ac-link.--ac-btn {
+    @apply rounded-md p-1 text-sm 2sm:text-base inline-block m-1;
+}
+
+.--ac-link .link-wrapper {
+    @apply flex text-center gap-1 align-middle items-center;
+}
+
+.--ac-link .btn-label {
+    @apply  cursor-pointer text-xs 2sm:text-base;
+}

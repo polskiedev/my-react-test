@@ -2,6 +2,7 @@ import { useState } from "react";
 import Button from "./components/Button";
 import Alert from "./components/Alert";
 import HeaderBar from "./components/HeaderBar";
+import Link from "./components/Link";
 import TopNavigation, {Item as TopNavigationItem} from "./components/TopNavigation";
 
 import dataTopNavigationMenu from "./hooks/useTopNavigationMenu";
@@ -32,6 +33,9 @@ function App() {
     </main>
     <footer>
       Footer
+      <p>
+        All right reserved... Thanks!
+      </p>
     </footer>
   </>
 }

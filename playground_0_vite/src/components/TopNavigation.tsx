@@ -18,10 +18,7 @@ export interface Item {
 const TopNavigation = ({items, className = ''}: Props) => {
     let classList: string[] = ["--ac-topnavigation"];
 
-    if(className) classList.push(className);
-
-    //Tailwind
-    classList.push("flex flex-row justify-center");
+    if(!!className) classList.push(className);
 
     return (<>
         <nav className={classList.join(" ")}>
@@ -32,14 +29,13 @@ const TopNavigation = ({items, className = ''}: Props) => {
                         , labelClassName = ""} = item;
 
                 let liClassList: string[] = ["list-group-item"];
-                let linkClassList: string[] = ["list-group-item-link flex flex-row justify-center content-center items-center pl-3 pr-4 text-white"];
-                let labelClassList: string[] = ["text-xs 2sm:text-base"];
+                let linkClassList: string[] = ["list-group-item-link"];
+                let labelClassList: string[] = [];
 
-                liClassList.push(className);
-                linkClassList.push(linkClassName);
-                labelClassList.push(labelClassName);
-
-                if(hasDivider) liClassList.push("add-divider flex items-center");
+                if(!!className) liClassList.push(className);
+                if(!!linkClassName) linkClassList.push(linkClassName);
+                if(!!labelClassName) labelClassList.push(labelClassName);
+                if(hasDivider) liClassList.push("add-divider");
 
                 return (               
                     <li className={liClassList.join(" ")} key={index}>

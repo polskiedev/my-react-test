@@ -14,30 +14,24 @@ interface Props {
 }
 
 const Link = ({children, onClick, icon, color = 'primary', className = '', labelClassName = '', label, type, href, hasStates = true}: Props) => {
-  let classList: string[] = ["--ac-link block"];
-  let labelClassList: string[] = ["btn-label cursor-pointer"];
+  let classList: string[] = ["--ac-link"];
+  let labelClassList: string[] = ["btn-label"];
 
   if(type == 'button') {
     classList.push("--ac-btn");
-    // classList.push("btn btn-" + color);
-    classList.push(`btn bg-${color}`);
-  
-    if(hasStates) classList.push(`hover:bg-${color}-hover active:bg-${color}-active`);
-    
-    //Tailwind
-    classList.push("rounded-md p-1 text-sm 2sm:text-base inline-block m-1");
+    classList.push(`--ac-btn-[${color}]`);
   }
 
-  labelClassList.push(labelClassName);
+  if(!!labelClassName) labelClassList.push(labelClassName);
 
   //If no icon dont hide label
-  if(icon) labelClassList.push("hidden 2sm:block");
+  if(!!icon) labelClassList.push("hidden 2sm:block");
 
-  if(className) classList.push(className);
+  if(!!className) classList.push(className);
 
   return (<>
       <a className={classList.join(" ")} onClick={onClick} href={href}>
-        <div className="flex text-center gap-1 align-middle">
+        <div className="link-wrapper">
           {icon && <span className={"btn-icon icon-" + icon}></span>}
           {label && <label className={labelClassList.join(" ")}>{label}</label>} {children}
         </div>

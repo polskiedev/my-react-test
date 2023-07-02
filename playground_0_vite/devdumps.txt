@@ -1,0 +1,11 @@
+
+#tailwind ex:
+// classList.push(`bg-[--brand-color]`);
+// classList.push(`min-[712px]:max-[877px]:right-16`);
+// classList.push(`btn bg-${color}`);
+// if(hasStates) classList.push(`hover:bg-${color}-hover active:bg-${color}-active`);
+
+# Source
+https://www.youtube.com/watch?v=SqcY0GlETPk
+https://www.youtube.com/watch?v=1WNYYippEr0
+https://www.youtube.com/watch?v=EuJrOC0bSlM

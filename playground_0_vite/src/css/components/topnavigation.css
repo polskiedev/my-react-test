@@ -12,14 +12,27 @@
 
 .--ac-topnavigation .list-group,
 .--ac-topnavigation .list-group .list-group-item,
-.--ac-topnavigation .list-group .list-group-item-link {
+.--ac-topnavigation .list-group .list-group-item-link,
+.--ac-topnavigation .list-group .link-wrapper {
     height: 100%;
 }
-
 
 .--ac-topnavigation .add-divider:before {
     content: "";
     height: 40%;
     width: 1px;
     background-color: #00a1e5;
+}
+
+/* --Tailwind-- */
+.--ac-topnavigation {
+    @apply flex flex-row justify-center;
+}
+
+.--ac-topnavigation .list-group-item-link {
+    @apply flex flex-row justify-center content-center items-center pl-3 pr-4;
+}
+
+.--ac-topnavigation .add-divider{
+    @apply flex items-center;
 }
