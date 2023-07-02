@@ -18,15 +18,18 @@
 }
 
 .--ac-btn-\[primary\] {
-    @apply bg-primary hover:bg-primary-hover active:bg-primary-active;
+    @apply bg-primary hover:bg-primary-hover active:bg-primary-active
+        text-primary-tc hover:text-primary-hover-tc active:text-primary-active-tc;
 }
 
 .--ac-btn-\[secondary\] {
-    @apply bg-secondary hover:bg-secondary-hover active:bg-secondary-active;
+    @apply bg-secondary hover:bg-secondary-hover active:bg-secondary-active
+        text-secondary-tc hover:text-secondary-hover-tc active:text-secondary-active-tc;
 }
 
 .--ac-btn-\[tertiary\] {
-    @apply bg-tertiary hover:bg-tertiary-hover active:bg-tertiary-active;
+    @apply bg-tertiary hover:bg-tertiary-hover active:bg-tertiary-active
+    text-tertiary-tc hover:text-tertiary-hover-tc active:text-tertiary-active-tc;
 }
 
 .--ac-btn .btn-label {

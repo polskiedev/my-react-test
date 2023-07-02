@@ -25,7 +25,15 @@ React Developer Tools
 
 
 #Others
+
 "build-css": "tailwindcss build src/css/style.css -o public/style.css",
+
+disabled vscode @ settings (ctrl + , for shortcut) look for "css lint unknown at rules" select ignore on the dropdown options
+
+Error @apply in css file -> in the vscode settings add the following lines:
+    "files.associations": {
+      "*.css": "tailwindcss"
+    }
 
 
 

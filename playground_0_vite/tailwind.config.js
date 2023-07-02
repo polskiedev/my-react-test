@@ -35,10 +35,29 @@ export default {
         'tertiary-active': 'linear-gradient(180deg,rgba(0,100,143,.2),rgba(0,161,229,.2))'
       },
       colors: {
+        primary: {
+          'DEFAULT': 'transparent',
+          'hover': 'transparent',
+          'active': 'transparent',
+          'tc': '#fff',
+          'hover-tc': '#fff',
+          'active-tc': '#fff'
+        },
+        secondary: {
+          'DEFAULT': 'transparent',
+          'hover': 'transparent',
+          'active': 'transparent',
+          'tc': '#fff',
+          'hover-tc': '#fff',
+          'active-tc': '#fff'
+        },
         tertiary: {
-          DEFAULT: '#00648f',
-          hover: '#004766',
-          active: '#00374f'
+          'DEFAULT': '#00648f',
+          'hover': '#004766',
+          'active': '#00374f',
+          'tc': '#fff',
+          'hover-tc': '#fff',
+          'active-tc': '#fff'
         },
       },
     },
