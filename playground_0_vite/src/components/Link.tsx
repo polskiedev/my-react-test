@@ -6,14 +6,13 @@ interface Props {
     type?: 'button';
     href?: string;
     icon?: string;
-    hasStates?: boolean;
     color?: 'primary' | 'secondary' | 'tertiary';
     className?: string;
     labelClassName?: string;
     onClick?: () => void;
 }
 
-const Link = ({children, onClick, icon, color = 'primary', className = '', labelClassName = '', label, type, href, hasStates = true}: Props) => {
+const Link = ({children, onClick, icon, color = 'primary', className = '', labelClassName = '', label, type, href}: Props) => {
   let classList: string[] = ["--ac-link"];
   let labelClassList: string[] = ["btn-label"];
 

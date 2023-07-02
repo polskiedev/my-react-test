@@ -1,1 +1,3 @@
-center the button in the header
+remove hasStates in button and link components
+======================
+done - center the button in the header

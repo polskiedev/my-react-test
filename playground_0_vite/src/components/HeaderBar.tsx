@@ -15,7 +15,7 @@ function HeaderBar({className = ''}: Props) {
     <>
         <div className={classList.join(" ")}>
             <div>
-                <Button label="Menu" icon="hamburger" color="tertiary" className="outlined" hasStates={false} onClick={() => console.log('Menu') } />
+                <Button label="Menu" icon="hamburger" color="tertiary" className="outlined" onClick={() => console.log('Menu') } />
             </div>
 
             <div className="hidden sm:inline-block">
