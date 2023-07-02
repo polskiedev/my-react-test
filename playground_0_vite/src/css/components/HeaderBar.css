@@ -1,6 +1,5 @@
 .--ac-headerbar {
     padding-inline: 0.25rem;
-    background: linear-gradient(to bottom,#009ce4 0%,#0094d5 100%);
 }
 
 .--ac-headerbar .--site-logo {
@@ -12,5 +11,6 @@
 
 /* --Tailwind-- */
 .--ac-headerbar {
-    @apply flex flex-row content-center items-center justify-between overflow-hidden;
+    @apply bg-ac-headerbar
+        flex flex-row content-center items-center justify-between overflow-hidden;
 }

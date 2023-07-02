@@ -14,7 +14,8 @@
 }
 /* --Tailwind-- */
 .--ac-btn {
-    @apply text-white flex text-center gap-1 no-underline align-middle rounded-md p-1 text-sm 2sm:px-3 2sm:py-1 2sm:text-base;
+    @apply text-white text-sm 2sm:text-base
+        flex text-center gap-1 no-underline align-middle rounded-md p-1 2sm:px-3 2sm:py-1;
 }
 
 .--ac-btn-\[primary\] {
@@ -33,9 +34,29 @@
 }
 
 .--ac-btn .btn-label {
-    @apply  cursor-pointer;
+    @apply  cursor-pointer text-xs 2sm:text-base;
 }
 
 .--ac-btn .btn-icon {
     @apply  inline-block;
+}
+
+/* -Disabled button state- */
+.--ac-btn:disabled,
+.--ac-btn:disabled:hover,
+.--ac-btn:disabled:active,
+.--ac-btn:disabled .btn-label {
+    @apply opacity-60 cursor-not-allowed;
+}
+
+.--ac-btn-\[primary\]:disabled {
+    @apply bg-primary;
+}
+
+.--ac-btn-\[secondary\]:disabled {
+    @apply bg-secondary;
+}
+
+.--ac-btn-\[tertiary\]:disabled {
+    @apply bg-tertiary;
 }

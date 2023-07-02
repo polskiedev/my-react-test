@@ -32,7 +32,10 @@ export default {
 
         'primary-active': 'linear-gradient(180deg,#f7901d,#ffc933)',
         'secondary-active': 'linear-gradient(180deg,#c31473,#e51f8e 16.01%,#ef36aa 57.87%,#f154c2)',
-        'tertiary-active': 'linear-gradient(180deg,rgba(0,100,143,.2),rgba(0,161,229,.2))'
+        'tertiary-active': 'linear-gradient(180deg,rgba(0,100,143,.2),rgba(0,161,229,.2))',
+
+        'ac-headerbar':  'linear-gradient(to bottom,#009ce4 0%,#0094d5 100%)'
+
       },
       colors: {
         primary: {
@@ -59,6 +62,11 @@ export default {
           'hover-tc': '#fff',
           'active-tc': '#fff'
         },
+        ac: {
+          'DEFAULT': 'transparent',
+          'topnavigation': '#00648f',
+          'headerbar': 'transparent'
+        }
       },
     },
   },
