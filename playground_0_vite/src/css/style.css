@@ -4,3 +4,7 @@
 @import './components/link.css';
 @import './components/headerbar.css';
 @import './components/topnavigation.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
