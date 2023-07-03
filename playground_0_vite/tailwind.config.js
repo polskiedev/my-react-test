@@ -47,55 +47,55 @@ export default {
         'btn': {
           'DEFAULT': 'transparent',
           
-          'bg':  'transparent',
-          'hover-bg': 'transparent',
-          'active-bg': 'transparent',
+          'bg'          :  'transparent',
+          'hover-bg'    : 'transparent',
+          'active-bg'   : 'transparent',
 
-          'text': '#fff',
-          'hover-text': '#fff',
-          'active-text': '#fff',
+          'text'        : '#fff',
+          'hover-text'  : '#fff',
+          'active-text' : '#fff',
 
-          'disabled-bg': '#6c757d',
-          'disabled-text': '#fff',
+          'disabled-bg'   : '#6c757d',
+          'disabled-text' : '#fff',
         },
         'btn-primary': {
-          'DEFAULT': 'transparent',
+          'DEFAULT'   : 'transparent',
           
-          'bg':  'transparent',
-          'hover-bg': 'transparent',
-          'active-bg': 'transparent',
+          'bg'        :  'transparent',
+          'hover-bg'  : 'transparent',
+          'active-bg' : 'transparent',
 
-          'text': '#fff',
-          'hover-text': '#fff',
-          'active-text': '#fff'
+          'text'        : '#fff',
+          'hover-text'  : '#fff',
+          'active-text' : '#fff'
         },
         'btn-secondary': {
           'DEFAULT': 'transparent',
 
-          'bg':  'transparent',
-          'hover-bg': 'transparent',
-          'active-bg': 'transparent',
+          'bg'        :  'transparent',
+          'hover-bg'  : 'transparent',
+          'active-bg' : 'transparent',
 
-          'text': '#fff',
-          'hover-text': '#fff',
-          'active-text': '#fff'
+          'text'        : '#fff',
+          'hover-text'  : '#fff',
+          'active-text' : '#fff'
         },
         'btn-tertiary': {
           'DEFAULT': '#00648f',
 
-          'bg':  '#00648f',
-          'hover-bg': '#004766',
-          'active-bg': '#00374f',
+          'bg'        :  '#00648f',
+          'hover-bg'  : '#004766',
+          'active-bg' : '#00374f',
 
-          'text': '#fff',
-          'hover-text': '#fff',
-          'active-text': '#fff'
+          'text'        : '#fff',
+          'hover-text'  : '#fff',
+          'active-text' : '#fff'
         },
         ac: {
           'DEFAULT': 'transparent',
 
-          'topnavigation': '#00648f',
-          'headerbar': 'transparent'
+          'topnavigation' : '#00648f',
+          'headerbar'     : 'transparent'
         }
       },
     },

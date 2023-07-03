@@ -36,7 +36,7 @@
 }
 
 .--ac-btn .btn-label {
-    @apply  cursor-pointer text-xs 2sm:text-base;
+    @apply cursor-pointer text-xs 2sm:text-base;
 }
 
 .--ac-btn .btn-icon {
