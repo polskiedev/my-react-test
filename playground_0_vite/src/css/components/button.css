@@ -14,23 +14,25 @@
 }
 /* --Tailwind-- */
 .--ac-btn {
-    @apply text-white text-sm 2sm:text-base
+    @apply bg-btn-bg hover:bg-btn-hover-bg active:bg-btn-active-bg
+        text-btn-text hover:text-btn-hover-text active:text-btn-active-text
+        text-sm 2sm:text-base
         flex text-center gap-1 no-underline align-middle rounded-md p-1 2sm:px-3 2sm:py-1;
 }
 
 .--ac-btn-\[primary\] {
-    @apply bg-primary hover:bg-primary-hover active:bg-primary-active
-        text-primary-tc hover:text-primary-hover-tc active:text-primary-active-tc;
+    @apply bg-btn-primary-bg hover:bg-btn-primary-hover-bg active:bg-btn-primary-active-bg
+        text-btn-primary-text hover:text-btn-primary-hover-text active:text-btn-primary-active-text;
 }
 
 .--ac-btn-\[secondary\] {
-    @apply bg-secondary hover:bg-secondary-hover active:bg-secondary-active
-        text-secondary-tc hover:text-secondary-hover-tc active:text-secondary-active-tc;
+    @apply bg-btn-secondary-bg hover:bg-btn-secondary-hover-bg active:bg-btn-secondary-active-bg
+        text-btn-secondary-text hover:text-btn-secondary-hover-text active:text-btn-secondary-active-text;
 }
 
 .--ac-btn-\[tertiary\] {
-    @apply bg-tertiary hover:bg-tertiary-hover active:bg-tertiary-active
-    text-tertiary-tc hover:text-tertiary-hover-tc active:text-tertiary-active-tc;
+    @apply bg-btn-tertiary-bg hover:bg-btn-tertiary-hover-bg active:bg-btn-tertiary-active-bg
+    text-btn-tertiary-text hover:text-btn-tertiary-hover-text active:text-btn-tertiary-active-text;
 }
 
 .--ac-btn .btn-label {
@@ -46,7 +48,7 @@
 .--ac-btn:disabled:hover,
 .--ac-btn:disabled:active,
 .--ac-btn:disabled .btn-label {
-    @apply bg-ac-disabled cursor-not-allowed opacity-60;
+    @apply bg-btn-disabled-bg text-btn-disabled-text cursor-not-allowed opacity-60;
 }
 
 /* 

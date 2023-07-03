@@ -22,51 +22,78 @@ export default {
     },
     extend: {
       backgroundImage: {
-        'primary': 'linear-gradient(180deg,#ffc933,#f7901d)',
-        'secondary': 'linear-gradient(180deg,#fa57cc,#f444b8 26.85%,#ed30a3 51.39%,#e51e8d 85.97%,#bb116d)',
-        'tertiary': 'linear-gradient(180deg,rgba(0,161,229,.2),rgba(0,100,143,.2))',
+        'btn-bg': 'none',
+        'btn-hover-bg': 'none',
+        'btn-active-bg': 'none',
 
-        'primary-hover': 'linear-gradient(180deg,#ffe246,#ffc933 34.95%,#ffb22f)',
-        'secondary-hover': 'linear-gradient(180deg,#ff5fe7,#ff4bd4 26.85%,#ff32b9 51.39%,#ff1ea2 83.64%,#dd067f)',
-        'tertiary-hover': 'linear-gradient(180deg,rgba(0,161,229,.2),rgba(0,100,143,.2))',
+        'btn-disabled': 'none',
 
-        'primary-active': 'linear-gradient(180deg,#f7901d,#ffc933)',
-        'secondary-active': 'linear-gradient(180deg,#c31473,#e51f8e 16.01%,#ef36aa 57.87%,#f154c2)',
-        'tertiary-active': 'linear-gradient(180deg,rgba(0,100,143,.2),rgba(0,161,229,.2))',
+        'btn-primary-bg': 'linear-gradient(180deg,#ffc933,#f7901d)',
+        'btn-primary-hover-bg': 'linear-gradient(180deg,#ffe246,#ffc933 34.95%,#ffb22f)',
+        'btn-primary-active-bg': 'linear-gradient(180deg,#f7901d,#ffc933)',
+        
+        'btn-secondary-bg': 'linear-gradient(180deg,#fa57cc,#f444b8 26.85%,#ed30a3 51.39%,#e51e8d 85.97%,#bb116d)',
+        'btn-secondary-hover-bg': 'linear-gradient(180deg,#ff5fe7,#ff4bd4 26.85%,#ff32b9 51.39%,#ff1ea2 83.64%,#dd067f)',
+        'btn-secondary-active-bg': 'linear-gradient(180deg,#c31473,#e51f8e 16.01%,#ef36aa 57.87%,#f154c2)',
+        
+        'btn-tertiary-bg': 'linear-gradient(180deg,rgba(0,161,229,.2),rgba(0,100,143,.2))',
+        'btn-tertiary-hover-bg': 'linear-gradient(180deg,rgba(0,161,229,.2),rgba(0,100,143,.2))',
+        'btn-tertiary-active-bg': 'linear-gradient(180deg,rgba(0,100,143,.2),rgba(0,161,229,.2))',
 
-        'ac-disabled': 'none',
+        'ac-topnavigation': 'none',
         'ac-headerbar':  'linear-gradient(to bottom,#009ce4 0%,#0094d5 100%)'
-
       },
       colors: {
-        primary: {
+        'btn': {
           'DEFAULT': 'transparent',
-          'hover': 'transparent',
-          'active': 'transparent',
-          'tc': '#fff',
-          'hover-tc': '#fff',
-          'active-tc': '#fff'
+          
+          'bg':  'transparent',
+          'hover-bg': 'transparent',
+          'active-bg': 'transparent',
+
+          'text': '#fff',
+          'hover-text': '#fff',
+          'active-text': '#fff',
+
+          'disabled-bg': '#6c757d',
+          'disabled-text': '#fff',
         },
-        secondary: {
+        'btn-primary': {
           'DEFAULT': 'transparent',
-          'hover': 'transparent',
-          'active': 'transparent',
-          'tc': '#fff',
-          'hover-tc': '#fff',
-          'active-tc': '#fff'
+          
+          'bg':  'transparent',
+          'hover-bg': 'transparent',
+          'active-bg': 'transparent',
+
+          'text': '#fff',
+          'hover-text': '#fff',
+          'active-text': '#fff'
         },
-        tertiary: {
+        'btn-secondary': {
+          'DEFAULT': 'transparent',
+
+          'bg':  'transparent',
+          'hover-bg': 'transparent',
+          'active-bg': 'transparent',
+
+          'text': '#fff',
+          'hover-text': '#fff',
+          'active-text': '#fff'
+        },
+        'btn-tertiary': {
           'DEFAULT': '#00648f',
-          'hover': '#004766',
-          'active': '#00374f',
-          'tc': '#fff',
-          'hover-tc': '#fff',
-          'active-tc': '#fff'
+
+          'bg':  '#00648f',
+          'hover-bg': '#004766',
+          'active-bg': '#00374f',
+
+          'text': '#fff',
+          'hover-text': '#fff',
+          'active-text': '#fff'
         },
         ac: {
           'DEFAULT': 'transparent',
-          'disabled': '#6c757d',
-          
+
           'topnavigation': '#00648f',
           'headerbar': 'transparent'
         }
