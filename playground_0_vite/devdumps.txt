@@ -5,6 +5,12 @@
 // classList.push(`btn bg-${color}`);
 // if(hasStates) classList.push(`hover:bg-${color}-hover active:bg-${color}-active`);
 
+
+Nullish Coalescing Operator (??):
+const result = null ?? 'Default Value';
+
+Optional Chaining Operator (?.):
+
 # Source
 https://www.youtube.com/watch?v=SqcY0GlETPk
 https://www.youtube.com/watch?v=1WNYYippEr0

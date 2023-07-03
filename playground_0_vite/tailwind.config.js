@@ -34,6 +34,7 @@ export default {
         'secondary-active': 'linear-gradient(180deg,#c31473,#e51f8e 16.01%,#ef36aa 57.87%,#f154c2)',
         'tertiary-active': 'linear-gradient(180deg,rgba(0,100,143,.2),rgba(0,161,229,.2))',
 
+        'ac-disabled': 'none',
         'ac-headerbar':  'linear-gradient(to bottom,#009ce4 0%,#0094d5 100%)'
 
       },
@@ -64,6 +65,8 @@ export default {
         },
         ac: {
           'DEFAULT': 'transparent',
+          'disabled': '#6c757d',
+          
           'topnavigation': '#00648f',
           'headerbar': 'transparent'
         }
