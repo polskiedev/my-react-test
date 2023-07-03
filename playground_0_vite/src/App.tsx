@@ -2,7 +2,9 @@ import { useState } from "react";
 import Button from "./components/Button";
 import Alert from "./components/Alert";
 import HeaderBar from "./components/HeaderBar";
-import Link from "./components/Link";
+// import Link from "./components/Link";
+import GameList from "./components/GameList";
+// import GameTile from "./components/GameTile";
 import TopNavigation, {Item as TopNavigationItem} from "./components/TopNavigation";
 
 import dataTopNavigationMenu from "./hooks/useTopNavigationMenu";
@@ -28,6 +30,7 @@ function App() {
     
     <main className="my-28">
       <section>
+        <GameList></GameList>
         Content
       </section>
     </main>

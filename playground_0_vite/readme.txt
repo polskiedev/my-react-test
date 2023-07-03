@@ -24,6 +24,16 @@ npm install -g postcss-cli
 React Developer Tools
 
 
+#Useful sites
+svg icons - https://heroicons.com/
+
+
+#Cheat sheets
+https://nerdcave.com/tailwind-cheat-sheet
+https://docs.emmet.io/cheat-sheet/
+
+
+
 #Others
 
 "build-css": "tailwindcss build src/css/style.css -o public/style.css",
@@ -34,6 +44,8 @@ Error @apply in css file -> in the vscode settings add the following lines:
     "files.associations": {
       "*.css": "tailwindcss"
     }
-
+Emmet
+- |c for html comments
+- emmet snippets
 
 

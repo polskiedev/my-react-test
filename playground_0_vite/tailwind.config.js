@@ -25,7 +25,6 @@ export default {
         'btn-bg': 'none',
         'btn-hover-bg': 'none',
         'btn-active-bg': 'none',
-
         'btn-disabled': 'none',
 
         'btn-primary-bg': 'linear-gradient(180deg,#ffc933,#f7901d)',
