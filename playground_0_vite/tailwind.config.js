@@ -95,6 +95,9 @@ export default {
 
           'topnavigation' : '#00648f',
           'headerbar'     : 'transparent'
+        },
+        header: {
+          'DEFAULT': '#ffea00'
         }
       },
     },

@@ -30,7 +30,7 @@ function App() {
     
     <main className="my-32">
       <section className="mx-auto lg:max-w-[928px]">
-        <GameList></GameList>
+        <GameList label="Popular"></GameList>
         Content
       </section>
     </main>

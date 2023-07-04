@@ -26,7 +26,7 @@ const GameTile = ({className = '', linkImgClassName ='', swap = true, name, img,
     return (<>
         <div className={classList.join(" ")}>
             <a href={url} style={{backgroundImage: `url(${displayImg})`}} className={linkImgClassList.join(" ")}>
-                <img src={placeholder} className="h-full w-full hidden" />
+                <img src={placeholder} className="h-full w-full invisible" />
             </a>
             <div className="game-info grid grid-cols-3 gap-1 p-1">
                 <a className="col-span-2" href={url}>{name}</a>

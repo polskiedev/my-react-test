@@ -3,11 +3,12 @@ import {dataGame} from "../hooks/useDataLoader";
 import GameTile from "../components/GameTile";
 
 interface Props {
+    label: string;
     className?: string;
     onClick?: () => void;
 }
 
-const GameList= ({className = ''}: Props) => {
+const GameList= ({className = '', label}: Props) => {
     const classList: string[] = ["--ac-game-list"];
     const navClassList: string[] = ["carousel-btn"];
     const gameTileLinkImgClassName: string[] = [];
@@ -24,7 +25,8 @@ const GameList= ({className = ''}: Props) => {
     const navTop = (dim.imgHeight - dim.navHeight)/2;
     const navAdjust = dim.navWidth/2;
 
-    classList.push(`carousel group relative m-5 lg:m-0`);
+    classList.push(`text-white`);
+    // navClassList.push(`hidden`);
     navClassList.push(`group-hover:block absolute`);
     navClassList.push(`top-[${navTop}px]`);
     gameTileLinkImgClassName.push(`block bg-center bg-cover duration-500`);
@@ -33,6 +35,13 @@ const GameList= ({className = ''}: Props) => {
 
     const navLeftClassList: string[] = [...navClassList, `left-[-${navAdjust}px]`];
     const navRightClassList: string[] = [...navClassList, `right-[-${navAdjust}px]`];
+
+    // navClassList.push(`top-[57px]`);
+    // gameTileLinkImgClassName.push(`h-[150px] w-[150px]`);
+    // gameTileLinkImgClassName.push(`max-w-[150px] max-h-[150px]`);
+
+    // const navLeftClassList: string[] = [...navClassList, `left-[-18px]`];
+    // const navRightClassList: string[] = [...navClassList, `right-[-18px]`];
 
     if(!!className) classList.push(className);
 
@@ -55,25 +64,32 @@ const GameList= ({className = ''}: Props) => {
 
     return (<>
             <div className={classList.join(" ")}>
-                <div className="flex flex-row gap-1 overflow-hidden">
-                {items.map((item, index) => {
-           
-                    return (    
-                        <GameTile key={index} swap={swapGameTileImg} linkImgClassName={gameTileLinkImgClassName.join(" ")} {...item}></GameTile>                      
-                    );
-                })}
+                <div className="flex flex-row gap-1 justify-between mx-5 lg:m-0 py-2">
+                    <h2 className="text-header text-xl">{label}</h2>
+                    <a href="#viewall">See all</a>
+                </div>
+                <div className="carousel group relative mx-5 lg:mx-0">
+                    <div className="flex flex-row gap-1 overflow-hidden">
+                    {items.map((item, index) => {
+            
+                        return (    
+                            <GameTile key={index} swap={swapGameTileImg} linkImgClassName={gameTileLinkImgClassName.join(" ")} {...item}></GameTile>                      
+                        );
+                    })}
+                    </div>
+
+                    <div className={navLeftClassList.join(" ")}>
+                        <button onClick={prevSlide}>
+                            <span className="btn-icon icon-carousel-nav-left block bg-no-repeat h-[36px] w-[36px]"></span>
+                        </button>
+                    </div>
+                    <div className={navRightClassList.join(" ")}>
+                        <button onClick={nextSlide}>
+                            <span className="btn-icon icon-carousel-nav-right block bg-no-repeat h-[36px] w-[36px]"></span>
+                        </button>
+                    </div>
                 </div>
 
-                <div className={navLeftClassList.join(" ")}>
-                    <button onClick={prevSlide}>
-                        <span className="btn-icon icon-carousel-nav-left block bg-no-repeat h-[36px] w-[36px]"></span>
-                    </button>
-                </div>
-                <div className={navRightClassList.join(" ")}>
-                    <button onClick={nextSlide}>
-                        <span className="btn-icon icon-carousel-nav-right block bg-no-repeat h-[36px] w-[36px]"></span>
-                    </button>
-                </div>
 
             </div>
     </>)
