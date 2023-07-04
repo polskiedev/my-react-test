@@ -28,8 +28,8 @@ function App() {
       <TopNavigation className="h-14" items={menuItems as TopNavigationItem[]}></TopNavigation>
     </header>
     
-    <main className="my-28">
-      <section>
+    <main className="my-32">
+      <section className="mx-auto lg:max-w-[928px]">
         <GameList></GameList>
         Content
       </section>

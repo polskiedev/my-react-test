@@ -30,3 +30,11 @@
 .btn-icon.icon-game-info {
     background-image: url(../src/assets/icons/icon-game-info.svg);
 }
+
+.btn-icon.icon-carousel-nav-left {
+    background-image: url(../src/assets/components/carousel-nav-left.svg);
+}
+
+.btn-icon.icon-carousel-nav-right {
+    background-image: url(../src/assets/components/carousel-nav-right.svg);
+}

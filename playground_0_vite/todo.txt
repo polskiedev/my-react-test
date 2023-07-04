@@ -1,3 +1,4 @@
-remove hasStates in button and link components
+add carousel for game list
 ======================
 done - center the button in the header
+done - hasStates in button and link components
