@@ -16,7 +16,7 @@ export interface Item {
 }
 
 const TopNavigation = ({items, className = ''}: Props) => {
-    let classList: string[] = ["--ac-topnavigation"];
+    const classList: string[] = ["--ac-topnavigation"];
 
     if(!!className) classList.push(className);
 

@@ -5,13 +5,15 @@ interface Props {
     name: string;
     url: string;
     className?: string;
+    linkImgClassName?: string;
     swap?: boolean;
     onClick?: () => void;
 }
 
-const GameTile = ({className = '', swap = true, name, img, url}: Props) => {
-    let classList: string[] = ["--ac-game-tile"];
-
+const GameTile = ({className = '', linkImgClassName ='', swap = true, name, img, url}: Props) => {
+    const classList: string[] = ["--ac-game-tile"];
+    const linkImgClassList: string[] = [];
+    
     const placeholder = `../src/assets/placeholders/game-thumbnail.png`
     const gameImg = `../src/assets/games/${img}`;
     const displayImg = swap ? gameImg : placeholder;
@@ -19,10 +21,11 @@ const GameTile = ({className = '', swap = true, name, img, url}: Props) => {
     classList.push("block text-white text-sm");
     
     if(!!className) classList.push(className);
+    if(!!linkImgClassName) linkImgClassList.push(linkImgClassName);
 
     return (<>
         <div className={classList.join(" ")}>
-            <a href={url} style={{backgroundImage: `url(${displayImg})`}} className="block h-[150px] w-[150px] max-w-[150px] max-h-[150px] bg-center bg-cover duration-500">
+            <a href={url} style={{backgroundImage: `url(${displayImg})`}} className={linkImgClassList.join(" ")}>
                 <img src={placeholder} className="h-full w-full hidden" />
             </a>
             <div className="game-info grid grid-cols-3 gap-1 p-1">

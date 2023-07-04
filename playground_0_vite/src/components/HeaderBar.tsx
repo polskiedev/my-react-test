@@ -7,7 +7,7 @@ interface Props {
 
 function HeaderBar({className = ''}: Props) {
   const [selectedIndex, setSelectedIndex] = useState(-1);
-  let classList: string[] = ["--ac-headerbar"];
+  const classList: string[] = ["--ac-headerbar"];
 
   if(!!className) classList.push(className);
 

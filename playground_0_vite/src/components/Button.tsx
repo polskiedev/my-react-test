@@ -11,8 +11,8 @@ interface Props {
 }
 
 const Button = ({children, onClick, icon, color = 'primary', className = '', label, labelClassName = ""}: Props) => {
-  let classList: string[] = ["--ac-btn"];
-  let labelClassList: string[] = ["btn-label"];
+  const classList: string[] = ["--ac-btn"];
+  const labelClassList: string[] = ["btn-label"];
 
   // classList.push(`bg-primary bg-secondary bg-tertiary hover:bg-primary-hover hover:bg-secondary-hover hover:bg-tertiary-hover active:bg-primary-active active:bg-secondary-active active:bg-tertiary-active`);
   classList.push(`--ac-btn-[${color}]`);

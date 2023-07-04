@@ -13,8 +13,8 @@ interface Props {
 }
 
 const Link = ({children, onClick, icon, color = 'primary', className = '', labelClassName = '', label, type, href}: Props) => {
-  let classList: string[] = ["--ac-link"];
-  let labelClassList: string[] = ["btn-label"];
+  const classList: string[] = ["--ac-link"];
+  const labelClassList: string[] = ["btn-label"];
 
   if(type == 'button') {
     classList.push("--ac-btn");
