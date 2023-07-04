@@ -23,7 +23,7 @@ const useGameList = () => {
     {
         name: 'Marathon',
         img:'game4.png',
-        badge: '',
+        badge: [],
         url: '#marathon'
     }, 
     {
@@ -35,7 +35,7 @@ const useGameList = () => {
     {
         name: 'Billiards',
         img:'game6.png',
-        badge: '',
+        badge: [],
         url: '#billiards'
     }, 
     {

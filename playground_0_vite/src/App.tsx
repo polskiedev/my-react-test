@@ -23,7 +23,7 @@ function App() {
   let menuItems = dataMenu();
 
   return <>
-    <header className="fixed w-full h-28 -top-0 -left-0">
+    <header className="fixed w-full h-28 -top-0 -left-0 z-50">
       <HeaderBar className="h-14"></HeaderBar>
       <TopNavigation className="h-14" items={menuItems as TopNavigationItem[]}></TopNavigation>
     </header>
@@ -31,6 +31,8 @@ function App() {
     <main className="my-32">
       <section className="mx-auto lg:max-w-[928px]">
         <GameList label="Popular"></GameList>
+        <GameList label="New Games"></GameList>
+        <GameList label="Jackpots"></GameList>
         Content
       </section>
     </main>

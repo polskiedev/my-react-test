@@ -4,6 +4,7 @@
 @import './components/link.css';
 @import './components/headerbar.css';
 @import './components/topnavigation.css';
+@import './components/gametile.css';
 
 @tailwind base;
 @tailwind components;

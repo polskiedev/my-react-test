@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import {dataGame} from "../hooks/useDataLoader";
 import GameTile from "../components/GameTile";
+import {generateSlug} from "../helpers/helpers"
 
 interface Props {
     label: string;
@@ -26,7 +27,7 @@ const GameList= ({className = '', label}: Props) => {
     const navAdjust = dim.navWidth/2;
 
     classList.push(`text-white`);
-    // navClassList.push(`hidden`);
+    navClassList.push(`lg:hidden`);
     navClassList.push(`group-hover:block absolute`);
     navClassList.push(`top-[${navTop}px]`);
     gameTileLinkImgClassName.push(`block bg-center bg-cover duration-500`);
@@ -53,6 +54,7 @@ const GameList= ({className = '', label}: Props) => {
         const newIndex = isFirstSlide ? items.length - 1 : currentIndex - 1;
 
         setCurrentIndex(newIndex);
+        console.log('prev slide');
     };
 
     const nextSlide = () => {
@@ -60,20 +62,29 @@ const GameList= ({className = '', label}: Props) => {
         const newIndex = isLastSlide ? 0 : currentIndex + 1;
 
         setCurrentIndex(newIndex);
+        console.log('next slide');
+    };
+
+    const itemConfig = {
+        swap: swapGameTileImg,
+        linkImgClassName: gameTileLinkImgClassName.join(" "),
     };
 
     return (<>
             <div className={classList.join(" ")}>
-                <div className="flex flex-row gap-1 justify-between mx-5 lg:m-0 py-2">
-                    <h2 className="text-header text-xl">{label}</h2>
-                    <a href="#viewall">See all</a>
+                <div className="flex flex-row gap-1 justify-between items-center mx-5 lg:m-0 p-2">
+                    <h2 className="text-header text-xl font-bold">{label}</h2>
+                    <a href={"#seeall_" + generateSlug(label)} className="flex flex-row gap-1 justify-between items-center text-sm" onClick={() => console.log(label + ' -> see all')}>
+                        See all
+                        <span className="btn-icon icon-chevron"></span>
+                    </a>
                 </div>
                 <div className="carousel group relative mx-5 lg:mx-0">
                     <div className="flex flex-row gap-1 overflow-hidden">
                     {items.map((item, index) => {
             
                         return (    
-                            <GameTile key={index} swap={swapGameTileImg} linkImgClassName={gameTileLinkImgClassName.join(" ")} {...item}></GameTile>                      
+                            <GameTile key={index} item={item} {...itemConfig}></GameTile>                      
                         );
                     })}
                     </div>
