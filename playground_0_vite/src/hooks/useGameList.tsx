@@ -1,21 +1,5 @@
 import React from 'react'
 
-function shuffleArray<T>(array: T[]): T[] {
-  const newArray = [...array];
-  const length = newArray.length;
-
-  for (let currentIndex = length - 1; currentIndex > 0; currentIndex--) {
-    const randomIndex = Math.floor(Math.random() * (currentIndex + 1));
-
-    // Swap current element with a random element
-    const temporaryValue = newArray[currentIndex];
-    newArray[currentIndex] = newArray[randomIndex];
-    newArray[randomIndex] = temporaryValue;
-  }
-
-  return newArray;
-}
-
 const useGameList = () => {
   let items = [
     {   
@@ -55,7 +39,7 @@ const useGameList = () => {
     } 
   ];
 
-  return shuffleArray(items);
+  return items;
 }
 
 export default useGameList;

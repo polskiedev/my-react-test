@@ -7,7 +7,7 @@ import GameList from "./components/GameList";
 // import GameTile from "./components/GameTile";
 import TopNavigation, {Item as TopNavigationItem} from "./components/TopNavigation";
 
-import dataTopNavigationMenu from "./hooks/useTopNavigationMenu";
+import {dataMenu} from "./hooks/useDataLoader";
 
 function testBootstrap() {
   const [alertVisible, setAlertVisibility] = useState(false);
@@ -20,7 +20,7 @@ function testBootstrap() {
 }
 
 function App() {
-  let menuItems = dataTopNavigationMenu();
+  let menuItems = dataMenu();
 
   return <>
     <header className="fixed w-full h-28 -top-0 -left-0">

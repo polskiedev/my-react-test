@@ -12,8 +12,8 @@ const GameTile = ({className = '', name, img}: Props) => {
     const items = dataGameList();
 
     return (<>
-        <div className="text-white text-sm">
-            <img src={img} className="h-[150px] w-[150px]" />
+        <div className="block text-white text-sm">
+            <img src={img} className="h-[150px] w-[150px] max-w-[150px] max-h-[150px]" />
             <div className="game-info grid grid-cols-3 gap-1 p-1">
                 <a className="col-span-2">{name}</a>
                 <button className=" col-span-1 flex flex-row justify-end content-center items-start">

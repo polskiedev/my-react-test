@@ -1,5 +1,5 @@
 import React from 'react'
-import dataGameList from "../hooks/useGameList";
+import {dataGame} from "../hooks/useDataLoader";
 import GameTile from "../components/GameTile";
 
 interface Props {
@@ -8,19 +8,17 @@ interface Props {
 }
 
 const GameList= ({className = ''}: Props) => {
-    const items = dataGameList();
+    const items = dataGame();
+    const imgPlaceholder = `../src/assets/placeholders/game-thumbnail.png`
+    const usePlaceholder = true;
 
     return (<>
-            <div className="flex flex-row gap-1" >
+            <div className="flex flex-row gap-1 p-2" >
             {items.map((item, index) => {
-                const { name, img } = item;
-                let thumbnail = `../src/assets/placeholders/game-thumbnail.png`;
-
-                // thumbnail = `../src/assets/games/${img}`;                
-                const gameItem = {name, img: thumbnail};
+                item.img = usePlaceholder ? imgPlaceholder : `../src/assets/games/${item.img}`;
 
                 return (    
-                    <GameTile key={index} {...gameItem}></GameTile>                      
+                    <GameTile key={index} {...item}></GameTile>                      
                 );
             })}
             </div>
