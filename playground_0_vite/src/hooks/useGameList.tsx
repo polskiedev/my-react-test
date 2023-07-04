@@ -1,49 +1,59 @@
 import React from 'react'
+//https://my-json-server.typicode.com/polskiedev/json-db-games
 
 const useGameList = () => {
   let items = [
-    {   
-        name: 'Basketball',
-        img:'game1.svg',
-        badge: ['Popular'],
-        url: '#basketball'
-    }, 
     {
-        name: 'Table Tennis',
-        img:'game2.svg',
-        badge: [],
-        url: '#table-tennis'
-    }, 
+      "name": "Basketball",
+      "img": "game1.svg",
+      "badge": [
+        "Popular"
+      ],
+      "url": "#basketball"
+    },
     {
-        name: 'Soccer',
-        img:'game3.jpeg',
-        badge: ['Popular'],
-        url: '#soccer'
-    }, 
+      "name": "Table Tennis",
+      "img": "game2.svg",
+      "badge": [],
+      "url": "#table-tennis"
+    },
     {
-        name: 'Marathon',
-        img:'game4.png',
-        badge: [],
-        url: '#marathon'
-    }, 
+      "name": "Soccer",
+      "img": "game3.jpeg",
+      "badge": [
+        "Popular"
+      ],
+      "url": "#soccer"
+    },
     {
-        name: 'Sepak Takraw',
-        img:'game5.svg',
-        badge: ['New'],
-        url: '#sepak-takraw'
-    }, 
+      "name": "Marathon",
+      "img": "game4.png",
+      "badge": [],
+      "url": "#marathon"
+    },
     {
-        name: 'Billiards',
-        img:'game6.png',
-        badge: [],
-        url: '#billiards'
-    }, 
+      "name": "Sepak Takraw",
+      "img": "game5.svg",
+      "badge": [
+        "New"
+      ],
+      "url": "#sepak-takraw"
+    },
     {
-        name: 'Darts',
-        img:'game7.png',
-        badge: ['New', 'Popular'],
-        url: '#darts'
-    } 
+      "name": "Billiards",
+      "img": "game6.png",
+      "badge": [],
+      "url": "#billiards"
+    },
+    {
+      "name": "Darts",
+      "img": "game7.png",
+      "badge": [
+        "New",
+        "Popular"
+      ],
+      "url": "#darts"
+    }
   ];
 
   return items;

@@ -1,28 +1,25 @@
 import { useState } from "react";
-import Button from "./components/Button";
-import Alert from "./components/Alert";
-import HeaderBar from "./components/HeaderBar";
+
+// import Alert from "./components/Alert";
 // import Link from "./components/Link";
-import GameList from "./components/GameList";
 // import GameTile from "./components/GameTile";
+// import Button from "./components/Button";
+// import ListUsersSkeleton from "./components/ListUsersSkeleton";
+// import ListUsers from "./components/ListUsers";
+import HeaderBar from "./components/HeaderBar";
 import TopNavigation, {Item as TopNavigationItem} from "./components/TopNavigation";
+import GameList from "./components/GameList";
 
 import {dataMenu} from "./hooks/useDataLoader";
 
-function testBootstrap() {
-  const [alertVisible, setAlertVisibility] = useState(false);
-  return <div>
-    {alertVisible && <Alert onClose={() => setAlertVisibility(false)}>My Alert</Alert>}
-    <Button color="primary" onClick={() => setAlertVisibility(true)}>My Button</Button>
-    <Button color="secondary" onClick={() => setAlertVisibility(true)}>My Button</Button>
-    <Button color="tertiary" onClick={() => setAlertVisibility(true)}>My Button</Button>
-  </div>
-}
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css'
 
 function App() {
   let menuItems = dataMenu();
 
   return <>
+    <SkeletonTheme baseColor="#202020" highlightColor="#444">
     <header className="fixed w-full h-28 -top-0 -left-0 z-50">
       <HeaderBar className="h-14"></HeaderBar>
       <TopNavigation className="h-14" items={menuItems as TopNavigationItem[]}></TopNavigation>
@@ -33,6 +30,7 @@ function App() {
         <GameList label="Popular"></GameList>
         <GameList label="New Games"></GameList>
         <GameList label="Jackpots"></GameList>
+        
         Content
       </section>
     </main>
@@ -42,6 +40,7 @@ function App() {
         All right reserved... Thanks!
       </p>
     </footer>
+    </SkeletonTheme>
   </>
 }
 export default App

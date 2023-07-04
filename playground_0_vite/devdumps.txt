@@ -15,3 +15,16 @@ Optional Chaining Operator (?.):
 https://www.youtube.com/watch?v=SqcY0GlETPk
 https://www.youtube.com/watch?v=1WNYYippEr0
 https://www.youtube.com/watch?v=EuJrOC0bSlM
+
+
+=====
+function testBootstrap() {
+  const [alertVisible, setAlertVisibility] = useState(false);
+  return <div>
+    {alertVisible && <Alert onClose={() => setAlertVisibility(false)}>My Alert</Alert>}
+    <Button color="primary" onClick={() => setAlertVisibility(true)}>My Button</Button>
+    <Button color="secondary" onClick={() => setAlertVisibility(true)}>My Button</Button>
+    <Button color="tertiary" onClick={() => setAlertVisibility(true)}>My Button</Button>
+  </div>
+}
+======
