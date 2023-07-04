@@ -13,7 +13,7 @@ const GameList= ({className = ''}: Props) => {
     const usePlaceholder = true;
 
     return (<>
-            <div className="carousel">
+            <div className="carousel relative">
                 <div className="flex flex-row gap-1 overflow-hidden">
                 {items.map((item, index) => {
                     item.img = usePlaceholder ? imgPlaceholder : `../src/assets/games/${item.img}`;
@@ -24,13 +24,12 @@ const GameList= ({className = ''}: Props) => {
                 })}
                 </div>
 
-                <button className="carousel-btn flex flex-row justify-end content-center items-start">
+                <button className="carousel-btn flex flex-row justify-end content-center items-start absolute top-[57px] -left-[18px]">
                     <span className="btn-icon icon-carousel-nav-left block bg-no-repeat h-[36px] w-[36px]"></span>
                 </button>
-                <button className="carousel-btn flex flex-row justify-end content-center items-start">
+                <button className="carousel-btn flex flex-row justify-end content-center items-start absolute top-[57px] -right-[18px]">
                     <span className="btn-icon icon-carousel-nav-right block bg-no-repeat h-[36px] w-[36px]"></span>
                 </button>
-          
             </div>
     </>)
 }
