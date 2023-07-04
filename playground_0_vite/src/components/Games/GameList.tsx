@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import {dataGame} from "../hooks/useDataLoader";
-import GameTile from "../components/GameTile";
-import {generateSlug} from "../helpers/helpers"
+import {dataGame} from "../../data/useDataLoader";
+import GameTile from "./GameItem";
+import {generateSlug} from "../../helpers/helpers"
 
 interface Props {
     label: string;
@@ -45,7 +45,7 @@ const GameList= ({className = '', label}: Props) => {
     // const navRightClassList: string[] = [...navClassList, `right-[-18px]`];
 
     if(!!className) classList.push(className);
-
+   
     const items = dataGame();
     const [currentIndex, setCurrentIndex] = useState(0);
 

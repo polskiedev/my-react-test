@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import ListUsersSkeleton from "./ListUsersSkeleton";
+import ListUsersSkeleton from "../Skeleton/ListUsersSkeleton";
 
 const url = "https://jsonplaceholder.typicode.com/users";
 

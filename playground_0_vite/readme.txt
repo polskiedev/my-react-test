@@ -5,6 +5,7 @@ npm i bootstrap@5.2.3
 npm i -D tailwindcss postcss autoprefixer
 npx tailwind init
 npm install -g postcss-cli
+npm install axios
 
 
 # vscode plugin 

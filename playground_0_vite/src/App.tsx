@@ -4,13 +4,16 @@ import { useState } from "react";
 // import Link from "./components/Link";
 // import GameTile from "./components/GameTile";
 // import Button from "./components/Button";
-// import ListUsersSkeleton from "./components/ListUsersSkeleton";
-// import ListUsers from "./components/ListUsers";
+// import ListUsersSkeleton from "./components/Users/ListUsersSkeleton";
+
+// import ListUsers from "./components/Users/ListUsers";
+// import GameTiles from "./components/GameTiles/GameTiles";
+import GameTiles2 from "./components/GameTiles/GameTiles2";
 import HeaderBar from "./components/HeaderBar";
 import TopNavigation, {Item as TopNavigationItem} from "./components/TopNavigation";
-import GameList from "./components/GameList";
+import GameList from "./components/Games/GameList";
 
-import {dataMenu} from "./hooks/useDataLoader";
+import {dataMenu} from "./data/useDataLoader";
 
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
@@ -30,7 +33,8 @@ function App() {
         <GameList label="Popular"></GameList>
         <GameList label="New Games"></GameList>
         <GameList label="Jackpots"></GameList>
-        
+
+        <GameTiles2></GameTiles2>
         Content
       </section>
     </main>

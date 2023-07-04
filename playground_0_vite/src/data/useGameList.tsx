@@ -1,5 +1,4 @@
 import React from 'react'
-//https://my-json-server.typicode.com/polskiedev/json-db-games
 
 const useGameList = () => {
   let items = [

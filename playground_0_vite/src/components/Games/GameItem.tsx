@@ -14,7 +14,7 @@ interface Props {
     swap?: boolean;
 }
 
-const GameTile = ({className = '', linkImgClassName = '', swap = true, item}: Props) => {
+const GameItem = ({className = '', linkImgClassName = '', swap = true, item}: Props) => {
     const classList: string[] = ["--ac-game-tile"];
     const linkImgClassList: string[] = [];
     
@@ -54,4 +54,4 @@ const GameTile = ({className = '', linkImgClassName = '', swap = true, item}: Pr
     </>)
 }
 
-export default GameTile
+export default GameItem
