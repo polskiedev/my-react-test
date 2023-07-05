@@ -12,9 +12,8 @@ export interface Post {
     userId: number;
 }
 
-export interface GameTile {
-    id: number;
-    name: string;
+export interface SiteTile {
+    label: string;
     tagline: string;
     icon: string;
     linktext: string;

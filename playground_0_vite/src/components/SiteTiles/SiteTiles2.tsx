@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { getGameTileById } from '../../api/services/ApiService';
-import { GameTile } from "../../api/models/ApiResponse";
+import { getSiteTileById } from '../../api/services/ApiService';
+import { SiteTile } from "../../api/models/ApiResponse";
 
-const GameTiles2 = () => {
-    const [tiles, setTiles] = useState<GameTile | null>(null);
+const SiteTiles2 = () => {
+    const [tiles, setTiles] = useState<SiteTile | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await getGameTileById(2);
+        const data = await getSiteTileById(2);
         setTiles(data);
       } catch (error) {
         // Handle error
@@ -22,8 +22,8 @@ const GameTiles2 = () => {
   return (
     <div>
         {tiles ? (
-            <div key={tiles.id}>
-                <h3>{tiles.name}</h3>
+            <div>
+                <h3>{tiles.label}</h3>
                 <p>{tiles.tagline}</p>
                 <p>{tiles.icon}</p>
                 <p>{tiles.url}</p>
@@ -35,4 +35,4 @@ const GameTiles2 = () => {
 );
 };
 
-export default GameTiles2;
+export default SiteTiles2;

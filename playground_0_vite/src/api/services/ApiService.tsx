@@ -1,10 +1,10 @@
 // apiService.ts
 import axios from 'axios';
-import { GameTile } from "../models/ApiResponse";
+import { SiteTile } from "../models/ApiResponse";
 
 const BASE_URL = 'https://my-json-server.typicode.com/polskiedev/json-db-game-tiles/';
 
-export async function getGameTiles(): Promise<GameTile[]> {
+export async function getSiteTiles(): Promise<SiteTile[]> {
   try {
     const response = await axios.get(`${BASE_URL}/tiles`);
     return response.data;
@@ -15,13 +15,13 @@ export async function getGameTiles(): Promise<GameTile[]> {
   }
 }
 
-export async function getGameTileById(id: number): Promise<GameTile> {
+export async function getSiteTileById(id: number): Promise<SiteTile> {
     try {
       const response = await axios.get(`${BASE_URL}/tiles/${id}`);
       return response.data;
     } catch (error) {
       // Handle error
-      console.error(`Error fetching game tile with ID ${id}:`, error);
+      console.error(`Error fetching site tile with ID ${id}:`, error);
       throw error;
     }
 }

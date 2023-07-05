@@ -5,15 +5,16 @@ import { useState } from "react";
 // import GameTile from "./components/GameTile";
 // import Button from "./components/Button";
 // import ListUsersSkeleton from "./components/Skeleton/ListUsersSkeleton";
-import SiteTileSkeleton from './components/Skeleton/SiteTileSkeleton';
-
+// import SiteTileSkeleton from './components/Skeleton/SiteTileSkeleton';
+// import GameTileSkeleton from './components/Skeleton/GameTileSkeleton';
 // import ListUsers from "./components/Users/ListUsers";
-import GameTiles from "./components/SiteTiles/SiteTiles";
-// import GameTiles2 from "./components/GameTiles/GameTiles2";
+
+import SiteTiles from "./components/SiteTiles/SiteTiles";
+// import SiteTiles2 from "./components/SiteTiles/SiteTiles2";
 import HeaderBar from "./components/HeaderBar";
 import TopNavigation, {Item as TopNavigationItem} from "./components/TopNavigation";
 import GameList from "./components/Games/GameList";
-
+import GameList2 from "./components/Games/GameList2";
 import {dataMenu} from "./data/useDataLoader";
 
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
@@ -31,10 +32,9 @@ function App() {
     
     <main className="my-32">
       <section className="mx-auto lg:max-w-[928px]">
-        
-        <GameList label="Popular"></GameList>
-        <GameList label="New Games"></GameList>
-        <GameTiles></GameTiles>
+        <GameList2 label="Popular"></GameList2>
+        <GameList2 label="New Games"></GameList2>
+        <SiteTiles></SiteTiles>
         Content
       </section>
     </main>
