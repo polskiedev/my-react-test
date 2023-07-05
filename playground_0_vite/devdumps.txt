@@ -28,3 +28,6 @@ function testBootstrap() {
   </div>
 }
 ======
+nextjs
+prismadb => graphQl; T3
+t3 github

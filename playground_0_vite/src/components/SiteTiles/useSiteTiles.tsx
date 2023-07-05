@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from 'react';
+import SiteTileSkeleton from '../Skeleton/SiteTileSkeleton';
 
 const url = "https://my-json-server.typicode.com/polskiedev/json-db-game-tiles/tiles";
 
-export interface Item {
-  id: number;
-  name: string;
+export interface Tile {
+  label: string;
   tagline: string;
   icon: string;
   linktext: string;
   url: string;
 }
 
-const GameTiles = (WrappedComponent: React.ComponentType<{ games: Item[] }>) => {
+const SiteTiles = (WrappedComponent: React.ComponentType<{ tiles: Tile[] }>) => {
   return () => {
-    const [tiles, setTiles] = useState<Item[]>([]);
+    const [tiles, setTiles] = useState<Tile[]>([]);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
@@ -26,11 +26,11 @@ const GameTiles = (WrappedComponent: React.ComponentType<{ games: Item[] }>) => 
     }, []);
 
     if (isLoading) {
-      return <p>Loading...</p>;
+      return <SiteTileSkeleton></SiteTileSkeleton>;
     }
 
-    return <WrappedComponent games={tiles} />;
+    return <WrappedComponent tiles={tiles} />;
   };
 };
 
-export default GameTiles;
+export default SiteTiles;

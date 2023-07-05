@@ -4,11 +4,12 @@ import { useState } from "react";
 // import Link from "./components/Link";
 // import GameTile from "./components/GameTile";
 // import Button from "./components/Button";
-// import ListUsersSkeleton from "./components/Users/ListUsersSkeleton";
+// import ListUsersSkeleton from "./components/Skeleton/ListUsersSkeleton";
+import SiteTileSkeleton from './components/Skeleton/SiteTileSkeleton';
 
 // import ListUsers from "./components/Users/ListUsers";
-// import GameTiles from "./components/GameTiles/GameTiles";
-import GameTiles2 from "./components/GameTiles/GameTiles2";
+import GameTiles from "./components/SiteTiles/SiteTiles";
+// import GameTiles2 from "./components/GameTiles/GameTiles2";
 import HeaderBar from "./components/HeaderBar";
 import TopNavigation, {Item as TopNavigationItem} from "./components/TopNavigation";
 import GameList from "./components/Games/GameList";
@@ -30,11 +31,10 @@ function App() {
     
     <main className="my-32">
       <section className="mx-auto lg:max-w-[928px]">
+        
         <GameList label="Popular"></GameList>
         <GameList label="New Games"></GameList>
-        <GameList label="Jackpots"></GameList>
-
-        <GameTiles2></GameTiles2>
+        <GameTiles></GameTiles>
         Content
       </section>
     </main>
