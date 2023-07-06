@@ -13,7 +13,7 @@ import SiteTiles from "./components/SiteTiles/SiteTiles";
 // import SiteTiles2 from "./components/SiteTiles/SiteTiles2";
 import HeaderBar from "./components/HeaderBar";
 import TopNavigation, {Item as TopNavigationItem} from "./components/TopNavigation";
-import GameList from "./components/Games/GameList";
+// import GameList from "./components/Games/GameList";
 import GameList2 from "./components/Games/GameList2";
 import {dataMenu} from "./data/useDataLoader";
 
