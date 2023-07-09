@@ -15,6 +15,13 @@ Optional Chaining Operator (?.):
 https://www.youtube.com/watch?v=SqcY0GlETPk
 https://www.youtube.com/watch?v=1WNYYippEr0
 https://www.youtube.com/watch?v=EuJrOC0bSlM
+https://www.youtube.com/watch?v=Ib-80HIjuZ4 => Accordion
+https://www.youtube.com/watch?v=BKFPfzWM3CQ&t=327s 
+=>  Create Highly Reusable React Components in Minutes with TypeScript
+=> Type Guards
+=> Type Generic + options
+https://www.youtube.com/watch?v=9i38FPugxB8
+
 
 
 =====

@@ -8,6 +8,7 @@ import { useState } from "react";
 // import SiteTileSkeleton from './components/Skeleton/SiteTileSkeleton';
 // import GameTileSkeleton from './components/Skeleton/GameTileSkeleton';
 // import ListUsers from "./components/Users/ListUsers";
+import Accordion from "./components/Accordion/Accordion";
 
 import SiteTiles from "./components/SiteTiles/SiteTiles";
 // import SiteTiles2 from "./components/SiteTiles/SiteTiles2";
@@ -31,7 +32,12 @@ function App() {
     </header>
     
     <main className="my-32">
-      <section className="mx-auto lg:max-w-[928px]">
+      <section className="test-section mx-auto lg:max-w-[928px]">
+        <Accordion title="Accordion Component Title" content="1 Accordion Component Content">
+          <p>2 This is the content of the accordion.</p>
+        </Accordion>
+      </section>
+      <section className="mx-auto lg:max-w-[928px] hidden">
         <GameList2 label="Popular"></GameList2>
         <GameList2 label="New Games"></GameList2>
         <SiteTiles></SiteTiles>
