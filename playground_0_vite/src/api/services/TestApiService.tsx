@@ -1,6 +1,6 @@
 // TestApiService.ts
 import axios from 'axios';
-import dataTopNavigationMenu from '../../data/dataTopNavigationMenu';
+import dataTopNavigationMenu from '../data/dataTopNavigationMenu';
 import { APP_ENV, APP_API_KEY } from '../../config/config';
 
 export interface Menu {
