@@ -4,39 +4,39 @@
 }
 
 .btn-icon.icon-hamburger {
-    background-image: url(../src/assets/icons/icon-hamburger.svg);
+    background-image: url(/src/assets/icons/icon-hamburger.svg);
 }
 
 .btn-icon.icon-home {
-    background-image: url(../src/assets/icons/icon-home.svg);
+    background-image: url(/src/assets/icons/icon-home.svg);
 }
 
 .btn-icon.icon-slots {
-    background-image: url(../src/assets/icons/icon-slots.svg);
+    background-image: url(/src/assets/icons/icon-slots.svg);
 }
 
 .btn-icon.icon-cards {
-    background-image: url(../src/assets/icons/icon-cards.svg);
+    background-image: url(/src/assets/icons/icon-cards.svg);
 }
 
 .btn-icon.icon-announcement {
-    background-image: url(../src/assets/icons/icon-announcement.svg);
+    background-image: url(/src/assets/icons/icon-announcement.svg);
 }
 
 .btn-icon.icon-shop {
-    background-image: url(../src/assets/icons/icon-shop.svg);
+    background-image: url(/src/assets/icons/icon-shop.svg);
 }
 
 .btn-icon.icon-game-info {
-    background-image: url(../src/assets/icons/icon-game-info.svg);
+    background-image: url(/src/assets/icons/icon-game-info.svg);
 }
 
 .btn-icon.icon-carousel-nav-left {
-    background-image: url(../src/assets/components/carousel-nav-left.svg);
+    background-image: url(/src/assets/components/carousel-nav-left.svg);
 }
 
 .btn-icon.icon-carousel-nav-right {
-    background-image: url(../src/assets/components/carousel-nav-right.svg);
+    background-image: url(/src/assets/components/carousel-nav-right.svg);
 }
 
 .btn-icon.icon-chevron {

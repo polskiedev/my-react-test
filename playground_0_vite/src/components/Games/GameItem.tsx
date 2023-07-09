@@ -1,4 +1,5 @@
 import React from 'react'
+import placeholder from '../../assets/placeholders/game-thumbnail.png';
 
 interface Item {
     name: string;
@@ -19,8 +20,8 @@ const GameItem = ({className = '', linkImgClassName = '', swap = true, item}: Pr
     const linkImgClassList: string[] = [];
     
     const {name, img, badge = [], url} = item;
-    const placeholder = `../src/assets/placeholders/game-thumbnail.png`
-    const gameImg = `../src/assets/games/${img}`;
+    // const placeholder = `./src/assets/placeholders/game-thumbnail.png`
+    const gameImg = `./src/assets/games/${img}`;
     const displayImg = swap ? gameImg : placeholder;
 
     classList.push("block text-white text-sm relative");
@@ -28,6 +29,7 @@ const GameItem = ({className = '', linkImgClassName = '', swap = true, item}: Pr
     if(!!className) classList.push(className);
     if(!!linkImgClassName) linkImgClassList.push(linkImgClassName);
 
+      
     return (<>
         <div className={classList.join(" ")}>
             <div className="game-badges">

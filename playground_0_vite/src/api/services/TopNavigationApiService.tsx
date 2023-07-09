@@ -1,29 +1,19 @@
 // TestApiService.ts
 import axios from 'axios';
-import dataTopNavigationMenu from '../data/dataTopNavigationMenu';
+import APP_API from './ApiServiceDirectory';
 import { APP_ENV, APP_API_KEY } from '../../config/config';
-
-export interface Menu {
-  label: string;
-  url: string;
-  icon?: string;
-  hasDivider?: boolean;
-  className?: string;
-  linkClassName?: string;
-  labelClassName?: string;
-}
+import {TopNavigationItem as Menu} from '../models/TopNavigationResponse';
+import dataTopNavigation from '../data/dataTopNavigation';
 
 export async function getTopNavigationMenu(): Promise<Menu[]> {
-  const API_BASE_URL = 'https://my-json-server.typicode.com/polskiedev/json-db-menu';
+  const {url: BASE_URL, base: BASE_DIR} = APP_API.top_navigation;
 
-//   console.log(APP_ENV);
-//   console.log(APP_API_KEY);
   if (APP_ENV === 'development') {
-    return dataTopNavigationMenu().menus;
+    return dataTopNavigation().menus;
   }
 
   try {
-    const response = await axios.get(`${API_BASE_URL}/menus`);
+    const response = await axios.get(`${BASE_URL}/${BASE_DIR}`);
     const data = response.data;
 
     // Transform the data as needed for the top navigation menu
@@ -37,8 +27,6 @@ export async function getTopNavigationMenu(): Promise<Menu[]> {
   } catch (error) {
     // Handle API error, fallback to dataTopNavigationMenu
     console.error('Error fetching top navigation menu:', error);
-
-    // Return the fallback menu from dataTopNavigationMenu
-    return dataTopNavigationMenu().menus;
+    throw error;
   }
 }

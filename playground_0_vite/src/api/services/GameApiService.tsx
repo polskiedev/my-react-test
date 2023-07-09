@@ -1,12 +1,13 @@
 // apiService.ts
 import axios from 'axios';
+import API_DIR from './ApiServiceDirectory';
 import { GameTile } from "../models/GameApiResponse";
 
-const BASE_URL = 'https://my-json-server.typicode.com/polskiedev/json-db-games2/';
+const {url: BASE_URL, base: BASE_DIR} = API_DIR.game_list;
 
 export async function getGameTiles(): Promise<GameTile[]> {
   try {
-    const response = await axios.get(`${BASE_URL}/games`);
+    const response = await axios.get(`${BASE_URL}/${BASE_DIR}`);
     return response.data;
   } catch (error) {
     // Handle error
@@ -17,7 +18,7 @@ export async function getGameTiles(): Promise<GameTile[]> {
 
 export async function getGameTileById(id: number): Promise<GameTile> {
     try {
-      const response = await axios.get(`${BASE_URL}/games/${id}`);
+      const response = await axios.get(`${BASE_URL}/${BASE_DIR}/${id}`);
       return response.data;
     } catch (error) {
       // Handle error

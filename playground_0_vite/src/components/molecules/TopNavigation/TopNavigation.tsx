@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { getTopNavigationMenu, Menu } from '../api/services/TestApiService';
+import { getTopNavigationMenu } from '../../../api/services/TopNavigationApiService';
+import {TopNavigationItem as Menu} from '../../../api/models/TopNavigationResponse';
 
-const TestComponent = () => {
+const TopNavigation = () => {
   const [navigationMenu, setNavigationMenu] = useState<Menu[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -39,4 +40,4 @@ const TestComponent = () => {
   );
 };
 
-export default TestComponent;
+export default TopNavigation;

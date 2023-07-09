@@ -1,12 +1,13 @@
 // apiService.ts
 import axios from 'axios';
+import API_DIR from './ApiServiceDirectory';
 import { SiteTile } from "../models/ApiResponse";
 
-const BASE_URL = 'https://my-json-server.typicode.com/polskiedev/json-db-game-tiles/';
+const {url: BASE_URL, base: BASE_DIR} = API_DIR.site_tiles;
 
 export async function getSiteTiles(): Promise<SiteTile[]> {
   try {
-    const response = await axios.get(`${BASE_URL}/tiles`);
+    const response = await axios.get(`${BASE_URL}/${BASE_DIR}`);
     return response.data;
   } catch (error) {
     // Handle error
@@ -17,7 +18,7 @@ export async function getSiteTiles(): Promise<SiteTile[]> {
 
 export async function getSiteTileById(id: number): Promise<SiteTile> {
     try {
-      const response = await axios.get(`${BASE_URL}/tiles/${id}`);
+      const response = await axios.get(`${BASE_URL}/${BASE_DIR}/${id}`);
       return response.data;
     } catch (error) {
       // Handle error
