@@ -1,30 +1,36 @@
-
 #tailwind ex:
 // classList.push(`bg-[--brand-color]`);
 // classList.push(`min-[712px]:max-[877px]:right-16`);
 // classList.push(`btn bg-${color}`);
 // if(hasStates) classList.push(`hover:bg-${color}-hover active:bg-${color}-active`);
 
+#####################################
+import ListGroup from "./components/ListGroup";
 
-Nullish Coalescing Operator (??):
-const result = null ?? 'Default Value';
+function App() {
+  let items = ["New York", "San Francisco", "Tokyo", "Paris", "Manila"];
+  let handleSelectItem = (item: string) => {
+    console.log(item);
+  };
 
-Optional Chaining Operator (?.):
-
-# Source
-https://www.youtube.com/watch?v=SqcY0GlETPk
-https://www.youtube.com/watch?v=1WNYYippEr0
-https://www.youtube.com/watch?v=EuJrOC0bSlM
-https://www.youtube.com/watch?v=Ib-80HIjuZ4 => Accordion
-https://www.youtube.com/watch?v=BKFPfzWM3CQ&t=327s 
-=>  Create Highly Reusable React Components in Minutes with TypeScript
-=> Type Guards
-=> Type Generic + options
-https://www.youtube.com/watch?v=9i38FPugxB8
+  return <div><ListGroup items={items} heading="Cities" onSelectItem={handleSelectItem} /></div>
+}
 
 
+#####################################
+import Alert from "./components/Alert";
 
-=====
+function App() {
+  return <div>
+    <Alert>
+      Sample 
+    </Alert>
+  </div>
+}
+export default App
+#####################################
+
+
 function testBootstrap() {
   const [alertVisible, setAlertVisibility] = useState(false);
   return <div>
@@ -35,6 +41,3 @@ function testBootstrap() {
   </div>
 }
 ======
-nextjs
-prismadb => graphQl; T3
-t3 github

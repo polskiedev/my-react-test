@@ -1,0 +1,2 @@
+done - center the button in the header
+done - hasStates in button and link components

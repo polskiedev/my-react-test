@@ -1,7 +1,5 @@
+improve accordion component by moving taiwindcss and use interface on its params
 clean up gametile.css
 move movable game list clasess to tailwind css directive
 change let to const in component declaration
 add carousel for game list
-======================
-done - center the button in the header
-done - hasStates in button and link components

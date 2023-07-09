@@ -1,0 +1,9 @@
+### Current ###
+- ReactJS
+- Tailwind
+
+=====
+### For improvements? ###
+nextjs
+prismadb => graphQl; T3
+t3 github

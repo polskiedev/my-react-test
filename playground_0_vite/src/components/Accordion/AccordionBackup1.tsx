@@ -6,13 +6,7 @@ import { useToggle } from "../../hooks/useToggle";
 const AccordionContext = createContext<any>(null);
 const { Provider } = AccordionContext;
 
-interface Props {
-    title: string;
-    children?: React.ReactNode;
-    content?: React.ReactNode 
-};
-
-const Accordion = (props: Props) => {
+const Accordion = (props: { title: string, children?: React.ReactNode, content?: React.ReactNode }) => {
   const { title, children, content } = props;
   const { status: expand, toggleStatus: toggleExpand } = useToggle();
 

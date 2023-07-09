@@ -1,0 +1,66 @@
+#Atomic folder structure (atomic design methodology):
+
+src/
+├── components/
+│   ├── atoms/
+│   │   ├── Button/
+│   │   │   ├── Button.tsx
+│   │   │   ├── Button.css
+│   │   │   └── index.tsx
+│   │   ├── Input/
+│   │   │   ├── Input.tsx
+│   │   │   ├── Input.css
+│   │   │   └── index.tsx
+│   │   └── ...
+│   ├── molecules/
+│   │   ├── Navbar/
+│   │   │   ├── Navbar.tsx
+│   │   │   ├── Navbar.css
+│   │   │   └── index.tsx
+│   │   ├── Card/
+│   │   │   ├── Card.tsx
+│   │   │   ├── Card.css
+│   │   │   └── index.tsx
+│   │   └── ...
+│   ├── organisms/
+│   │   ├── Header/
+│   │   │   ├── Header.tsx
+│   │   │   ├── Header.css
+│   │   │   └── index.tsx
+│   │   ├── Sidebar/
+│   │   │   ├── Sidebar.tsx
+│   │   │   ├── Sidebar.css
+│   │   │   └── index.tsx
+│   │   └── ...
+│   ├── templates/
+│   │   ├── HomePage/
+│   │   │   ├── HomePage.tsx
+│   │   │   ├── HomePage.css
+│   │   │   └── index.tsx
+│   │   ├── AboutPage/
+│   │   │   ├── AboutPage.tsx
+│   │   │   ├── AboutPage.css
+│   │   │   └── index.tsx
+│   │   └── ...
+│   ├── pages/
+│   │   ├── Home/
+│   │   │   ├── Home.tsx
+│   │   │   ├── Home.css
+│   │   │   └── index.tsx
+│   │   ├── About/
+│   │   │   ├── About.tsx
+│   │   │   ├── About.css
+│   │   │   └── index.tsx
+│   │   └── ...
+│   └── ...
+├── App.tsx
+├── index.tsx
+└── ...
+==================
+In the context of a website or application, the terms "template" and "pages" often refer to different concepts:
+
+    1. Templates: Templates are reusable components or layouts that define the overall structure and design of a specific type of page. They serve as a blueprint for creating multiple pages with consistent styles and components. Templates typically include common elements such as headers, footers, navigation bars, and other structural components that are shared across multiple pages. They provide a consistent user experience and help maintain design coherence throughout the application.
+
+    2. Pages: Pages represent the specific content or views that users interact with in the application. Each page is unique and serves a specific purpose, such as displaying a home page, about page, product details page, etc. Pages are created by combining or extending the templates and filling them with specific content or data. They can include additional components, custom styling, and specific functionality to cater to the unique requirements of the page.
+
+In summary, templates define the overall structure and design patterns that are shared across multiple pages, while pages represent the specific content and functionality tailored to each unique view or interaction within the application. Templates provide a consistent design framework, while pages bring the templates to life by filling them with specific content and customization.

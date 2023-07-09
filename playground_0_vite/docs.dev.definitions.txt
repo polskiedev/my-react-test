@@ -1,0 +1,11 @@
+Nullish Coalescing Operator (??):
+const result = null ?? 'Default Value';
+
+Optional Chaining Operator (?.)
+====================================
+Pascal casing is commonly used in programming languages like JavaScript, C#, Java, and others. In ReactJS, it is often used for naming components, where the component names start with an uppercase letter and follow Pascal casing conventions.
+
+It's worth noting that Pascal casing is different from camel casing, where the first letter is lowercase. In camel casing, the first letter of the identifier is lowercase, and each subsequent word starts with an uppercase letter (e.g., firstName, lastName, phoneNumber, myFunction, someVariable).
+
+Using Pascal casing or camel casing is a matter of personal preference and project conventions. However, in ReactJS, Pascal casing is commonly used for component names to distinguish them from regular HTML elements and maintain consistency with other React components.
+====================================
