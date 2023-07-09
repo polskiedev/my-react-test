@@ -1,0 +1,13 @@
+SPA/SP websites 
+-it can require a large number of javascript bundles, which in tern can make initial page load slow
+-dynamic routes is a no-go if you need good SEO or when people want to share your content to social media
+==========
+Server-Side Rendering with Hydration - SSR
+Static Site Generation with Hydration
+- Jamstack built by metaframeworks
+Incremental Static Regeneration
+- deploy static site but rebuild individual pages on the fly on your server when the cache is invalidated
+- Vercel?
+Partial Hydration
+- render first the component on the top(above the fold), wait until the user scroll before making the component interactive
+- code splitting to facilitate lazy loading

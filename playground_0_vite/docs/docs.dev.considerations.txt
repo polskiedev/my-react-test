@@ -1,0 +1,5 @@
+- seo
+- translations
+- routing
+- caching
+- content management

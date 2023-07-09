@@ -12,6 +12,5 @@ https://www.youtube.com/watch?v=BKFPfzWM3CQ&t=327s
 => Type Guards
 => Type Generic + options
 https://www.youtube.com/watch?v=9i38FPugxB8
-
-
-
+https://www.youtube.com/watch?v=Dkx5ydvtpCA&list=WL
+=> 10 Rendering Patterns for Web Apps 
