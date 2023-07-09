@@ -1,6 +1,7 @@
 - seo
 - translations
-- routing
+- routing - nextjs?
 - caching
 - content management
-- environment config
+- environment config - done setup
+- unit testing
