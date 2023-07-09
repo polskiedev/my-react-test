@@ -4,8 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
+    "serve-dev": "tsc && vite build --mode development --config vite.config.js && vite",
+    "serve-prod": "tsc && vite build --mode production --config vite.config.js && vite preview",
+    "serve": "vite",
     "preview": "vite preview"
   },
   "dependencies": {

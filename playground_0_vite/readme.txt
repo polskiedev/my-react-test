@@ -6,7 +6,17 @@ npm i -D tailwindcss postcss autoprefixer
 npx tailwind init
 npm install -g postcss-cli
 npm install axios
-
+x npm install --save-dev cross-env
+x npm install --save-dev @types/node
+x npm install dotenv
+=========
+cross-env is for forcing application environment (.env)
+@types/node is for reading/using environment vars
+========
+npm uninstall @types/node
+npm uninstall cross-env
+npm uninstall dotenv
+========
 
 # vscode plugin 
 - [ ] es7+ => to use type `rafce` on a file
