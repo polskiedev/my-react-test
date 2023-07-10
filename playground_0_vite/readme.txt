@@ -9,6 +9,11 @@ npm install axios
 x npm install --save-dev cross-env
 x npm install --save-dev @types/node
 x npm install dotenv
+npm install webpack webpack-cli webpack-dev-server --save-dev
+npm i file-loader 
+=> will be used in webpack for processing image
+npm install --save-dev @vitejs/plugin-legacy
+=> will be used in vite.config to skip processing images, will leave it to webpack
 =========
 cross-env is for forcing application environment (.env)
 @types/node is for reading/using environment vars

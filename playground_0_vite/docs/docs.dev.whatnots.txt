@@ -11,3 +11,9 @@ Incremental Static Regeneration
 Partial Hydration
 - render first the component on the top(above the fold), wait until the user scroll before making the component interactive
 - code splitting to facilitate lazy loading
+Islands architecture
+- Astro
+Streaming SSR 
+- NextJS 13; App directory
+Resumability
+- Qwik

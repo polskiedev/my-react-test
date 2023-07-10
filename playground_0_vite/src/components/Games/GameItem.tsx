@@ -21,7 +21,7 @@ const GameItem = ({className = '', linkImgClassName = '', swap = true, item}: Pr
     
     const {name, img, badge = [], url} = item;
     // const placeholder = `./src/assets/placeholders/game-thumbnail.png`
-    const gameImg = `./src/assets/games/${img}`;
+    const gameImg = `./assets/games/${img}`;
     const displayImg = swap ? gameImg : placeholder;
 
     classList.push("block text-white text-sm relative");

@@ -8,6 +8,7 @@ import dataTopNavigation from '../data/dataTopNavigation';
 export async function getTopNavigationMenu(): Promise<Menu[]> {
   const {url: BASE_URL, base: BASE_DIR} = APP_API.top_navigation;
 
+  // console.log(APP_ENV + ': ' + APP_API_KEY);
   if (APP_ENV === 'development') {
     return dataTopNavigation().menus;
   }

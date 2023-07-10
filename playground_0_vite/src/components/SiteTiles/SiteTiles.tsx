@@ -16,7 +16,7 @@ const ListSiteTiles = ({ tiles }: { tiles: Tile[] }) => {
               {tile.linktext}
             </a>
             <div className="relative col-span-1 flex justify-end items-end">
-              <div className="absolute bottom-0 right-0 h-[50px] w-full bg-no-repeat bg-contain bg-right-bottom" style={{ backgroundImage: `url(../src/assets/cards/${tile.icon})` }}></div>
+              <div className="absolute bottom-0 right-0 h-[50px] w-full bg-no-repeat bg-contain bg-right-bottom" style={{ backgroundImage: `url(./assets/cards/${tile.icon})` }}></div>
             </div>
           </div>
         </div>
