@@ -1,17 +1,20 @@
 import React from 'react';
 import Button, { Props as ButtonProps } from '../../atoms/Button/Button';
 import Span from '../../atoms/Span/Span';
+import Label from '../../atoms/Label/Label';
 
 interface Props extends ButtonProps {
   icon?: string;
+  label?: string;
 }
 
-const ButtonExt: React.FC<Props> = ({ icon, children, ...props }: Props) => {
+const _Button: React.FC<Props> = ({ icon, label, children, ...props }: Props) => {
 
   return <Button {...props}>
-    <Span icon={icon}></Span>
+    {icon && <Span icon={icon}></Span>}
+    {label && <Label>{label}</Label>}
     {children}
     </Button>;
 };
 
-export default ButtonExt;
+export default _Button;

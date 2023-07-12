@@ -13,12 +13,12 @@ import Accordion from "./components/Accordion/Accordion";
 
 import SiteTiles from "./components/SiteTiles/SiteTiles";
 // import SiteTiles2 from "./components/SiteTiles/SiteTiles2";
-import HeaderBar from "./components/HeaderBar";
+import HeaderBar from "./components/molecules/HeaderBar.tsx/HeaderBar";
 import TopNavigation, {Item as TopNavigationItem} from "./components/TopNavigation";
 // import GameList from "./components/Games/GameList";
 import GameList2 from "./components/Games/GameList2";
 import {dataMenu} from "./data/useDataLoader";
-import AcButton from "./components/molecules/ButtonExt/ButtonExt"
+import AcButton from "./components/molecules/_Button/_Button"
 import AcSpan from "./components/atoms/Span/Span"
 
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
@@ -36,7 +36,7 @@ function App() {
     
     <main className="my-32">
       <section className="test-section mx-auto lg:max-w-[928px]">
-        <AcButton variant="secondary" icon="home" className="appp-aaa">This is a buttonExt with spanIcon</AcButton>
+        <AcButton variant="secondary" icon="home" className="appp-aaa" onClick={() => {}}>This is a buttonExt with spanIcon</AcButton>
         <AcSpan></AcSpan>
         <TopNavigation2></TopNavigation2>
         <Accordion title="Accordion Component Title" content="1 Accordion Component Content">

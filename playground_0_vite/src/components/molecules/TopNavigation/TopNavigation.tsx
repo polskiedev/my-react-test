@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getTopNavigationMenu } from '../../../api/services/TopNavigationApiService';
 import {TopNavigationItem as Menu} from '../../../api/models/TopNavigationResponse';
+import Link from '../_Link/_Link';
 
 const TopNavigation = () => {
   const [navigationMenu, setNavigationMenu] = useState<Menu[]>([]);
@@ -32,7 +33,7 @@ const TopNavigation = () => {
       <ul>
         {navigationMenu.map((menu) => (
           <li key={menu.label}>
-            <a href={menu.url}>{menu.label}</a>
+            <Link url={menu.url} icon={menu.icon}>{menu.label}</Link>
           </li>
         ))}
       </ul>

@@ -1,6 +1,6 @@
 import applyVariant, {ComponentVariants} from "./ComponentVariants";
 
-class ClassManipulator {
+class ClassGenerator {
     private ClassList: string[] = [];
 
     addVariants(variants: ComponentVariants, variant?: string): void {
@@ -36,4 +36,4 @@ class ClassManipulator {
 }
 
 
-export default ClassManipulator;
+export default ClassGenerator;

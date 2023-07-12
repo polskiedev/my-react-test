@@ -26,6 +26,6 @@
     @apply flex flex-row justify-center content-center items-center pl-3 pr-4;
 }
 
-.--ac-topnavigation .add-divider{
+.--ac-topnavigation .add-divider {
     @apply flex items-center;
 }

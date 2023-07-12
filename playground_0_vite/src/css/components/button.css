@@ -2,65 +2,65 @@
     --btn-focus-outline: 1px solid #fff;
 }
 
-.--ac-btn {
+.--ac-button {
     white-space: break-spaces;
 }
 
-.--ac-btn.outlined:active:focus, 
-.--ac-btn.outlined.active:focus, 
-.--ac-btn.outlined:active.focus, 
-.--ac-btn.outlined.active.focus {
+.--ac-button.outlined:active:focus, 
+.--ac-button.outlined.active:focus, 
+.--ac-button.outlined:active.focus, 
+.--ac-button.outlined.active.focus {
     outline: var(--btn-focus-outline);
 }
 /* --Tailwind-- */
-.--ac-btn {
+.--ac-button {
     @apply bg-btn-bg hover:bg-btn-hover-bg active:bg-btn-active-bg
         text-btn-text hover:text-btn-hover-text active:text-btn-active-text
         text-sm 2sm:text-base
         flex text-center gap-1 no-underline align-middle rounded-md p-1 2sm:px-3 2sm:py-1;
 }
 
-.--ac-btn-\[primary\] {
+.--ac-button-\[primary\] {
     @apply bg-btn-primary-bg hover:bg-btn-primary-hover-bg active:bg-btn-primary-active-bg
         text-btn-primary-text hover:text-btn-primary-hover-text active:text-btn-primary-active-text;
 }
 
-.--ac-btn-\[secondary\] {
+.--ac-button-\[secondary\] {
     @apply bg-btn-secondary-bg hover:bg-btn-secondary-hover-bg active:bg-btn-secondary-active-bg
         text-btn-secondary-text hover:text-btn-secondary-hover-text active:text-btn-secondary-active-text;
 }
 
-.--ac-btn-\[tertiary\] {
+.--ac-button-\[tertiary\] {
     @apply bg-btn-tertiary-bg hover:bg-btn-tertiary-hover-bg active:bg-btn-tertiary-active-bg
     text-btn-tertiary-text hover:text-btn-tertiary-hover-text active:text-btn-tertiary-active-text;
 }
 
-.--ac-btn .btn-label {
+.--ac-button .--ac-label {
     @apply cursor-pointer text-xs 2sm:text-base;
 }
 
-.--ac-btn .--ac-span {
+.--ac-button .--ac-span {
     @apply  inline-block;
 }
 
 /* -Disabled button state- */
-.--ac-btn:disabled,
-.--ac-btn:disabled:hover,
-.--ac-btn:disabled:active,
-.--ac-btn:disabled .btn-label {
+.--ac-button:disabled,
+.--ac-button:disabled:hover,
+.--ac-button:disabled:active,
+.--ac-button:disabled .btn-label {
     @apply bg-btn-disabled-bg text-btn-disabled-text cursor-not-allowed opacity-60;
 }
 
 /* 
-.--ac-btn-\[primary\]:disabled {
+.--ac-button-\[primary\]:disabled {
     @apply bg-primary;
 }
 
-.--ac-btn-\[secondary\]:disabled {
+.--ac-button-\[secondary\]:disabled {
     @apply bg-secondary;
 }
 
-.--ac-btn-\[tertiary\]:disabled {
+.--ac-button-\[tertiary\]:disabled {
     @apply bg-tertiary;
 } 
 */

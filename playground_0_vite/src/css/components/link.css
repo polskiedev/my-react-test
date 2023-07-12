@@ -2,7 +2,7 @@
     @apply block text-white;
 }
 
-.--ac-link.--ac-btn {
+.--ac-link.--ac-button {
     @apply rounded-md p-1 text-sm 2sm:text-base inline-block m-1;
 }
 
@@ -10,6 +10,6 @@
     @apply flex text-center gap-1 align-middle items-center;
 }
 
-.--ac-link .btn-label {
+.--ac-link .--ac-label {
     @apply  cursor-pointer text-xs 2sm:text-base;
 }

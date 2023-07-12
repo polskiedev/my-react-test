@@ -1,5 +1,5 @@
 @import './variables.css';
-@import './components/icons.css';
+@import '../components/atoms/Span/span-icon.css';
 @import './components/button.css';
 @import './components/link.css';
 @import './components/headerbar.css';
