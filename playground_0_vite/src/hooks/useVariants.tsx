@@ -7,12 +7,12 @@ interface DefaultVariants {
     [key: string]: string;
 }
 
-interface VariantObject {
+interface VariantItem {
     [key: string]: string;
 }
 
 interface VariantsObject {
-    [key: string]: VariantObject;
+    [key: string]: VariantItem;
 }
 
 export interface ComponentVariants {
@@ -37,7 +37,6 @@ const useVariants = function(variants: ComponentVariants, variant: string = 'def
     }
     return classList.join(" ");
 };
-
 
 export default useVariants;
 
