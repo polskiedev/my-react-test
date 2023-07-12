@@ -31,7 +31,7 @@ const Link = ({children, onClick, icon, color = 'primary', className = '', label
   return (<>
       <a className={classList.join(" ")} onClick={onClick} href={href}>
         <div className="link-wrapper">
-          {icon && <span className={"btn-icon icon-" + icon}></span>}
+          {icon && <span className={"--ac-span icon-" + icon}></span>}
           {label && <label className={labelClassList.join(" ")}>{label}</label>} {children}
         </div>
       </a>  

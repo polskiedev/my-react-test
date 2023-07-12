@@ -1,6 +1,6 @@
 const ButtonVariants = {
     base: {
-      register: '--ac-btn',
+      register: '--ac-button',
       display: 'flex text-center gap-1 no-underline align-middle',
       text: 'text-sm 2sm:text-base',
       padding: 'p-1 2sm:px-3 2sm:py-1',

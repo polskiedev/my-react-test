@@ -1,17 +1,21 @@
-import React, { ButtonHTMLAttributes, FC } from 'react';
+import React, { ReactNode, ButtonHTMLAttributes, FC } from 'react';
 import ButtonVariants from './ButtonVariants';
-import useVariants from '../../../hooks/useVariants';
+import ClassManipulator from '../../../helpers/ClassManipulator';
 
-interface Props  extends ButtonHTMLAttributes<HTMLButtonElement> {
-
+export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: string;
+  className?: string;
+  children?: ReactNode;
 }
 
-const Button: FC<Props> = ({className, ...props}) => {
-  const classList = [useVariants(ButtonVariants)];
-  if(!!className) classList.join(className);
-  
+const Button: FC<Props> = ({variant, className, children, ...props}: Props) => {
+  const classList = new ClassManipulator();
+
+  classList.addVariants(ButtonVariants, variant)
+  classList.addClass(className);
+
   return (
-    <button className={classList.join(" ")} {...props}>Button</button>
+    <button className={classList.getList()} {...props}>{children}</button>
   )
 }
 

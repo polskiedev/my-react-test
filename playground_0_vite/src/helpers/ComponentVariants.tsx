@@ -21,7 +21,7 @@ export interface ComponentVariants {
     defaultVariants: DefaultVariants;
 }
   
-const useVariants = function(variants: ComponentVariants, variant: string = 'default') {
+const applyVariant = function(variants: ComponentVariants, variant: string = 'default'): string {
     const classList = Array();
     const {"base": _base, "variants": _variants, "defaultVariants": _default} = variants;
     
@@ -38,5 +38,5 @@ const useVariants = function(variants: ComponentVariants, variant: string = 'def
     return classList.join(" ");
 };
 
-export default useVariants;
+export default applyVariant;
 

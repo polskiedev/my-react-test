@@ -1,51 +1,51 @@
-.btn-icon {
+.--ac-span {
     width: 24px;
     height: 24px;
 }
 
-.btn-icon.icon-hamburger {
+.--ac-span.icon-nav {
     background-image: url(/src/assets/icons/icon-hamburger.svg);
 }
 
-.btn-icon.icon-home {
+.--ac-span.icon-home {
     background-image: url(/src/assets/icons/icon-home.svg);
 }
 
-.btn-icon.icon-slots {
+.--ac-span.icon-slots {
     background-image: url(/src/assets/icons/icon-slots.svg);
 }
 
-.btn-icon.icon-cards {
+.--ac-span.icon-cards {
     background-image: url(/src/assets/icons/icon-cards.svg);
 }
 
-.btn-icon.icon-announcement {
+.--ac-span.icon-announcement {
     background-image: url(/src/assets/icons/icon-announcement.svg);
 }
 
-.btn-icon.icon-shop {
+.--ac-span.icon-shop {
     background-image: url(/src/assets/icons/icon-shop.svg);
 }
 
-.btn-icon.icon-game-info {
+.--ac-span.icon-game-info {
     background-image: url(/src/assets/icons/icon-game-info.svg);
 }
 
-.btn-icon.icon-carousel-nav-left {
+.--ac-span.icon-carousel-nav-left {
     background-image: url(/src/assets/components/carousel-nav-left.svg);
 }
 
-.btn-icon.icon-carousel-nav-right {
+.--ac-span.icon-carousel-nav-right {
     background-image: url(/src/assets/components/carousel-nav-right.svg);
 }
 
-.btn-icon.icon-chevron {
+.--ac-span.icon-chevron {
     border-style: solid;
     border-width: 2px 2px 0 0;
     content: '';
     display: block;
-    height: 5px;
     left: 3px;
+    height: 5px;
     width: 5px;
     transform: rotate(45deg);
     box-sizing: content-box;

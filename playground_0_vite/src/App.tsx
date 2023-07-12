@@ -18,7 +18,8 @@ import TopNavigation, {Item as TopNavigationItem} from "./components/TopNavigati
 // import GameList from "./components/Games/GameList";
 import GameList2 from "./components/Games/GameList2";
 import {dataMenu} from "./data/useDataLoader";
-import AcButton from "./components/atoms/Button/Button"
+import AcButton from "./components/molecules/ButtonExt/ButtonExt"
+import AcSpan from "./components/atoms/Span/Span"
 
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
@@ -35,7 +36,8 @@ function App() {
     
     <main className="my-32">
       <section className="test-section mx-auto lg:max-w-[928px]">
-        <AcButton>dd</AcButton>
+        <AcButton variant="secondary" icon="home" className="appp-aaa">This is a buttonExt with spanIcon</AcButton>
+        <AcSpan></AcSpan>
         <TopNavigation2></TopNavigation2>
         <Accordion title="Accordion Component Title" content="1 Accordion Component Content">
           <p>2 This is the content of the accordion.</p>

@@ -39,7 +39,7 @@
     @apply cursor-pointer text-xs 2sm:text-base;
 }
 
-.--ac-btn .btn-icon {
+.--ac-btn .--ac-span {
     @apply  inline-block;
 }
 

@@ -97,7 +97,7 @@ const GameList2= ({className = '', label}: Props) => {
                     <h2 className="text-header text-xl font-bold">{label}</h2>
                     <a href={"#seeall_" + generateSlug(label)} className="flex flex-row gap-1 justify-between items-center text-sm" onClick={() => console.log(label + ' -> see all')}>
                         See all
-                        <span className="btn-icon icon-chevron"></span>
+                        <span className="--ac-span icon-chevron"></span>
                     </a>
                 </div>
                 <div className="carousel group relative mx-5 lg:mx-0">
@@ -112,12 +112,12 @@ const GameList2= ({className = '', label}: Props) => {
 
                     <div className={navLeftClassList.join(" ")}>
                         <button onClick={prevSlide}>
-                            <span className="btn-icon icon-carousel-nav-left block bg-no-repeat h-[36px] w-[36px]"></span>
+                            <span className="--ac-span icon-carousel-nav-left block bg-no-repeat h-[36px] w-[36px]"></span>
                         </button>
                     </div>
                     <div className={navRightClassList.join(" ")}>
                         <button onClick={nextSlide}>
-                            <span className="btn-icon icon-carousel-nav-right block bg-no-repeat h-[36px] w-[36px]"></span>
+                            <span className="--ac-span icon-carousel-nav-right block bg-no-repeat h-[36px] w-[36px]"></span>
                         </button>
                     </div>
                 </div>
