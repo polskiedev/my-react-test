@@ -1,5 +1,5 @@
 import React from 'react'
-import placeholder from '../../assets/placeholders/game-thumbnail.png';
+import { asset } from '../../helpers/helpers';
 
 interface Item {
     name: string;
@@ -18,12 +18,11 @@ interface Props {
 const GameItem = ({className = '', linkImgClassName = '', swap = true, item}: Props) => {
     const classList: string[] = ["--ac-game-tile"];
     const linkImgClassList: string[] = [];
-    
     const {name, img, badge = [], url} = item;
-    // const placeholder = `./src/assets/placeholders/game-thumbnail.png`
-    const gameImg = `./assets/games/${img}`;
-    const displayImg = swap ? gameImg : placeholder;
 
+    const placeholder = asset(`placeholders/game-thumbnail.png`);
+    const gameImg = asset(`games/${img}`);
+    const displayImg = swap ? gameImg : placeholder;
     classList.push("block text-white text-sm relative");
     
     if(!!className) classList.push(className);

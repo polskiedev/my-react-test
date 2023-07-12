@@ -46,13 +46,13 @@ export default {
         'btn': {
           'DEFAULT': 'transparent',
           
-          'bg'          :  'transparent',
-          'hover-bg'    : 'transparent',
-          'active-bg'   : 'transparent',
+          'bg'          : '#efefef',
+          'hover-bg'    : '#ccd1e4',
+          'active-bg'   : '#f5f5f5',
 
-          'text'        : '#fff',
-          'hover-text'  : '#fff',
-          'active-text' : '#fff',
+          'text'        : '#000',
+          'hover-text'  : '#000',
+          'active-text' : '#000',
 
           'disabled-bg'   : '#6c757d',
           'disabled-text' : '#fff',

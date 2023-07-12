@@ -5,6 +5,7 @@ https://www.youtube.com/watch?v=SqcY0GlETPk
 => Pascal Casing
 https://www.youtube.com/watch?v=1WNYYippEr0
 https://www.youtube.com/watch?v=EuJrOC0bSlM
+=> 10 Amazing Tailwind CSS Tricks You Need to Know
 https://www.youtube.com/watch?v=Ib-80HIjuZ4
 => Accordion
 https://www.youtube.com/watch?v=BKFPfzWM3CQ&t=327s 
@@ -12,5 +13,10 @@ https://www.youtube.com/watch?v=BKFPfzWM3CQ&t=327s
 => Type Guards
 => Type Generic + options
 https://www.youtube.com/watch?v=9i38FPugxB8
+=> How Did I Not Know This TypeScript Trick Earlier??!
 https://www.youtube.com/watch?v=Dkx5ydvtpCA&list=WL
 => 10 Rendering Patterns for Web Apps 
+https://www.youtube.com/watch?v=BKFPfzWM3CQ
+=> Create Highly Reusable React Components in Minutes with TypeScript
+https://www.youtube.com/watch?v=eXRlVpw1SIQ
+=>  Creating High-Quality React Components: Best Practices for Reusability 

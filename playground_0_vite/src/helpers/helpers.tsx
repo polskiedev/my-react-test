@@ -1,3 +1,9 @@
+import { APP_ENV } from '../config/config';
+
+export function asset(url: string) {
+  return `./${APP_ENV == 'production' ? '' : 'src/'}assets/${url}`;
+}
+
 export function generateSlug(input: string): string {
     return input
       .toLowerCase()
