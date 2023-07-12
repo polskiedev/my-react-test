@@ -15,7 +15,7 @@ function entriesChecker() {
     const images = glob.sync("src/assets/**/*.{png,jpeg,svg}", {});
 
     images.forEach(filePath => {
-        const imgDir = ['games', 'cards'];
+        const imgDir = ['games', 'cards', 'placeholders'];
         let pathArr = filePath.replace("src/assets/", "").split("/");
         let fileName = path.basename(filePath);
 
