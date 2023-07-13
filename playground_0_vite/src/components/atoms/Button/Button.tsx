@@ -1,6 +1,6 @@
 import React, { ReactNode, ButtonHTMLAttributes, FC } from 'react';
 import ButtonVariants from './ButtonVariants';
-import ClassCollector from '../../../helpers/ClassManager/ClassCollector';
+import ClassBuilder from '../../../helpers/ClassBuilder/ClassBuilder';
 
 export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: string;
@@ -10,7 +10,7 @@ export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const Button: FC<Props> = ({variant, className, children, onClick, ...props}: Props) => {
-  const classList = new ClassCollector();
+  const classList = new ClassBuilder();
 
   classList.addVariants(ButtonVariants, variant)
   classList.addClass(className);

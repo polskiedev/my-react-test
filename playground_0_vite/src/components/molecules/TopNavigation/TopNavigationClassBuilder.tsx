@@ -1,10 +1,10 @@
-import ClassCollector from '../../../helpers/ClassManager/ClassCollector';
+import ClassBuilder from '../../../helpers/ClassBuilder/ClassBuilder';
 
 const TopNavigationClassBuilder = () => {
-  const classList = new ClassCollector();
-  const ulClassList = new ClassCollector();
-  const liClassList = new ClassCollector();
-  const linkClassList = new ClassCollector();
+  const classList = new ClassBuilder();
+  const ulClassList = new ClassBuilder();
+  const liClassList = new ClassBuilder();
+  const linkClassList = new ClassBuilder();
 
   classList.addClass('--ac-topnavigation');
   classList.addClassGroup('flex-center');

@@ -8,25 +8,25 @@ import { useState } from "react";
 // import SiteTileSkeleton from './components/Skeleton/SiteTileSkeleton';
 // import GameTileSkeleton from './components/Skeleton/GameTileSkeleton';
 // import ListUsers from "./components/Users/ListUsers";
-import TopNavigation from "./components/molecules/TopNavigation/TopNavigation";
-import Accordion from "./components/Accordion/Accordion";
-
-import SiteTiles from "./components/SiteTiles/SiteTiles";
+// import AcButton from "./components/molecules/ExtButton/ExtButton"
+// import AcSpan from "./components/atoms/Span/Span"
 // import SiteTiles2 from "./components/SiteTiles/SiteTiles2";
-import HeaderBar from "./components/molecules/HeaderBar/HeaderBar";
 // import TopNavigation, {Item as TopNavigationItem} from "../dumps/TopNavigation";
 // import GameList from "./components/Games/GameList";
+// import TopNavigation from "./components/molecules/TopNavigation/TopNavigation";
+// import HeaderBar from "./components/molecules/HeaderBar/HeaderBar";
+// import {dataMenu} from "./data/useDataLoader";
+import Accordion from "./components/Accordion/Accordion";
+import SiteTiles from "./components/SiteTiles/SiteTiles";
 import GameList2 from "./components/Games/GameList2";
-import {dataMenu} from "./data/useDataLoader";
-import AcButton from "./components/molecules/ExtButton/ExtButton"
-import AcSpan from "./components/atoms/Span/Span"
 import Header from "./components/organisms/Header/Header";
-
+import Footer from "./components/organisms/Footer/Footer";
+import GameTile from "./components/molecules/GameTile/GameTileStorybook";
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
 
 function App() {
-  let menuItems = dataMenu();
+  // let menuItems = dataMenu();
 
   return <>
     <SkeletonTheme baseColor="#202020" highlightColor="#444">
@@ -34,8 +34,7 @@ function App() {
     
     <main className="my-32">
       <section className="test-section mx-auto lg:max-w-[928px]">
-        <AcButton variant="secondary" icon="home" className="appp-aaa" onClick={() => {}}>This is a buttonExt with spanIcon</AcButton>
-        <AcSpan></AcSpan>
+        <GameTile />
         <Accordion title="Accordion Component Title" content="1 Accordion Component Content">
           <p>2 This is the content of the accordion.</p>
         </Accordion>
@@ -47,12 +46,7 @@ function App() {
         Content
       </section>
     </main>
-    <footer>
-      Footer
-      <p>
-        All right reserved... Thanks!
-      </p>
-    </footer>
+    <Footer />
     </SkeletonTheme>
   </>
 }

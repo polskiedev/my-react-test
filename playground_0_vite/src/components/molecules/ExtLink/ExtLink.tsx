@@ -1,8 +1,8 @@
 import React from 'react';
-import Link, { Props as LinkProps, ClassBuilder as ClassBuilderParent } from '../../atoms/Link/Link';
+import Link, { Props as LinkProps, ClassBuilder2 as ClassBuilderParent } from '../../atoms/Link/Link';
 import Span from '../../atoms/Span/Span';
 import Label from '../../atoms/Label/Label';
-import ClassCollector from '../../../helpers/ClassManager/ClassCollector';
+import ClassBuilder from '../../../helpers/ClassBuilder/ClassBuilder';
 
 interface Props extends LinkProps {
   className?: string;
@@ -10,8 +10,8 @@ interface Props extends LinkProps {
   label?: string;
 }
 
-export const ClassBuilder = (className?: string) => {
-  const classList = new ClassCollector();
+export const ClassBuilder2 = (className?: string) => {
+  const classList = new ClassBuilder();
 
   classList.addClass(ClassBuilderParent().build());
   classList.addClass(className);
@@ -22,7 +22,7 @@ export const ClassBuilder = (className?: string) => {
 };
 
 const _Link: React.FC<Props> = ({ icon, label, className, children, ...props }: Props) => {
-  const classList = ClassBuilder(className);
+  const classList = ClassBuilder2(className);
 
   return <Link className={classList.build()} {...props}>
     {icon && <Span icon={icon}></Span>}

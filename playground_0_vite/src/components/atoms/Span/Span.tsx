@@ -1,6 +1,6 @@
 import React, { ReactNode, ButtonHTMLAttributes, FC } from 'react';
 import SpanVariants from './SpanVariants';
-import ClassCollector from '../../../helpers/ClassManager/ClassCollector';
+import ClassBuilder from '../../../helpers/ClassBuilder/ClassBuilder';
 
 interface Props {
     icon?: string;
@@ -9,7 +9,7 @@ interface Props {
 }
 
 const Span: FC<Props> = ({icon: variant, children, className, ...props}: Props) => {
-  const classList = new ClassCollector();
+  const classList = new ClassBuilder();
 
   classList.addVariants(SpanVariants, variant)
   classList.addClass(className);

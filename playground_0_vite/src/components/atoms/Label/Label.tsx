@@ -1,5 +1,5 @@
 import React, { ReactNode, FC } from 'react';
-import ClassCollector from '../../../helpers/ClassManager/ClassCollector';
+import ClassBuilder from '../../../helpers/ClassBuilder/ClassBuilder';
 
 interface Props {
   className?: string;
@@ -8,7 +8,7 @@ interface Props {
 }
 
 const Span: FC<Props> = ({text, className, children, ...props}: Props) => {
-  const classList = new ClassCollector();
+  const classList = new ClassBuilder();
   classList.addClass('--ac-label');
   classList.addClass(className);
 

@@ -1,7 +1,7 @@
 import { useState } from "react";
 // import Button from "./Button";
 import Button from "../ExtButton/ExtButton";
-import ClassCollector from '../../../helpers/ClassManager/ClassCollector';
+import ClassBuilder from '../../../helpers/ClassBuilder/ClassBuilder';
 
 interface Props {
     className?: string;
@@ -9,7 +9,7 @@ interface Props {
 
 function HeaderBar({className = ''}: Props) {
   const [selectedIndex, setSelectedIndex] = useState(-1);
-  const classList = new ClassCollector();
+  const classList = new ClassBuilder();
 
   classList.addClass('--ac-headerbar');
   classList.addClass('h-14');

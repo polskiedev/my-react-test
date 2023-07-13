@@ -7,7 +7,7 @@ type ClassGroupProp = {
     [key: string]: string;
 };
 
-class ClassCollector {
+class ClassBuilder {
     private ClassList: string[] = [];
 
     addVariants(variants: ComponentVariants, variant?: string): void {
@@ -48,4 +48,4 @@ class ClassCollector {
 }
 
 
-export default ClassCollector;
+export default ClassBuilder;
