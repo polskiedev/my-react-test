@@ -1,4 +1,3 @@
-//useVariants.tsx
 interface BaseVariants {
     [key: string]: string;
 }

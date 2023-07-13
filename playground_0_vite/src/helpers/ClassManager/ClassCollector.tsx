@@ -1,6 +1,13 @@
+import ClassGroup from "./ClassGroup";
 import applyVariant, {ComponentVariants} from "./ComponentVariants";
 
-class ClassGenerator {
+export { ClassGroup };
+
+type ClassGroupProp = {
+    [key: string]: string;
+};
+
+class ClassCollector {
     private ClassList: string[] = [];
 
     addVariants(variants: ComponentVariants, variant?: string): void {
@@ -9,8 +16,13 @@ class ClassGenerator {
     }
 
     addClass(className: string = ''): void {
+        className && this.ClassList.push(className);
+    }
+
+    addClassGroup(className: string = ''): void {
         if(className) {
-            this.ClassList.push(className);
+            const classList = (ClassGroup as ClassGroupProp)[className];
+            classList && this.ClassList.push(classList);
         }
     }
 
@@ -27,7 +39,7 @@ class ClassGenerator {
         }
     }
 
-    getList(): string {
+    build(): string {
         //Return only unique class
         let classList = this.ClassList.join(' ').split(' ');
         classList = Array.from(new Set(classList));
@@ -36,4 +48,4 @@ class ClassGenerator {
 }
 
 
-export default ClassGenerator;
+export default ClassCollector;

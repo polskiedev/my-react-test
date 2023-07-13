@@ -1,4 +1,4 @@
-import Link from "./Link";
+import Link from "../src/components/Link";
 
 interface Props {
     className?: string;
@@ -49,3 +49,7 @@ const TopNavigation = ({items, className = ''}: Props) => {
 }
 
 export default TopNavigation
+
+
+//implementation
+// <TopNavigation className="h-14" items={menuItems as TopNavigationItem[]}></TopNavigation>

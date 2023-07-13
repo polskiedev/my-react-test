@@ -1,5 +1,5 @@
 import React, { ReactNode, FC } from 'react';
-import ClassCollector from '../../../helpers/ClassCollector';
+import ClassCollector from '../../../helpers/ClassManager/ClassCollector';
 
 export interface Props {
   className?: string;
@@ -8,13 +8,18 @@ export interface Props {
   url: string;
 }
 
-const Link: FC<Props> = ({text, url, className, children, ...props}: Props) => {
+export const ClassBuilder = (className?: string) => {
   const classList = new ClassCollector();
   classList.addClass('--ac-link');
   classList.addClass(className);
+  return classList;
+};
 
+const Link: FC<Props> = ({text, url, className, children, ...props}: Props) => {
+  const classList = ClassBuilder(className);
+  
   return (
-    <a href={url} className={classList.getList()} {...props}>{text}{children}</a>
+    <a href={url} className={classList.build()} {...props}>{text}{children}</a>
   )
 }
 

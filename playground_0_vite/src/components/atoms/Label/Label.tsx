@@ -1,5 +1,5 @@
 import React, { ReactNode, FC } from 'react';
-import ClassCollector from '../../../helpers/ClassCollector';
+import ClassCollector from '../../../helpers/ClassManager/ClassCollector';
 
 interface Props {
   className?: string;
@@ -13,7 +13,7 @@ const Span: FC<Props> = ({text, className, children, ...props}: Props) => {
   classList.addClass(className);
 
   return (
-    <label className={classList.getList()} {...props}>{text}{children}</label>
+    <label className={classList.build()} {...props}>{text}{children}</label>
   )
 }
 

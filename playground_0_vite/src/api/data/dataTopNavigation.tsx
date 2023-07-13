@@ -21,7 +21,7 @@ const dataTopNavigationMenu = () => {
         "label": "Contact Us",
         "icon": "cards",
         "url": "#contactus",
-        "className": "liClassName hidden md:block",
+        "className": "liClassName hidden md:inline-flex",
         "linkClassName": "linkClassName",
         "labelClassName": "labelClassName"
       },

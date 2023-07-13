@@ -1,7 +1,7 @@
 import { useState } from "react";
 // import Button from "./Button";
-import Button from "../_Button/_Button";
-import ClassCollector from '../../../helpers/ClassCollector';
+import Button from "../ExtButton/ExtButton";
+import ClassCollector from '../../../helpers/ClassManager/ClassCollector';
 
 interface Props {
     className?: string;
@@ -16,7 +16,7 @@ function HeaderBar({className = ''}: Props) {
 
   return (
     <>
-        <div className={classList.getList()}>
+        <div className={classList.build()}>
             <div>
                 <Button label="Menu" icon="nav" variant="tertiary" className="outlined" onClick={() => console.log('Menu') } />
             </div>

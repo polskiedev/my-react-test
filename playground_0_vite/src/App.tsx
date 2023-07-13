@@ -8,17 +8,17 @@ import { useState } from "react";
 // import SiteTileSkeleton from './components/Skeleton/SiteTileSkeleton';
 // import GameTileSkeleton from './components/Skeleton/GameTileSkeleton';
 // import ListUsers from "./components/Users/ListUsers";
-import TopNavigation2 from "./components/molecules/TopNavigation/TopNavigation";
+import TopNavigation from "./components/molecules/TopNavigation/TopNavigation";
 import Accordion from "./components/Accordion/Accordion";
 
 import SiteTiles from "./components/SiteTiles/SiteTiles";
 // import SiteTiles2 from "./components/SiteTiles/SiteTiles2";
 import HeaderBar from "./components/molecules/HeaderBar.tsx/HeaderBar";
-import TopNavigation, {Item as TopNavigationItem} from "./components/TopNavigation";
+// import TopNavigation, {Item as TopNavigationItem} from "../dumps/TopNavigation";
 // import GameList from "./components/Games/GameList";
 import GameList2 from "./components/Games/GameList2";
 import {dataMenu} from "./data/useDataLoader";
-import AcButton from "./components/molecules/_Button/_Button"
+import AcButton from "./components/molecules/ExtButton/ExtButton"
 import AcSpan from "./components/atoms/Span/Span"
 
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
@@ -31,14 +31,13 @@ function App() {
     <SkeletonTheme baseColor="#202020" highlightColor="#444">
     <header className="fixed w-full h-28 -top-0 -left-0 z-50">
       <HeaderBar className="h-14"></HeaderBar>
-      <TopNavigation className="h-14" items={menuItems as TopNavigationItem[]}></TopNavigation>
+      <TopNavigation></TopNavigation>
     </header>
     
     <main className="my-32">
       <section className="test-section mx-auto lg:max-w-[928px]">
         <AcButton variant="secondary" icon="home" className="appp-aaa" onClick={() => {}}>This is a buttonExt with spanIcon</AcButton>
         <AcSpan></AcSpan>
-        <TopNavigation2></TopNavigation2>
         <Accordion title="Accordion Component Title" content="1 Accordion Component Content">
           <p>2 This is the content of the accordion.</p>
         </Accordion>
