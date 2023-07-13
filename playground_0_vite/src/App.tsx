@@ -13,13 +13,14 @@ import Accordion from "./components/Accordion/Accordion";
 
 import SiteTiles from "./components/SiteTiles/SiteTiles";
 // import SiteTiles2 from "./components/SiteTiles/SiteTiles2";
-import HeaderBar from "./components/molecules/HeaderBar.tsx/HeaderBar";
+import HeaderBar from "./components/molecules/HeaderBar/HeaderBar";
 // import TopNavigation, {Item as TopNavigationItem} from "../dumps/TopNavigation";
 // import GameList from "./components/Games/GameList";
 import GameList2 from "./components/Games/GameList2";
 import {dataMenu} from "./data/useDataLoader";
 import AcButton from "./components/molecules/ExtButton/ExtButton"
 import AcSpan from "./components/atoms/Span/Span"
+import Header from "./components/organisms/Header/Header";
 
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
@@ -29,10 +30,7 @@ function App() {
 
   return <>
     <SkeletonTheme baseColor="#202020" highlightColor="#444">
-    <header className="fixed w-full h-28 -top-0 -left-0 z-50">
-      <HeaderBar className="h-14"></HeaderBar>
-      <TopNavigation></TopNavigation>
-    </header>
+    <Header />
     
     <main className="my-32">
       <section className="test-section mx-auto lg:max-w-[928px]">

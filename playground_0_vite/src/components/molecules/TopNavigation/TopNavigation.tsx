@@ -1,34 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { getTopNavigationMenu } from '../../../api/services/TopNavigationApiService';
 import {TopNavigationItem as Menu} from '../../../api/models/TopNavigationResponse';
+import { default as ClassBuilder } from './TopNavigationClassBuilder';
 import Link from '../ExtLink/ExtLink';
-import ClassCollector from '../../../helpers/ClassManager/ClassCollector';
-
-export const ClassBuilder = () => {
-  const classList = new ClassCollector();
-  const ulClassList = new ClassCollector();
-  const liClassList = new ClassCollector();
-  const linkClassList = new ClassCollector();
-
-  classList.addClass('--ac-topnavigation');
-  classList.addClass('h-14');
-  classList.addClassGroup('flex-center');
-
-  ulClassList.addClassGroup('flex-row');
-  ulClassList.addClass('h-full');
-
-  liClassList.addClass('h-full');
-  liClassList.addClassGroup('flex-center');
-  
-  linkClassList.addClass('pl-3 pr-4');
-
-  return {
-    _: classList,
-    ul: ulClassList,
-    li: liClassList,
-    a: linkClassList
-  };
-};
 
 const TopNavigation = () => {
   const [navigationMenu, setNavigationMenu] = useState<Menu[]>([]);

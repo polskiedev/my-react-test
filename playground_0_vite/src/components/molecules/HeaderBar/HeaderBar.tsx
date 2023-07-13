@@ -12,6 +12,7 @@ function HeaderBar({className = ''}: Props) {
   const classList = new ClassCollector();
 
   classList.addClass('--ac-headerbar');
+  classList.addClass('h-14');
   classList.addClass(className);
 
   return (
