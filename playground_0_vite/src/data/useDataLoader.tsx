@@ -11,7 +11,6 @@ const useDataLoader = () => {
 }
 
 export function dataGame() {
-    
     return shuffleArray(useGameList());
 }
 
