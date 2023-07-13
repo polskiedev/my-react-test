@@ -10,7 +10,7 @@ const GameTileClassBuilder = () => {
   classList.addClass(`w-[${config.width}px] max-w-[${config.width}px]`);
 
   linkClassList.addClass('game-tile-link');
-  linkClassList.addClass('block bg-center bg-cover duration-500 pl-3 pr-4');
+  linkClassList.addClass('block bg-center bg-cover pl-3 pr-4');
   
   linkClassList.addClass(`h-[${config.height}px] min-h-[${config.height}px]`);
   linkClassList.addClass(`w-[${config.width}px] min-w-[${config.width}px]`);

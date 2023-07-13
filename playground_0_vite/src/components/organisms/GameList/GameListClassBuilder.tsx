@@ -13,7 +13,7 @@ const GameListClassBuilder = (className = '') => {
     classList.addClass(className);
 
     navClassList.addClass("carousel-nav");
-    // navClassList.addClass("lg:hidden");
+    navClassList.addClass("lg:hidden");
     navClassList.addClass(`group-hover:block absolute`);
 
     const navTop = (config.imgHeight - config.navHeight)/2;

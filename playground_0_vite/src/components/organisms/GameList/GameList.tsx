@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import GameTile from "../../molecules/GameTile/GameTile";
 import {generateSlug} from "../../../helpers/helpers"
 
@@ -46,7 +46,7 @@ const GameList = ({className = '', label}: Props) => {
             
             setCurrentIndex(newIndex);
             console.log('prev slide: '+ newIndex);
-            console.log(items);
+            // console.log(items);
         }
     };
 
@@ -57,7 +57,7 @@ const GameList = ({className = '', label}: Props) => {
     
             setCurrentIndex(newIndex);
             console.log('next slide: ' + newIndex);
-            console.log(items);
+            // console.log(items);
         }
     };
 
@@ -67,6 +67,7 @@ const GameList = ({className = '', label}: Props) => {
                 <GameListHeader label={label}></GameListHeader>
                 <div className="carousel group relative mx-5 lg:mx-0">
                     <GameListCarousel items={items} currentIndex={currentIndex}></GameListCarousel>
+     
                     <GameListCarouselNavigation
                         gotoPrev={() => prevSlide()}
                         gotoNext={() => nextSlide()}
@@ -92,13 +93,26 @@ const GameListHeader = ({ label }: { label: string}) => {
 };
 
 const GameListCarousel = ({items, currentIndex}: { items: GameTileModel[], currentIndex: number}) => {
+    const carouselRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (carouselRef.current) {
+          let carouselWidth = carouselRef.current.clientWidth;
+          let translateXValue = currentIndex * -carouselWidth;
+          
+          carouselRef.current.style.transform = `translateX(${translateXValue}px)`;
+        }
+      }, [currentIndex]);
+
     return (
-        <div className="flex flex-row gap-1 overflow-hidden">
-        {items.map((item, index) => {
-            return (    
-                <GameTile key={index} item={item} isActive={index === currentIndex} ></GameTile>                      
-            );
-        })}
+        <div className={`carousel-container overflow-hidden`}>
+            <div ref={carouselRef} className={`carousel-slider flex flex-row gap-1 ${currentIndex > 0 ? 'translateX' : ''}`}>
+            {items.map((item, index) => {
+                return (    
+                    <GameTile key={index} item={item} isActive={index === currentIndex} ></GameTile>                      
+                );
+            })}
+            </div>
         </div>
     );
 };
