@@ -1,0 +1,13 @@
+.--ac-game-list .carousel-nav {
+    top: 57px;
+    height: 36px;
+    width: 36px;
+}
+
+.--ac-game-list .carousel-nav-left {
+    left: -18px;
+}
+
+.--ac-game-list .carousel-nav-right {
+    right: -18px;
+}

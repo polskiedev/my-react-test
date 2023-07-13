@@ -1,3 +1,4 @@
+sometime vite/tailwind dont compile classes with dynamic values, add fallback css for needed components
 images not working when serving production
 improve accordion component by moving taiwindcss and use interface on its params
 clean up gametile.css

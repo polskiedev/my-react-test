@@ -16,12 +16,12 @@ import { useState } from "react";
 // import TopNavigation from "./components/molecules/TopNavigation/TopNavigation";
 // import HeaderBar from "./components/molecules/HeaderBar/HeaderBar";
 // import {dataMenu} from "./data/useDataLoader";
+// import GameList2 from "../dumps/Games/GameList2";
 import Accordion from "./components/Accordion/Accordion";
 import SiteTiles from "./components/SiteTiles/SiteTiles";
-import GameList2 from "./components/Games/GameList2";
 import Header from "./components/organisms/Header/Header";
 import Footer from "./components/organisms/Footer/Footer";
-import GameTile from "./components/molecules/GameTile/GameTileStorybook";
+import GameList from "./components/organisms/GameList/GameList";
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
 
@@ -34,14 +34,13 @@ function App() {
     
     <main className="my-32">
       <section className="test-section mx-auto lg:max-w-[928px]">
-        <GameTile />
         <Accordion title="Accordion Component Title" content="1 Accordion Component Content">
           <p>2 This is the content of the accordion.</p>
         </Accordion>
       </section>
       <section className="mx-auto lg:max-w-[928px]">
-        <GameList2 label="Popular"></GameList2>
-        <GameList2 label="New Games"></GameList2>
+        <GameList label="Popular"></GameList>
+        <GameList label="New Games"></GameList>
         <SiteTiles></SiteTiles>
         Content
       </section>

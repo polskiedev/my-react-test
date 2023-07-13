@@ -1,10 +1,12 @@
 @import './variables.css';
 @import '../components/atoms/Span/span-icon.css';
+@import '../components/molecules/GameTile/game-tile.css';
+@import '../components/organisms/GameList/game-list.css';
 @import './components/button.css';
 @import './components/link.css';
 @import './components/headerbar.css';
 @import './components/topnavigation.css';
-@import './components/gametile.css';
+/* @import './components/gametile.css'; */
 
 @tailwind base;
 @tailwind components;
