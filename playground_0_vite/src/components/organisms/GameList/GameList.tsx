@@ -27,6 +27,8 @@ const GameList = ({className = '', label}: Props) => {
     const carouselRef = useRef<HTMLDivElement>(null);
     const [currentMaxScroll, setMaxScroll] = useState(0);
     const [currentScroll, setCurrentScroll] = useState(0);
+    const [touchStartPosition, setTouchStartPosition] = useState(0);
+    const [carouselTranslateX, setCarouselTranslateX] = useState(0);
     
     const [items, setItems] = useState<GameTileModel[] | null>(null);
     // const items2 = dataGame();
@@ -35,7 +37,8 @@ const GameList = ({className = '', label}: Props) => {
             try {
                 const data = await getGameTiles();
                 setItems(data);
-                handleChange()
+                handleResize();
+                handleTouch();
             } catch (error) {
                 // Handle error
                 console.error('Error fetching game tiles:', error);
@@ -71,11 +74,12 @@ const GameList = ({className = '', label}: Props) => {
                 }
                 
                 carouselRef.current.style.transform = `translateX(${translateXValue}px)`;
+                setCarouselTranslateX(translateXValue);
             }
         }
     }, [currentScroll]);
 
-    const handleChange = () => {
+    const handleResize = () => {
         if (carouselRef.current) {
             const carouselWidth = carouselRef.current.clientWidth;
             const scrollWidth = carouselRef.current.scrollWidth;
@@ -83,19 +87,60 @@ const GameList = ({className = '', label}: Props) => {
             let maxScroll =  Math.ceil(scrollWidth / carouselWidth);
             setMaxScroll(maxScroll);
             setCurrentScroll(0);
+            setCarouselTranslateX(0);
         }
     };
 
+    const handleTouch = () => {
+        carouselRef.current?.addEventListener('touchstart', handleTouchStart);
+        carouselRef.current?.addEventListener('touchmove', handleTouchMove);
+        carouselRef.current?.addEventListener('touchend', handleTouchEnd);
+    }
+
     useEffect(() => {
-        // Add event listener for window resize
-        window.addEventListener('resize', handleChange);
-    
-        // Cleanup the event listener on component unmount
+        // Add event listeners for window resize and touch events
+        window.addEventListener('resize', handleResize);
+   
+        // Cleanup the event listeners on component unmount
         return () => {
-          window.removeEventListener('resize', handleChange);
+            window.removeEventListener('resize', handleResize);
+        
+            carouselRef.current?.removeEventListener('touchstart', handleTouchStart);
+            carouselRef.current?.removeEventListener('touchmove', handleTouchMove);
+            carouselRef.current?.removeEventListener('touchend', handleTouchEnd);
+    
         };
     }, []);
+    
+    const handleTouchStart = (event: TouchEvent) => {
+        setTouchStartPosition(event.touches[0].clientX);
+        console.log('Touch Start');
+    };
+    
+    const handleTouchEnd = () => {
+        setTouchStartPosition(0);
+        console.log('Touch End');
+    };
 
+    const handleTouchMove = (event: TouchEvent) => {
+        const touchCurrentPosition = event.touches[0].clientX;
+        const touchDelta = touchCurrentPosition - touchStartPosition;
+        if (carouselRef.current) {
+            const carouselWidth = carouselRef.current.clientWidth;
+            const scrollWidth = carouselRef.current.scrollWidth;
+            // carouselRef.current.style.transform = `translateX(${touchDelta}px)`;
+            console.log('carouselTranslateX: '+carouselTranslateX);
+        }
+        // touchDelta
+
+        // if (touchDelta > 20) {
+        //     prevSlide();
+        // } else if (touchDelta < -20) {
+        //     nextSlide();
+        // }
+        console.log('Touch move: '+touchDelta);
+    };
+      
     const prevSlide = () => {
         if (items && currentScroll > 0) {
             setCurrentScroll(currentScroll-1);
@@ -109,31 +154,7 @@ const GameList = ({className = '', label}: Props) => {
             console.log(currentScroll+1);
         }
     };
-////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////
-    const prevSlide1 = () => {
-        if (items) {
-            const isFirstSlide = currentIndex === 0;
-            const newIndex = isFirstSlide ? items.length - 1 : currentIndex - 1;
-            
-            setCurrentIndex(newIndex);
-            console.log('prev slide: '+ newIndex);
-            // console.log(items);
-        }
-    };
 
-    const nextSlide1 = () => {
-        if (items) {
-            const isLastSlide = currentIndex === items.length - 1;
-            const newIndex = isLastSlide ? 0 : currentIndex + 1;
-    
-            setCurrentIndex(newIndex);
-            console.log('next slide: ' + newIndex);
-            // console.log(items);
-        }
-    };
-////////////////////
     return (<>
             {items ? (
             <div className={mainCB.build()}>
