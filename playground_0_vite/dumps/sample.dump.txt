@@ -1,0 +1,11 @@
+    // getData: function({ bool = true }: { bool?: boolean }): 
+    // { currIdx: number; print: string } | false {
+    //   if(!bool) return false;
+
+    //   return {
+    //     currIdx: currentIndex,
+    //     print: `${currentIndex}`
+    //   }
+    // }
+    // ### Usage
+    // const currentIndex = (useHook1.getData({ bool: false }) as { currIdx: number; print: string })?.currIdx || 0;
