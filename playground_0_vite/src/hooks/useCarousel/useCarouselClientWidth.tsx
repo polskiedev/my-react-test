@@ -1,0 +1,69 @@
+import React, { useEffect, useState, useRef } from 'react';
+
+const useCarouselClientWidth = (carouselRef: React.RefObject<HTMLDivElement>) => {
+  const [currentScroll, setCurrentScroll] = useState(0);
+  const [currentMaxScroll, setMaxScroll] = useState(0);
+
+  useEffect(() => {
+    if (carouselRef.current) {
+      const carouselWidth = carouselRef.current.clientWidth;
+      const scrollWidth = carouselRef.current.scrollWidth;
+      let translateXValue = currentScroll * -carouselWidth;
+
+      let maxScroll = Math.ceil(scrollWidth / carouselWidth);
+      setMaxScroll(maxScroll);
+
+      if (currentScroll < maxScroll && currentScroll >= 0) {
+        if (currentScroll + 1 === maxScroll) {
+          translateXValue = carouselWidth - scrollWidth;
+        }
+
+        carouselRef.current.style.transform = `translateX(${translateXValue}px)`;
+      }
+    }
+  }, [currentScroll]);
+
+  const handleResize = () => {
+    if (carouselRef.current) {
+      const carouselWidth = carouselRef.current.clientWidth;
+      const scrollWidth = carouselRef.current.scrollWidth;
+
+      let maxScroll = Math.ceil(scrollWidth / carouselWidth);
+      setMaxScroll(maxScroll);
+      setCurrentScroll(0);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const prevSlide = () => {
+    if (currentScroll > 0) {
+      setCurrentScroll(currentScroll - 1);
+    }
+  };
+
+  const nextSlide = () => {
+    if (currentMaxScroll > currentScroll + 1) {
+      setCurrentScroll(currentScroll + 1);
+    }
+  };
+
+  return {
+    prevSlide,
+    nextSlide,
+    handleResize,
+    data: {
+      max: currentMaxScroll,
+      currIdx: currentScroll + 1,
+      print: `${currentScroll + 1} of ${currentMaxScroll}`
+    }
+  };
+};
+
+export { useCarouselClientWidth };

@@ -15,6 +15,10 @@
 .--ac-game-list .carousel-slider {
     transition: transform 0.5s ease-in-out;
 }
+
+.--ac-game-list .--ac-game-tile.active {
+    box-shadow: inset 0px -2px 0px #004766;
+}
 /* 
 .--ac-game-list  .carousel-slider.translateX {
     transform: translateX(-100%);

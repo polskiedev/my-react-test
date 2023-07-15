@@ -9,6 +9,9 @@ import GameTileSkeleton from '../../Skeleton/GameTileSkeleton';
 import Span from '../../atoms/Span/Span';
 import {dataGame} from "../../../data/useDataLoader";
 
+import { useCarousel } from '../../../hooks/useCarousel/useCarousel';
+import { useCarouselClientWidth } from '../../../hooks/useCarousel/useCarouselClientWidth';
+
 interface Props {
     label: string;
     className?: string;
@@ -23,12 +26,10 @@ interface NavProps {
 const {_: mainCB, nr: nrCB, nl: nlCB, nspan: nsCB} = ClassBuilder();
 
 const GameList = ({className = '', label}: Props) => {
-    const [currentIndex, setCurrentIndex] = useState(0);
     const carouselRef = useRef<HTMLDivElement>(null);
-    const [currentMaxScroll, setMaxScroll] = useState(0);
-    const [currentScroll, setCurrentScroll] = useState(0);
-    const [touchStartPosition, setTouchStartPosition] = useState(0);
-    const [carouselTranslateX, setCarouselTranslateX] = useState(0);
+    const useHook1 = useCarousel(carouselRef);
+    const useHook2 = useCarouselClientWidth(carouselRef);
+    const currentIndex = useHook1.data.currIdx || 0;
     
     const [items, setItems] = useState<GameTileModel[] | null>(null);
     // const items2 = dataGame();
@@ -36,136 +37,40 @@ const GameList = ({className = '', label}: Props) => {
         const fetchData = async () => {
             try {
                 const data = await getGameTiles();
-                setItems(data);
-                handleResize();
-                handleTouch();
+                addHooks(data);
             } catch (error) {
                 // Handle error
                 console.error('Error fetching game tiles:', error);
             }
         };
-
         fetchData();
     }, []);
 
-    useEffect(() => {
-        if (carouselRef.current) {
-            const carouselWidth = carouselRef.current.clientWidth;
-            const scrollWidth = carouselRef.current.scrollWidth;
-            let translateXValue = currentScroll * -carouselWidth;
-
-            let maxScroll =  Math.ceil(scrollWidth / carouselWidth);
-            setMaxScroll(maxScroll);
-
-            if(currentScroll < maxScroll && currentScroll >= 0) {
-
-                console.log('currentScroll: '+currentScroll);
-                console.log('carouselWidth: '+carouselWidth);
-                console.log('scrollWidth: '+scrollWidth);
-    
-                console.log('maxScroll: '+maxScroll);
-                console.log('currentScroll: '+currentScroll);
-                console.log('translateXValue: '+translateXValue);
-    
-                console.log('================');
-    
-                if(currentScroll + 1 === maxScroll) {
-                    translateXValue =  carouselWidth-scrollWidth;
-                }
-                
-                carouselRef.current.style.transform = `translateX(${translateXValue}px)`;
-                setCarouselTranslateX(translateXValue);
-            }
-        }
-    }, [currentScroll]);
-
-    const handleResize = () => {
-        if (carouselRef.current) {
-            const carouselWidth = carouselRef.current.clientWidth;
-            const scrollWidth = carouselRef.current.scrollWidth;
-
-            let maxScroll =  Math.ceil(scrollWidth / carouselWidth);
-            setMaxScroll(maxScroll);
-            setCurrentScroll(0);
-            setCarouselTranslateX(0);
-        }
+    const addHooks = (data: GameTileModel[]) => {
+        setItems(data);
+        useHook1.setItems(data);
+        useHook2.handleResize();
     };
 
-    const handleTouch = () => {
-        carouselRef.current?.addEventListener('touchstart', handleTouchStart);
-        carouselRef.current?.addEventListener('touchmove', handleTouchMove);
-        carouselRef.current?.addEventListener('touchend', handleTouchEnd);
-    }
-
-    useEffect(() => {
-        // Add event listeners for window resize and touch events
-        window.addEventListener('resize', handleResize);
-   
-        // Cleanup the event listeners on component unmount
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        
-            carouselRef.current?.removeEventListener('touchstart', handleTouchStart);
-            carouselRef.current?.removeEventListener('touchmove', handleTouchMove);
-            carouselRef.current?.removeEventListener('touchend', handleTouchEnd);
-    
-        };
-    }, []);
-    
-    const handleTouchStart = (event: TouchEvent) => {
-        setTouchStartPosition(event.touches[0].clientX);
-        console.log('Touch Start');
-    };
-    
-    const handleTouchEnd = () => {
-        setTouchStartPosition(0);
-        console.log('Touch End');
-    };
-
-    const handleTouchMove = (event: TouchEvent) => {
-        const touchCurrentPosition = event.touches[0].clientX;
-        const touchDelta = touchCurrentPosition - touchStartPosition;
-        if (carouselRef.current) {
-            const carouselWidth = carouselRef.current.clientWidth;
-            const scrollWidth = carouselRef.current.scrollWidth;
-            // carouselRef.current.style.transform = `translateX(${touchDelta}px)`;
-            console.log('carouselTranslateX: '+carouselTranslateX);
-        }
-        // touchDelta
-
-        // if (touchDelta > 20) {
-        //     prevSlide();
-        // } else if (touchDelta < -20) {
-        //     nextSlide();
-        // }
-        console.log('Touch move: '+touchDelta);
-    };
-      
     const prevSlide = () => {
-        if (items && currentScroll > 0) {
-            setCurrentScroll(currentScroll-1);
-            console.log(currentScroll-1);
-        }
+        useHook2.prevSlide()
     };
 
     const nextSlide = () => {
-        if (items && currentMaxScroll > (currentScroll + 1)) {
-            setCurrentScroll(currentScroll+1);
-            console.log(currentScroll+1);
-        }
+        useHook2.nextSlide()
     };
 
     return (<>
             {items ? (
             <div className={mainCB.build()}>
-                {currentMaxScroll}-{currentScroll+1}
+                {/* {useHook1.data.print} */}
                 <GameListHeader label={label}></GameListHeader>
                 <div className="carousel group relative mx-5 lg:mx-0">
-                    <GameListCarousel items={items} currentIndex={currentIndex} carouselRef={carouselRef}></GameListCarousel>
+                    <GameListCarousel items={items} carouselRef={carouselRef} currentIndex={currentIndex}></GameListCarousel>
      
                     <GameListCarouselNavigation
-                        gotoPrev={() => prevSlide()}
-                        gotoNext={() => nextSlide()}
+                        gotoPrev={prevSlide}
+                        gotoNext={nextSlide}
                         />
                 </div>
             </div>
@@ -187,7 +92,7 @@ const GameListHeader = ({ label }: { label: string}) => {
     );
 };
 
-const GameListCarousel = ({items, currentIndex, carouselRef}: { items: GameTileModel[], currentIndex: number, carouselRef: any}) => {
+const GameListCarousel = ({items, currentIndex = 0, carouselRef}: { items: GameTileModel[], currentIndex?: number, carouselRef: React.RefObject<HTMLDivElement>}) => {
     return (
         <div className={`carousel-container overflow-hidden`}>
             <div ref={carouselRef} className={`carousel-slider flex flex-row gap-1 ${currentIndex > 0 ? 'translateX' : ''}`}>
