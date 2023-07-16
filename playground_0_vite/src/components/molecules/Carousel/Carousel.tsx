@@ -6,7 +6,7 @@ import { getGameTiles } from '../../../api/services/GameApiService';
 import { GameTile as GameTileModel } from "../../../api/models/GameApiResponse";
 import {default as ClassBuilder}  from '../../organisms/GameList/GameListClassBuilder';
 
-import GameTileSkeleton from '../../Skeleton/GameTileSkeleton';
+import GameTileSkeleton from '../../organisms/GameList/GameListSkeleton';
 import Span from '../../atoms/Span/Span';
 
 interface Props {

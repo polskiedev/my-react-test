@@ -1,18 +1,20 @@
 import React, { useEffect, useState, useRef } from 'react';
-import GameTile from "../../molecules/GameTile/GameTile";
 import {generateSlug} from "../../../helpers/helpers"
+import {dataGame} from "../../../data/useDataLoader";
+import {default as ClassBuilder} from './GameListClassBuilder';
+import { useComponentHooks } from '../../../hooks/useComponentHooks';
 
 import { getGameTiles } from '../../../api/services/GameApiService';
 import { GameTile as GameTileModel } from "../../../api/models/GameApiResponse";
-import {default as ClassBuilder} from './GameListClassBuilder';
-import GameTileSkeleton from '../../Skeleton/GameTileSkeleton';
+import GameTile from "../../molecules/GameTile/GameTile";
+
 import Span from '../../atoms/Span/Span';
-import {dataGame} from "../../../data/useDataLoader";
+import Skeleton from './GameListSkeleton';
 
 import { useCarousel } from '../../../hooks/useCarousel/useCarousel';
 import { useCarouselClientWidth } from '../../../hooks/useCarousel/useCarouselClientWidth';
 import { useCarouselTouchTrigger } from '../../../hooks/useCarousel/useCarouselTouchTrigger';
-import { useComponentHooks } from '../../../hooks/useComponentHooks';
+
 
 interface Props {
     label: string;
@@ -80,7 +82,7 @@ const GameList = ({className = '', label}: Props) => {
                 </div>
             </div>
             ) : (
-                <GameTileSkeleton></GameTileSkeleton>
+                <Skeleton />
             )}
     </>)
 }

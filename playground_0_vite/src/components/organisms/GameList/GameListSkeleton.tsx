@@ -1,7 +1,7 @@
 import React from 'react';
 import Skeleton from 'react-loading-skeleton';
 
-const GameTileSkeleton = ({ count = 6 }) => {
+const GameListSkeleton = ({ count = 6 }) => {
   return (
     <React.Fragment>
       <div className="flex flex-row gap-1 justify-between items-center mx-5 lg:m-0 py-2">
@@ -22,4 +22,4 @@ const GameTileSkeleton = ({ count = 6 }) => {
   );
 };
 
-export default GameTileSkeleton;
+export default GameListSkeleton;
