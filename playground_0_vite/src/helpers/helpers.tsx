@@ -4,6 +4,13 @@ export function asset(url: string) {
   return `./${APP_ENV == 'production' ? '' : 'src/'}assets/${url}`;
 }
 
+export function getWindowSize() {
+  return {
+    width: window.innerWidth,
+    height: window.innerHeight
+  }
+}
+
 export function generateSlug(input: string): string {
     return input
       .toLowerCase()

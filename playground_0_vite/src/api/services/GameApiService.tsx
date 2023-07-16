@@ -11,7 +11,7 @@ export async function getGameTiles(): Promise<GameTile[]> {
     return response.data;
   } catch (error) {
     // Handle error
-    console.error('Error fetching users:', error);
+    console.error('Error fetching Game List:', error);
     throw error;
   }
 }

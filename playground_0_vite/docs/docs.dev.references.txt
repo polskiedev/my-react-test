@@ -20,3 +20,5 @@ https://www.youtube.com/watch?v=BKFPfzWM3CQ
 => Create Highly Reusable React Components in Minutes with TypeScript
 https://www.youtube.com/watch?v=eXRlVpw1SIQ
 =>  Creating High-Quality React Components: Best Practices for Reusability 
+https://www.youtube.com/watch?v=R1FG54FY-18
+=>  Loading Your React Data Like This is Awesome 

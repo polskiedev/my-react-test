@@ -37,53 +37,50 @@ const GameList = ({className = '', label}: Props) => {
     useHooks.add(useCarouselClientWidth(carouselRef));
     useHooks.add(useCarouselTouchTrigger(carouselRef));
 
-    const navHookIdx = 1;
+    const useNavHookIdx = 1;
     const currentIndex = useHooks.get(0)?.data.currIdx || -1;
     const [items, setItems] = useState<GameTileModel[] | null>(null);
     // const items2 = dataGame();
     useEffect(() => {
         const fetchData = async () => {
-            try {
-                const data = await getGameTiles();
-                initialize(data);
-            } catch (error) {
-                // Handle error
-                console.error('Error fetching game tiles:', error);
-            }
+            const data = await getGameTiles();
+            setItems(data);
+            initHooks(data);
+            console.log('fetchData');
         };
+
         fetchData();
     }, []);
 
-    const initialize = (data: GameTileModel[]) => {
-        setItems(data);
+    const initHooks = (data: GameTileModel[]) => {
         useHooks.init(data);
     };
 
     const prevSlide = () => {
-        useHooks.get(navHookIdx)?.prevSlide();
+        useHooks.get(useNavHookIdx)?.prevSlide();
     };
 
     const nextSlide = () => {
-        useHooks.get(navHookIdx)?.nextSlide();
+        useHooks.get(useNavHookIdx)?.nextSlide();
     };
 
     return (<>
-            {items ? (
-            <div className={mainCB.build()}>
-                {/* {useHooks.get(1).data.print} */}
-                <GameListHeader label={label}></GameListHeader>
-                <div className="carousel group relative mx-5 lg:mx-0">
-                    <GameListCarousel items={items} carouselRef={carouselRef} currentIndex={currentIndex}></GameListCarousel>
-     
-                    <GameListCarouselNavigation
-                        gotoPrev={prevSlide}
-                        gotoNext={nextSlide}
-                        />
-                </div>
+        {items ? (
+        <div className={mainCB.build()}>
+            {useHooks.get(1).data.print}
+            <GameListHeader label={label}></GameListHeader>
+            <div className="carousel group relative mx-5 lg:mx-0">
+                <GameListCarousel items={items} carouselRef={carouselRef} currentIndex={currentIndex}></GameListCarousel>
+    
+                <GameListCarouselNavigation
+                    gotoPrev={prevSlide}
+                    gotoNext={nextSlide}
+                    />
             </div>
-            ) : (
-                <Skeleton />
-            )}
+        </div>
+        ) : (
+            <Skeleton />
+        )}
     </>)
 }
 
