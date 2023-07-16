@@ -5,6 +5,10 @@ const useCarouselTouchTrigger = (carouselRef: React.RefObject<HTMLDivElement>) =
 
     const [items, setItems] = useState<any>([]);
 
+    const init = (data?: any) => {
+
+    };
+
     const prevSlide = () => {
       const isFirstSlide = currentIndex === 0;
       const newIndex = isFirstSlide ? items.length - 1 : currentIndex - 1;
@@ -26,7 +30,7 @@ const useCarouselTouchTrigger = (carouselRef: React.RefObject<HTMLDivElement>) =
   return {
     prevSlide,
     nextSlide,
-    setItems,
+    init,
     data: {
       currIdx: currentIndex,
       print: `${currentIndex}`

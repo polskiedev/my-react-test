@@ -23,6 +23,10 @@ const useCarouselClientWidth = (carouselRef: React.RefObject<HTMLDivElement>) =>
     }
   }, [currentScroll]);
 
+  const init = (data?: any) => {
+    handleResize();
+  };
+
   const handleResize = () => {
     if (carouselRef.current) {
       const carouselWidth = carouselRef.current.clientWidth;
@@ -57,7 +61,7 @@ const useCarouselClientWidth = (carouselRef: React.RefObject<HTMLDivElement>) =>
   return {
     prevSlide,
     nextSlide,
-    handleResize,
+    init,
     data: {
       max: currentMaxScroll,
       currIdx: currentScroll + 1,

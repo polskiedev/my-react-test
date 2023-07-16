@@ -11,6 +11,8 @@ import {dataGame} from "../../../data/useDataLoader";
 
 import { useCarousel } from '../../../hooks/useCarousel/useCarousel';
 import { useCarouselClientWidth } from '../../../hooks/useCarousel/useCarouselClientWidth';
+import { useCarouselTouchTrigger } from '../../../hooks/useCarousel/useCarouselTouchTrigger';
+import { useComponentHooks } from '../../../hooks/useComponentHooks';
 
 interface Props {
     label: string;
@@ -27,17 +29,21 @@ const {_: mainCB, nr: nrCB, nl: nlCB, nspan: nsCB} = ClassBuilder();
 
 const GameList = ({className = '', label}: Props) => {
     const carouselRef = useRef<HTMLDivElement>(null);
-    const useHook1 = useCarousel(carouselRef);
-    const useHook2 = useCarouselClientWidth(carouselRef);
-    const currentIndex = useHook1.data.currIdx || 0;
-    
+    const useHooks = useComponentHooks();
+
+    useHooks.add(useCarousel(carouselRef));
+    useHooks.add(useCarouselClientWidth(carouselRef));
+    useHooks.add(useCarouselTouchTrigger(carouselRef));
+
+    const navHookIdx = 1;
+    const currentIndex = useHooks.get(0)?.data.currIdx || -1;
     const [items, setItems] = useState<GameTileModel[] | null>(null);
     // const items2 = dataGame();
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const data = await getGameTiles();
-                addHooks(data);
+                initialize(data);
             } catch (error) {
                 // Handle error
                 console.error('Error fetching game tiles:', error);
@@ -46,24 +52,23 @@ const GameList = ({className = '', label}: Props) => {
         fetchData();
     }, []);
 
-    const addHooks = (data: GameTileModel[]) => {
+    const initialize = (data: GameTileModel[]) => {
         setItems(data);
-        useHook1.setItems(data);
-        useHook2.handleResize();
+        useHooks.init(data);
     };
 
     const prevSlide = () => {
-        useHook2.prevSlide()
+        useHooks.get(navHookIdx)?.prevSlide();
     };
 
     const nextSlide = () => {
-        useHook2.nextSlide()
+        useHooks.get(navHookIdx)?.nextSlide();
     };
 
     return (<>
             {items ? (
             <div className={mainCB.build()}>
-                {/* {useHook1.data.print} */}
+                {/* {useHooks.get(1).data.print} */}
                 <GameListHeader label={label}></GameListHeader>
                 <div className="carousel group relative mx-5 lg:mx-0">
                     <GameListCarousel items={items} carouselRef={carouselRef} currentIndex={currentIndex}></GameListCarousel>
