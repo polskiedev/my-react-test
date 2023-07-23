@@ -1,39 +1,44 @@
 import React, { useEffect, useState, useRef } from 'react';
 
 const useCarouselTouchTrigger = (carouselRef: React.RefObject<HTMLDivElement>) => {
-    const [currentIndex, setCurrentIndex] = useState(0);
+  const [initialX, setInitialX] = useState(0);
 
-    const [items, setItems] = useState<any>([]);
+  const [items, setItems] = useState<any>([]);
 
-    const init = (data?: any) => {
+  const init = (data?: any) => {
 
-    };
+    carouselRef.current?.addEventListener('touchstart', handleTouchStart as any, false);
+    carouselRef.current?.addEventListener('touchmove', handleTouchMove as any, false);
+    carouselRef.current?.addEventListener('touchend', handleTouchEnd as any, false);
+  
+  };
 
-    const prevSlide = () => {
-      const isFirstSlide = currentIndex === 0;
-      const newIndex = isFirstSlide ? items.length - 1 : currentIndex - 1;
+  const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
+    setInitialX(event.touches[0].clientX);
+    console.log('Start');
+  };
 
-      setCurrentIndex(newIndex);
-      // console.log('prev slide: '+ newIndex);
-      // console.log(items);
-    };
+  const handleTouchMove = (event: React.TouchEvent<HTMLDivElement>) => {
+    const deltaX = event.touches[0].clientX - initialX;
+    const currX = carouselRef.current?.style.transform;
+    const regex = /^translateX\((-?\d+px)\)$/;
+  
+    if (carouselRef.current) {
+      const value1 = currX ? currX.replace(regex, '$1'): 0;
+      carouselRef.current.style.transform = `translateX(${parseInt(deltaX)}px)`;
+      console.log(deltaX, value1);
+    }
+    console.log('Move');
+  };
+  
 
-    const nextSlide = () => {
-      const isLastSlide = currentIndex === items.length - 1;
-      const newIndex = isLastSlide ? 0 : currentIndex + 1;
-
-      setCurrentIndex(newIndex);
-      // console.log('next slide: ' + newIndex);
-      // console.log(items);
-    };
+  const handleTouchEnd = () => {
+    console.log('End');
+  };
 
   return {
-    prevSlide,
-    nextSlide,
     init,
     data: {
-      currIdx: currentIndex,
-      print: `${currentIndex}`
     }
   };
 };

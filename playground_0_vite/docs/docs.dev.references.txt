@@ -22,3 +22,5 @@ https://www.youtube.com/watch?v=eXRlVpw1SIQ
 =>  Creating High-Quality React Components: Best Practices for Reusability 
 https://www.youtube.com/watch?v=R1FG54FY-18
 =>  Loading Your React Data Like This is Awesome 
+https://www.youtube.com/watch?v=X9fSMGkjtug&t=3205s
+i built a Raspberry Pi SUPER COMPUTER!! // ft. Kubernetes (k3s cluster w/ Rancher) 

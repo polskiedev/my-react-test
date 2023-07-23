@@ -5,3 +5,10 @@
 - content management
 - environment config - done setup
 - unit testing
+=============
+- Kubernetes k3s Rancher
+- - load balancer
+- git
+- Ansible for bare metal configuration and network management
+- jwt
+- ci/cd
