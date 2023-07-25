@@ -25,7 +25,7 @@ const useCarouselTouchTrigger = (carouselRef: React.RefObject<HTMLDivElement>) =
   
     if (carouselRef.current) {
       const value1 = currX ? currX.replace(regex, '$1'): 0;
-      carouselRef.current.style.transform = `translateX(${parseInt(deltaX)}px)`;
+      carouselRef.current.style.transform = `translateX(${deltaX.toString()}px)`;
       console.log(deltaX, value1);
     }
     console.log('Move');

@@ -35,7 +35,7 @@ npm uninstall dotenv
     - [ ] Ctrl + shift + P; Select CodeSnap
 - [ ] Inline fold
     - [ ] For tailwindcss dev
-
+- [ ] Thunder Client
 #Chrome addons
 React Developer Tools
 
