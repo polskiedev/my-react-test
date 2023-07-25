@@ -1,6 +1,9 @@
 import { APP_ENV } from '../config/config';
 
 export function asset(url: string) {
+  if (url.startsWith("https://")) {
+    return url;
+  }
   return `./${APP_ENV == 'production' ? '' : 'src/'}assets/${url}`;
 }
 
