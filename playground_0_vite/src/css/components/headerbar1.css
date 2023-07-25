@@ -9,7 +9,7 @@
     background-size: 100%;
 }
 
-/* --Tailwind-- */
+/* ---Tailwind--- */
 .--ac-headerbar {
     @apply bg-ac-headerbar
         flex flex-row content-center items-center justify-between overflow-hidden;
