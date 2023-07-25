@@ -23,7 +23,9 @@ const GameTile = ({className = '', linkImgClassName = '', item, isActive = false
 
     const placeholder = asset(`placeholders/game-thumbnail.png`);
     const gameImg = asset(`games/${img}`);
-    const displayImg = img === 'placeholder' ? placeholder : gameImg;
+    let displayImg = placeholder;
+
+    displayImg = img.startsWith("https://") ? img : gameImg;
 
     mainCB.addClass(className);
     if (isActive) {
