@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useEffect, useState } from 'react';
 
 // import Alert from "./components/Alert";
 // import Link from "./components/Link";
@@ -24,29 +24,52 @@ import Footer from "./components/organisms/Footer/Footer";
 import GameList from "./components/organisms/GameList/GameList";
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
+import { useTheme, ThemeName } from "./components/organisms/ThemeToggle/ThemeContext";
+import ThemeToggleButton from "./components/organisms/ThemeToggle/ThemeToggleButton";
+import { getThemeURL } from './helpers/helpers';
 
 function App() {
   // let menuItems = dataMenu();
+  const { theme, toggleTheme } = useTheme();
+
+  useEffect(() => {
+    loadThemeCSS(theme);
+  }, [theme]);
+
+  const loadThemeCSS = (themeName: ThemeName) => {
+    const themeLink = document.getElementById('theme-link') as HTMLLinkElement;
+    // if (themeLink) {
+    //   themeLink.href = `${themeName}-theme.css`;
+    // }
+  };
+
+  const handleThemeChange = (selectedTheme: ThemeName) => {
+    toggleTheme(selectedTheme);
+  };
 
   return <>
-    <SkeletonTheme baseColor="#202020" highlightColor="#444">
-    <Header />
-    
-    <main className="my-32">
-      <section className="test-section mx-auto lg:max-w-[928px]">
-        <Accordion title="Accordion Component Title" content="1 Accordion Component Content">
-          <p>2 This is the content of the accordion.</p>
-        </Accordion>
-      </section>
-      <section className="mx-auto lg:max-w-[928px]">
-        <GameList label="Popular"></GameList>
-        <GameList label="New Games"></GameList>
-        <SiteTiles></SiteTiles>
-        Content
-      </section>
-    </main>
-    <Footer />
-    </SkeletonTheme>
+    <link id="theme-link" rel="stylesheet" href={getThemeURL(theme)} />
+    <div data-theme={theme}>
+      <SkeletonTheme baseColor="#202020" highlightColor="#444">
+      <Header />
+      
+      <main className="my-32">
+        <ThemeToggleButton/>
+        <section className="test-section mx-auto lg:max-w-[928px]">
+          <Accordion title="Accordion Component Title" content="1 Accordion Component Content">
+            <p>2 This is the content of the accordion.</p>
+          </Accordion>
+        </section>
+        <section className="mx-auto lg:max-w-[928px]">
+          <GameList label="Popular"></GameList>
+          <GameList label="New Games"></GameList>
+          <SiteTiles></SiteTiles>
+          Content
+        </section>
+      </main>
+      <Footer />
+      </SkeletonTheme>
+    </div>
   </>
 }
 export default App

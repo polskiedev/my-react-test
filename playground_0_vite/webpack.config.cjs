@@ -1,5 +1,6 @@
 const path = require("path");
 const glob = require("glob");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 function str_repeat(str, count) {
     let repeatedString = '';
@@ -13,6 +14,7 @@ function entriesChecker() {
     console.log(str_repeat('#', 20), '[Starting webpack process]...', str_repeat('#', 20));
     const entries = {};
     const images = glob.sync("src/assets/**/*.{png,jpeg,svg}", {});
+    const themeStyles = glob.sync("src/css/theme/*-theme.css");
 
     images.forEach(filePath => {
         const imgDir = ['games', 'cards', 'placeholders'];
@@ -29,6 +31,15 @@ function entriesChecker() {
                 entries[name] = entryDir;
             }
         }
+    });
+
+    themeStyles.forEach(filePath => {
+        let pathArr = filePath.replace("src/css/theme/", "").split("/");
+        let fileName = path.basename(filePath);
+        let name = `/styles/theme/${fileName}`;
+        let entryDir = `./src/css/theme/${fileName}`;
+
+        entries[name] = entryDir;
     });
 
     return entries;
@@ -66,7 +77,14 @@ module.exports = {
                     name: '[name].[ext]',
                 },
             },
+            {
+                test: /\.css$/,
+                use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
+            },
         ]
     },
-    devtool: "source-map"
+    devtool: "source-map",
+    plugins: [new MiniCssExtractPlugin({
+        filename: "[name]",
+    })]
 }

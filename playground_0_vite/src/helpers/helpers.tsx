@@ -4,6 +4,12 @@ export function asset(url: string) {
   return `./${APP_ENV == 'production' ? '' : 'src/'}assets/${url}`;
 }
 
+export function getThemeURL(theme: string) {
+  return APP_ENV == 'production' 
+    ? `./styles/theme/${theme}-theme.css`
+    : `./src/css/theme/${theme}-theme.css`;
+};
+
 export function getWindowSize() {
   return {
     width: window.innerWidth,
