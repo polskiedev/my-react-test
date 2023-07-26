@@ -9,9 +9,9 @@ const ButtonVariants = {
     variants: {
       variant: {
         default:    'bg-btn-bg hover:bg-btn-hover-bg active:bg-btn-active-bg',
-        primary:    'bg-btn-primary-bg hover:bg-btn-primary-hover-bg active:bg-btn-primary-active-bg',
-        secondary:  'bg-btn-secondary-bg hover:bg-btn-secondary-hover-bg active:bg-btn-secondary-active-bg',
-        tertiary:   'bg-btn-tertiary-bg hover:bg-btn-tertiary-hover-bg active:bg-btn-tertiary-active-bg'
+        primary:    '--variant-primary bg-btn-primary-bg hover:bg-btn-primary-hover-bg active:bg-btn-primary-active-bg',
+        secondary:  '--variant-secondary bg-btn-secondary-bg hover:bg-btn-secondary-hover-bg active:bg-btn-secondary-active-bg',
+        tertiary:   '--variant-tertiary bg-btn-tertiary-bg hover:bg-btn-tertiary-hover-bg active:bg-btn-tertiary-active-bg'
       }, 
       textcolor: {
         default:    '',

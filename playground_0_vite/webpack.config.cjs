@@ -1,5 +1,6 @@
 const path = require("path");
 const glob = require("glob");
+const fs = require('fs');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 function str_repeat(str, count) {
@@ -10,11 +11,52 @@ function str_repeat(str, count) {
     return repeatedString;
 }
 
+function ThemeBuilder() {
+    const entries = {};
+    const themeVars = glob.sync("src/css/theme/variables/*-theme-vars.css");
+    
+    themeVars.forEach(filePath => {
+        let pathArr = filePath.replace("src/css/theme/variables/", "").split("/");
+        let fileName = path.basename(filePath);
+        let themeName = fileName.replace('-theme-vars.css', '');
+        let themeFile = fileName.replace('-theme-vars.css', '-theme.css');
+        let fileContent = '';
+
+        const componentThemes = glob.sync(`src/components/**/styles/*.${themeName}-theme.css`);
+
+        fileContent += `@import './variables/${fileName}';\n`;
+
+        componentThemes.forEach(filePath => {
+            let path = filePath.replace("src/components/", "../../components/")
+            fileContent += `@import '${path}';\n`;
+        });
+        
+        fs.writeFile('src/css/theme/'+themeFile, fileContent, (err) => {
+            if (err) {
+                console.error('Error creating the file:', err);
+            } else {
+                console.log(`File "${themeFile}" created successfully.`);
+            }
+        });
+    });
+
+    const themeStyles = glob.sync("src/css/theme/*-theme.css");
+    themeStyles.forEach(filePath => {
+        let pathArr = filePath.replace("src/css/theme/", "").split("/");
+        let fileName = path.basename(filePath);
+        let name = `/styles/theme/${fileName}`;
+        let entryDir = `./src/css/theme/${fileName}`;
+
+        entries[name] = entryDir;
+    });
+
+    return entries;
+}
+
 function entriesChecker() {
     console.log(str_repeat('#', 20), '[Starting webpack process]...', str_repeat('#', 20));
     const entries = {};
     const images = glob.sync("src/assets/**/*.{png,jpeg,svg}", {});
-    const themeStyles = glob.sync("src/css/theme/*-theme.css");
 
     images.forEach(filePath => {
         const imgDir = ['games', 'cards', 'placeholders'];
@@ -33,15 +75,12 @@ function entriesChecker() {
         }
     });
 
-    themeStyles.forEach(filePath => {
-        let pathArr = filePath.replace("src/css/theme/", "").split("/");
-        let fileName = path.basename(filePath);
-        let name = `/styles/theme/${fileName}`;
-        let entryDir = `./src/css/theme/${fileName}`;
-
-        entries[name] = entryDir;
-    });
-
+    const themeEntries = ThemeBuilder();
+    for (const entryName in themeEntries) {
+        const entryDir = themeEntries[entryName];
+        entries[entryName] = entryDir;
+    }
+      
     return entries;
 }
 

@@ -1,7 +1,7 @@
 @import './variables.css';
-@import '../components/atoms/Span/span-icon.css';
-@import '../components/molecules/GameTile/GameTile.css';
-@import '../components/organisms/GameList/GameList.css';
+@import '../components/atoms/Span/styles/span-icon.css';
+@import '../components/molecules/GameTile/styles/GameTile.css';
+@import '../components/organisms/GameList/styles/GameList.css';
 @import './components/button.css';
 @import './components/link.css';
 @import './components/headerbar.css';

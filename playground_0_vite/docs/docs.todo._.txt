@@ -1,3 +1,4 @@
+fix webpack css built has many comments
 fix: carousel molecule, it is still derived from game list. Note behavior is working on it.
 in game list organism remove comments, check if you can handle touch scrolling for it. Also check a way to handle or separate behavior into another file
 fix: sometime vite/tailwind dont compile classes with dynamic values, add fallback css for needed components
