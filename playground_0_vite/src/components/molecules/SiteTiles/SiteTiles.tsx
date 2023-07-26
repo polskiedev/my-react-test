@@ -1,6 +1,6 @@
 import React from 'react';
 import useSiteTiles, {Tile} from './useSiteTiles';
-import {asset} from '../../helpers/helpers'
+import {asset} from '../../../helpers/helpers'
 
 const ListSiteTiles = ({ tiles }: { tiles: Tile[] }) => {
   return (

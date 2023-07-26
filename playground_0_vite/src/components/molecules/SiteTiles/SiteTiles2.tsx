@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { getSiteTileById } from '../../api/services/ApiService';
-import { SiteTile } from "../../api/models/ApiResponse";
+import { getSiteTileById } from '../../../api/services/ApiService';
+import { SiteTile } from "../../../api/models/ApiResponse";
 
 const SiteTiles2 = () => {
     const [tiles, setTiles] = useState<SiteTile | null>(null);

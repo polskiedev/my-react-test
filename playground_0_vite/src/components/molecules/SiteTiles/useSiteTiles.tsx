@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import SiteTileSkeleton from '../Skeleton/SiteTileSkeleton';
+import SiteTileSkeleton from './SiteTileSkeleton';
 
 const url = "https://my-json-server.typicode.com/polskiedev/json-db-game-tiles/tiles";
 

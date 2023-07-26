@@ -3,7 +3,7 @@
 }
 
 [data-theme='dark'] .--ac-button.--variant-primary {
-    background-color: #4b5563;
+    background-color: #1f2937;
 }
 
 [data-theme='dark'] .--ac-button.--variant-secondary {
@@ -11,5 +11,5 @@
 }
 
 [data-theme='dark'] .--ac-button.--variant-tertiary {
-    background-color: #1f2937;
+    background-color: #4b5563;
 }
