@@ -1,0 +1,30 @@
+:root {
+    --btn-focus-outline: 1px solid #fff;
+}
+
+.--ac-button {
+    white-space: break-spaces;
+}
+
+.--ac-button.outlined:active:focus, 
+.--ac-button.outlined.active:focus, 
+.--ac-button.outlined:active.focus, 
+.--ac-button.outlined.active.focus {
+    outline: var(--btn-focus-outline);
+}
+
+.--ac-button .--ac-label {
+    @apply cursor-pointer text-xs 2sm:text-base;
+}
+
+.--ac-button .--ac-span {
+    @apply  inline-block;
+}
+
+/* -Disabled button state- */
+.--ac-button:disabled,
+.--ac-button:disabled:hover,
+.--ac-button:disabled:active,
+.--ac-button:disabled .btn-label {
+    @apply bg-btn-disabled-bg text-btn-disabled-text cursor-not-allowed opacity-60;
+}

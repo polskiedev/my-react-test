@@ -38,9 +38,9 @@ function App() {
 
   const loadThemeCSS = (themeName: ThemeName) => {
     const themeLink = document.getElementById('theme-link') as HTMLLinkElement;
-    // if (themeLink) {
-    //   themeLink.href = `${themeName}-theme.css`;
-    // }
+    if (themeLink) {
+      themeLink.href = getThemeURL(themeName);
+    }
   };
 
   const handleThemeChange = (selectedTheme: ThemeName) => {

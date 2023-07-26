@@ -1,0 +1,4 @@
+@import '../components/atoms/Button/styles/button.component.css';
+@import '../components/atoms/Span/styles/span-icon.component.css';
+@import '../components/molecules/GameTile/styles/gametile.component.css';
+@import '../components/organisms/GameList/styles/gamelist.component.css';

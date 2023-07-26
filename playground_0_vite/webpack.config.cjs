@@ -13,36 +13,35 @@ function str_repeat(str, count) {
 
 function ThemeBuilder() {
     const entries = {};
-    const themeVars = glob.sync("src/css/theme/variables/*-theme-vars.css");
+    const themeVars = glob.sync("src/css/theme/base.theme-*.css");
     
     themeVars.forEach(filePath => {
-        let pathArr = filePath.replace("src/css/theme/variables/", "").split("/");
+        // let pathArr = filePath.replace("src/css/theme/", "").split("/");
         let fileName = path.basename(filePath);
-        let themeName = fileName.replace('-theme-vars.css', '');
-        let themeFile = fileName.replace('-theme-vars.css', '-theme.css');
+        let themeName = fileName.replace('base.', '');
         let fileContent = '';
+        
+        const componentThemes = glob.sync(`src/components/**/styles/*.${themeName}`);
 
-        const componentThemes = glob.sync(`src/components/**/styles/*.${themeName}-theme.css`);
-
-        fileContent += `@import './variables/${fileName}';\n`;
+        fileContent += `@import './${fileName}';\n`;
 
         componentThemes.forEach(filePath => {
             let path = filePath.replace("src/components/", "../../components/")
             fileContent += `@import '${path}';\n`;
         });
         
-        fs.writeFile('src/css/theme/'+themeFile, fileContent, (err) => {
+        fs.writeFile('src/css/theme/'+themeName, fileContent, (err) => {
             if (err) {
                 console.error('Error creating the file:', err);
             } else {
-                console.log(`File "${themeFile}" created successfully.`);
+                console.log(`File "${themeName}" created successfully.`);
             }
         });
     });
 
-    const themeStyles = glob.sync("src/css/theme/*-theme.css");
+    let themeStyles = glob.sync("src/css/theme/theme-*.css");
+    // themeStyles = [];
     themeStyles.forEach(filePath => {
-        let pathArr = filePath.replace("src/css/theme/", "").split("/");
         let fileName = path.basename(filePath);
         let name = `/styles/theme/${fileName}`;
         let entryDir = `./src/css/theme/${fileName}`;
@@ -50,7 +49,27 @@ function ThemeBuilder() {
         entries[name] = entryDir;
     });
 
+
     return entries;
+}
+
+function CreateComponentListStyles() {
+    let fileContent = '';
+    const cssFile = 'components.css';
+    const componentStyles = glob.sync(`src/components/**/styles/*.component.css`);
+
+    componentStyles.forEach(filePath => {
+        let path = filePath.replace("src/components/", "../components/")
+        fileContent += `@import '${path}';\n`;
+    });
+
+    fs.writeFile(`src/css/${cssFile}`, fileContent, (err) => {
+        if (err) {
+            console.error('Error creating the file:', err);
+        } else {
+            console.log(`File "${cssFile}" created successfully.`);
+        }
+    });
 }
 
 function entriesChecker() {
@@ -80,7 +99,8 @@ function entriesChecker() {
         const entryDir = themeEntries[entryName];
         entries[entryName] = entryDir;
     }
-      
+    
+    CreateComponentListStyles();
     return entries;
 }
 

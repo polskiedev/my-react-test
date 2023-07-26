@@ -1,8 +1,7 @@
 @import './variables.css';
-@import '../components/atoms/Span/styles/span-icon.css';
-@import '../components/molecules/GameTile/styles/GameTile.css';
-@import '../components/organisms/GameList/styles/GameList.css';
-@import './components/button.css';
+@import './components.css';
+
+/* To be removed */
 @import './components/link.css';
 @import './components/headerbar.css';
 @import './components/topnavigation.css';
