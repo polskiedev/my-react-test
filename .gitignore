@@ -5,6 +5,7 @@
 
 playground_0_vite/src/assets/games/*
 playground_0_vite/src/assets/cards/*
+playground_0_vite/src/css/theme/*-theme.css
 # Logs
 logs
 *.log
