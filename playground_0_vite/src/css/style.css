@@ -1,12 +1,6 @@
 @import './variables.css';
 @import './components.css';
 
-/* To be removed */
-@import './components/link.css';
-@import './components/headerbar.css';
-@import './components/topnavigation.css';
-/* @import './components/gametile.css'; */
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
