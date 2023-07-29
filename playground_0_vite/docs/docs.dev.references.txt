@@ -26,3 +26,5 @@ https://www.youtube.com/watch?v=X9fSMGkjtug&t=3205s
 i built a Raspberry Pi SUPER COMPUTER!! // ft. Kubernetes (k3s cluster w/ Rancher)
 https://www.youtube.com/watch?v=UIylvFz2m-I
 =>  Build a Full-Stack Next.js Application and deploy to Vercel 
+https://www.youtube.com/watch?v=oLqdy95LZSw
+=> Tabs no JS just CSS

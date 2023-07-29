@@ -1,5 +1,5 @@
 const componentClass = '--ac-tabify';
-
+//Not optimized for component?
 function TabifyComponentBehaviour() {
   const tabBtns = document.querySelectorAll('.tab_btn');
   const contents = document.querySelectorAll('.content');
