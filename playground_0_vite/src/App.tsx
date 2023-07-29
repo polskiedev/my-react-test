@@ -26,6 +26,7 @@ import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
 import { useTheme, ThemeName } from "./components/organisms/ThemeToggle/ThemeContext";
 import ThemeToggleButton from "./components/organisms/ThemeToggle/ThemeToggleButton";
+import Tabify from './components/molecules/Tabify/Tabify';
 import { getThemeURL } from './helpers/helpers';
 
 function App() {
@@ -46,7 +47,7 @@ function App() {
   const handleThemeChange = (selectedTheme: ThemeName) => {
     toggleTheme(selectedTheme);
   };
-
+Tabify
   return <>
     <link id="theme-link" rel="stylesheet" href={getThemeURL(theme)} />
     <div data-theme={theme}>
@@ -55,6 +56,7 @@ function App() {
       
       <main className="my-32">
         <ThemeToggleButton/>
+        <Tabify></Tabify>
         <section className="test-section mx-auto lg:max-w-[928px]">
           <Accordion title="Accordion Component Title" content="1 Accordion Component Content">
             <p>2 This is the content of the accordion.</p>

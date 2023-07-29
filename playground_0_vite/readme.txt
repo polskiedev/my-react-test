@@ -14,6 +14,9 @@ npm i file-loader
 => will be used in webpack for processing image
 npm install --save-dev @vitejs/plugin-legacy
 => will be used in vite.config to skip processing images, will leave it to webpack
+npm install node-sass
+x npm i -D babel-loader 
+npm install -D sass
 =========
 cross-env is for forcing application environment (.env)
 @types/node is for reading/using environment vars

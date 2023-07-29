@@ -1,10 +1,8 @@
-@import './base.style.css';
-@import './components.css';
-
+@import url(./base.style.css);
+@import url(./components.css);
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 body {
-    background-color: var(--theme-bg);
+  background-color: var(--theme-bg);
 }

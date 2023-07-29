@@ -1,0 +1,18 @@
+.--ac-tabify {
+    width: 600px;
+    padding: 30px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, .1);
+    border-radius: 20px;
+    background-color: white;
+
+    .tab_box {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-bottom: 2px solid rgba(229, 299, 299, 1);
+        font-size: 18px;
+        font-weight: 600;
+        background-color: red;
+    }
+}
