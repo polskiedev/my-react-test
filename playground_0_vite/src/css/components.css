@@ -1,9 +1,8 @@
-@import url(../components/atoms/Button/styles/button.component.css);
-@import url(../components/atoms/Link/styles/link.component.css);
-@import url(../components/atoms/Span/styles/span-icon.component.css);
-@import url(../components/molecules/GameTile/styles/gametile.component.css);
-@import url(../components/molecules/HeaderBar/styles/headerbar.component.css);
-@import url(../components/molecules/Tabify/styles/tabify.component.css);
-@import url(../components/molecules/Template/styles/tabify.component.css);
-@import url(../components/molecules/TopNavigation/styles/topnavigation.component.css);
-@import url(../components/organisms/GameList/styles/gamelist.component.css);
+@import '../components/atoms/Button/styles/button.component.css';
+@import '../components/atoms/Link/styles/link.component.css';
+@import '../components/atoms/Span/styles/span-icon.component.css';
+@import '../components/molecules/GameTile/styles/gametile.component.css';
+@import '../components/molecules/HeaderBar/styles/headerbar.component.css';
+@import '../components/molecules/Tabify/styles/tabify.component.css';
+@import '../components/molecules/TopNavigation/styles/topnavigation.component.css';
+@import '../components/organisms/GameList/styles/gamelist.component.css';

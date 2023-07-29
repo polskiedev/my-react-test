@@ -17,6 +17,7 @@ npm install --save-dev @vitejs/plugin-legacy
 npm install node-sass
 x npm i -D babel-loader 
 npm install -D sass
+npm install -D chokidar
 =========
 cross-env is for forcing application environment (.env)
 @types/node is for reading/using environment vars

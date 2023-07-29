@@ -1,13 +1,13 @@
 import React from 'react'
-import { default as ClassBuilder } from './TabifyClassBuilder';
+import { default as ClassBuilder } from './TemplateClassBuilder';
 
-const Tabify = () => {
+const Template = () => {
     const {_: mainCB} = ClassBuilder();
     return (
         <div className={mainCB.build()}>
-            Tabify
+            Template
         </div>
     )
 }
 
-export default Tabify
+export default Template
