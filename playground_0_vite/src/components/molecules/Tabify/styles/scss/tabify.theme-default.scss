@@ -1,0 +1,13 @@
+:root {
+    --tabify-nav-color: #7360ff;
+}
+
+[data-theme='default'] .--ac-tabify {
+    .tab_box .tab_btn.active {
+        color: var(--tabify-nav-color);
+    }
+
+    .line {
+        background-color: var(--tabify-nav-color);
+    }
+}

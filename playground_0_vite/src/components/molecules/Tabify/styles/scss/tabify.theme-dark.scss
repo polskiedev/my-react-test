@@ -1,8 +1,13 @@
-[data-theme='default'] .--ac-tabify {
+:root {
+    --tabify-navigation-color: black;
+}
+
+[data-theme='dark'] .--ac-tabify {
     .tab_box .tab_btn.active {
-        color: black;
+        color: var(--tabify-navigation-color);
     }
+
     .line {
-        background-color: black;
+        background-color: var(--tabify-navigation-color) ;
     }
 }

@@ -26,10 +26,6 @@
         cursor: pointer;
     }
 
-    .tab_box .tab_btn.active {
-        color: #7360ff;
-    }
-
     .content_box {
         padding: 20px;
     }
@@ -58,7 +54,6 @@
         left: 0;
         width: 90px;
         height: 5px;
-        background-color: #7360ff;
         border-radius: 10px;
         transition: all .3s ease-in-out;
     }

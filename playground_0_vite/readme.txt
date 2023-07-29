@@ -18,6 +18,9 @@ npm install node-sass
 x npm i -D babel-loader 
 npm install -D sass
 npm install -D chokidar
+=> used for manual sass watcher (compile-component-sass.cjs)
+npm install -D date-fns
+=> for css backup date time formating in using sass watcher (compile-component-sass.cjs)
 =========
 cross-env is for forcing application environment (.env)
 @types/node is for reading/using environment vars
@@ -25,8 +28,8 @@ cross-env is for forcing application environment (.env)
 npm uninstall @types/node
 npm uninstall cross-env
 npm uninstall dotenv
-========
 
+========
 # vscode plugin 
 - [ ] es7+ => to use type `rafce` on a file
 - [ ] prettier - code formatter

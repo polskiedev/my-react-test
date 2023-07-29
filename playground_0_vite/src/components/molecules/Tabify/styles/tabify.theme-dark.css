@@ -1,7 +1,12 @@
-[data-theme='default'] .--ac-tabify .tab_box .tab_btn.active {
-  color: black;
+/* Generated file */
+:root {
+  --tabify-navigation-color: black;
 }
 
-[data-theme='default'] .--ac-tabify .line {
-  background-color: black;
+[data-theme='dark'] .--ac-tabify .tab_box .tab_btn.active {
+  color: var(--tabify-navigation-color);
+}
+
+[data-theme='dark'] .--ac-tabify .line {
+  background-color: var(--tabify-navigation-color);
 }
