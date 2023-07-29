@@ -1,8 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react';
 import { default as ClassBuilder } from './TabifyClassBuilder';
+import TabifyComponentBehaviour from './scripts/tabify.component.behaviour';
 
 const Tabify = () => {
     const {_: mainCB} = ClassBuilder();
+    useEffect(() => {
+        // Run the behavior logic when the component is mounted
+        TabifyComponentBehaviour();
+    }, []);
+
     return (
         <div className={mainCB.build()}>
              <div className="container">
@@ -10,6 +16,7 @@ const Tabify = () => {
                     <button className="tab_btn">Home</button>
                     <button className="tab_btn">About</button>
                     <button className="tab_btn">Contact Us</button>
+                    <div className="line"></div>
                 </div>
                 <div className="content_box">
                     <div className="content">

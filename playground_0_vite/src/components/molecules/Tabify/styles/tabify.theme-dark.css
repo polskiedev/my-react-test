@@ -1,0 +1,7 @@
+[data-theme='default'] .--ac-tabify .tab_box .tab_btn.active {
+  color: black;
+}
+
+[data-theme='default'] .--ac-tabify .line {
+  background-color: black;
+}
