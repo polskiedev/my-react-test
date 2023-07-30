@@ -56,7 +56,7 @@ const ThemeToggleButton: React.FC = () => {
   return (
     <>
       <div className={`${mainCB.build()} ${toggleComponent}`}>
-        <div className="controls flex flex-row justify-end ${toggleComponent">
+        <div className="controls flex flex-row justify-end">
         {toggleButtons ? (
           <button onClick={handleToggleButtons}>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
