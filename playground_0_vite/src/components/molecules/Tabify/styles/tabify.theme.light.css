@@ -3,10 +3,10 @@
   --tabify-nav-color: #7360ff;
 }
 
-[data-theme='default'] .--ac-tabify .tab_box .tab_btn.active {
+[data-theme='light'] .--ac-tabify .tab_box .tab_btn.active {
   color: var(--tabify-nav-color);
 }
 
-[data-theme='default'] .--ac-tabify .line {
+[data-theme='light'] .--ac-tabify .line {
   background-color: var(--tabify-nav-color);
 }

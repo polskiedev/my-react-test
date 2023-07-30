@@ -1,0 +1,15 @@
+/* Generated file */
+.--ac-theme-toggle {
+  padding: 12px 8px;
+  margin: 8px 12px;
+  border: 1px solid gray;
+  display: block;
+  position: fixed;
+  top: calc(13.5%);
+  right: 0;
+  background-color: #eae6e6;
+  color: black;
+  z-index: 1;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}

@@ -24,33 +24,35 @@ import Footer from "./components/organisms/Footer/Footer";
 import GameList from "./components/organisms/GameList/GameList";
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
-import { useTheme, ThemeName } from "./components/organisms/ThemeToggle/ThemeContext";
+import { useTheme, ThemeOptions, useSite, SiteOptions, useEvent, EventOptions } from "./components/organisms/ThemeToggle/ThemesProvider";
 import ThemeToggleButton from "./components/organisms/ThemeToggle/ThemeToggleButton";
 import Tabify from './components/molecules/Tabify/Tabify';
-import { getThemeURL } from './helpers/helpers';
+import { getCSSURL } from './helpers/helpers';
 
 function App() {
   // let menuItems = dataMenu();
   const { theme, toggleTheme } = useTheme();
+  const { site: sitecode, toggleSite } = useSite();
+  const { event, toggleEvent } = useEvent();
 
   useEffect(() => {
     loadThemeCSS(theme);
   }, [theme]);
 
-  const loadThemeCSS = (themeName: ThemeName) => {
+  const loadThemeCSS = (themeName: ThemeOptions) => {
     const themeLink = document.getElementById('theme-link') as HTMLLinkElement;
     if (themeLink) {
-      themeLink.href = getThemeURL(themeName);
+      themeLink.href = getCSSURL(themeName);
     }
   };
 
-  const handleThemeChange = (selectedTheme: ThemeName) => {
-    toggleTheme(selectedTheme);
-  };
-Tabify
   return <>
-    <link id="theme-link" rel="stylesheet" href={getThemeURL(theme)} />
-    <div data-theme={theme}>
+
+    { sitecode != 'BASE' && <link id="site-link" rel="stylesheet" href={getCSSURL(sitecode, 'site')} /> }
+    { event != 'NONE' && <link id="event-link" rel="stylesheet" href={getCSSURL(event, 'event')} /> }
+    { theme && <link id="theme-link" rel="stylesheet" href={getCSSURL(theme, 'theme')} /> }
+
+    <div data-theme={theme} data-sitecode={sitecode} data-event={event}>
       <SkeletonTheme baseColor="#202020" highlightColor="#444">
       <Header />
       

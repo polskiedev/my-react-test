@@ -4,10 +4,10 @@ export function asset(url: string) {
   return `./${APP_ENV == 'production' ? '' : 'src/'}assets/${url}`;
 }
 
-export function getThemeURL(theme: string): string {
+export function getCSSURL(type: string, path: string = 'theme'): string {
   return APP_ENV == 'production' 
-    ? `./styles/theme/theme-${theme}.css`
-    : `./src/css/theme/theme-${theme}.css`;
+    ? `./styles/${path}/${path}.${type}.css`
+    : `./src/css/${path}/${path}.${type}.css`;
 };
 
 export function getWindowSize() {

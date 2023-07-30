@@ -1,13 +1,5 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
-
-export type ThemeName = 'default' | 'dark';
-
-export interface ThemeContextType {
-  theme: ThemeName;
-  toggleTheme: (newTheme: ThemeName) => void;
-}
-
-const defaultTheme: ThemeName = 'default';
+import { ContextType as ThemeContextType, Options, _default as defaultTheme} from './ThemeInterface';
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
@@ -16,9 +8,9 @@ interface ThemeProviderProps {
 }
 
 const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-  const [theme, setTheme] = useState<ThemeName>(defaultTheme);
+  const [theme, setTheme] = useState<Options>(defaultTheme);
 
-  const toggleTheme = (newTheme: ThemeName) => {
+  const toggleTheme = (newTheme: Options) => {
     setTheme(newTheme);
   };
 
@@ -37,4 +29,5 @@ const useTheme = (): ThemeContextType => {
   return context;
 };
 
+export type {Options};
 export { ThemeProvider, useTheme };

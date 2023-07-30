@@ -4,12 +4,12 @@ import App from './App'
 // import "./css/tailwind.css";
 // import 'bootstrap/dist/css/bootstrap.css'
 import "./css/style.css";
-import { ThemeProvider } from './components/organisms/ThemeToggle/ThemeContext';
+import { ThemesProvider } from './components/organisms/ThemeToggle/ThemesProvider';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <ThemeProvider>
+    <ThemesProvider>
       <App />
-    </ThemeProvider>
+    </ThemesProvider>
   </React.StrictMode>,
 )

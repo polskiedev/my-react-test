@@ -6,3 +6,4 @@
 @import '../components/molecules/Tabify/styles/tabify.component.css';
 @import '../components/molecules/TopNavigation/styles/topnavigation.component.css';
 @import '../components/organisms/GameList/styles/gamelist.component.css';
+@import '../components/organisms/ThemeToggle/styles/themetoggle.component.css';

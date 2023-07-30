@@ -12,8 +12,16 @@ function str_repeat(str, count) {
 }
 
 function ThemeBuilder() {
+    const themeTypes = ['theme', 'site', 'event'];
+
+    themeTypes.forEach((type) => {
+        CSSThemeBuilder(type);
+    });
+}
+
+function CSSThemeBuilder(type) {
     const entries = {};
-    const themeVars = glob.sync("src/css/theme/base.theme-*.css");
+    const themeVars = glob.sync(`src/css/${type}/base.${type}.*.css`);
     
     themeVars.forEach(filePath => {
         // let pathArr = filePath.replace("src/css/theme/", "").split("/");
@@ -30,7 +38,7 @@ function ThemeBuilder() {
             fileContent += `@import '${path}';\n`;
         });
         
-        fs.writeFile('src/css/theme/'+themeName, fileContent, (err) => {
+        fs.writeFile(`src/css/${type}/${themeName}`, fileContent, (err) => {
             if (err) {
                 console.error('Error creating the file:', err);
             } else {
@@ -39,13 +47,12 @@ function ThemeBuilder() {
         });
     });
 
-    let themeStyles = glob.sync("src/css/theme/theme-*.css");
+    let themeStyles = glob.sync(`src/css/${type}/${type}.*.css`);
     // themeStyles = [];
     themeStyles.forEach(filePath => {
         let fileName = path.basename(filePath);
-        let name = `/styles/theme/${fileName}`;
-        let entryDir = `./src/css/theme/${fileName}`;
-
+        let name = `/styles/${type}/${fileName}`;
+        let entryDir = `./src/css/${type}/${fileName}`;
         entries[name] = entryDir;
     });
 
