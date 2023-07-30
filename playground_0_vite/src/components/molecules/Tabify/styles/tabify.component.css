@@ -1,9 +1,11 @@
+/* Generated file */
 .--ac-tabify .container {
   width: 600px;
   padding: 30px;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   background-color: white;
+  margin: 5px auto;
 }
 
 .--ac-tabify .tab_box {

@@ -1,16 +1,30 @@
 .--ac-theme-toggle {
+    z-index: 1;
     padding: 12px 8px;
     margin: 8px 12px;
     border: 1px solid gray;
     display: block;
     position: fixed;
-    top: calc(13.5%);
-    right: 0;
+    top: calc(15%);
+    right: 5px;
     background-color: rgb(234, 230, 230);
     color: black;
-    z-index: 1;
     box-shadow: 0 2px 16px rgba(0, 0, 0, .5);
     border-radius: 5px;
+
+    &.minimize {
+        border-radius: 25px;
+        height: 50px;
+        width: 50px;
+
+        .controls { 
+            justify-content: center;
+        }
+
+        .content {
+            display: none;
+        }
+    }
 
     .content {
         display: flex;

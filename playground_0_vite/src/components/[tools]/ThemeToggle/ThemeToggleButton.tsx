@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import { default as ClassBuilder } from './ThemeToggleClassBuilder';
 import { APP_ENV } from '../../../config/config';
 
@@ -10,6 +10,9 @@ const {_: mainCB} = ClassBuilder();
 
 const ThemeToggleButton: React.FC = () => {
   if(APP_ENV === 'production') return (<></>);
+
+  const [toggleButtons, setToggleButtons] = useState(true);
+  const [toggleComponent, setToggleComponent] = useState('');
 
   const { theme, toggleTheme } = useTheme();
   const { site, toggleSite } = useSite();
@@ -30,6 +33,13 @@ const ThemeToggleButton: React.FC = () => {
     toggleEvent(selectedEvent);
   };
 
+  const handleToggleButtons = () => {
+    setToggleButtons((prevShowButtons) => !prevShowButtons);
+    setToggleComponent((prevClassName) =>
+      prevClassName.includes('minimize') ? '' : 'minimize'
+    );
+  };
+
   const availableThemes: ThemeOptions[] = ['light', 'dark'];
   const availableSites: SiteOptions[] = [
     'BASE',
@@ -45,7 +55,22 @@ const ThemeToggleButton: React.FC = () => {
 
   return (
     <>
-      <div className={mainCB.build()}>
+      <div className={`${mainCB.build()} ${toggleComponent}`}>
+        <div className="controls flex flex-row justify-end ${toggleComponent">
+        {toggleButtons ? (
+          <button onClick={handleToggleButtons}>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </button>
+        ) : (
+          <button onClick={handleToggleButtons}>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </button>
+        )}
+        </div>
         <div className="content">
           <div className="theme-option">
             <label htmlFor="site-select">Site: </label>
