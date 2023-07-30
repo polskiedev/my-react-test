@@ -24,8 +24,8 @@ import Footer from "./components/organisms/Footer/Footer";
 import GameList from "./components/organisms/GameList/GameList";
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
-import { useTheme, ThemeOptions, useSite, SiteOptions, useEvent, EventOptions } from "./components/organisms/ThemeToggle/ThemesProvider";
-import ThemeToggleButton from "./components/organisms/ThemeToggle/ThemeToggleButton";
+import { useTheme, ThemeOptions, useSite, SiteOptions, useEvent, EventOptions } from "./components/[tools]/ThemeToggle/ThemesProvider";
+import ThemeToggleButton from "./components/[tools]/ThemeToggle/ThemeToggleButton";
 import Tabify from './components/molecules/Tabify/Tabify';
 import { getCSSURL } from './helpers/helpers';
 
@@ -68,7 +68,7 @@ function App() {
       themeLink.href = getCSSURL(themeName, 'event');
     }
   };
-  
+
   return <>
 
     { sitecode != 'BASE' && <link id="site-link" rel="stylesheet" href={getCSSURL(sitecode, 'site')} /> }

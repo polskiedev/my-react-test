@@ -1,5 +1,6 @@
 import React, { ChangeEvent } from 'react';
 import { default as ClassBuilder } from './ThemeToggleClassBuilder';
+import { APP_ENV } from '../../../config/config';
 
 import { useTheme, Options as ThemeOptions } from './types/Theme/ThemeProvider';
 import { useSite, Options as SiteOptions } from './types/Site/SiteProvider';
@@ -8,6 +9,8 @@ import { useEvent, Options as EventOptions } from './types/Event/EventProvider';
 const {_: mainCB} = ClassBuilder();
 
 const ThemeToggleButton: React.FC = () => {
+  if(APP_ENV === 'production') return (<></>);
+
   const { theme, toggleTheme } = useTheme();
   const { site, toggleSite } = useSite();
   const { event, toggleEvent } = useEvent();
@@ -39,7 +42,6 @@ const ThemeToggleButton: React.FC = () => {
     'NONE', 'CHRISTMAS', 'NEW_YEAR', 'HALLOWEEN', 
     'VALENTINES', 'APRIL_FOOLS', 'EASTER'
   ];
-  
 
   return (
     <>

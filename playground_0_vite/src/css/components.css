@@ -1,3 +1,4 @@
+@import '../components/[tools]/ThemeToggle/styles/themetoggle.component.css';
 @import '../components/atoms/Button/styles/button.component.css';
 @import '../components/atoms/Link/styles/link.component.css';
 @import '../components/atoms/Span/styles/span-icon.component.css';
@@ -6,4 +7,3 @@
 @import '../components/molecules/Tabify/styles/tabify.component.css';
 @import '../components/molecules/TopNavigation/styles/topnavigation.component.css';
 @import '../components/organisms/GameList/styles/gamelist.component.css';
-@import '../components/organisms/ThemeToggle/styles/themetoggle.component.css';

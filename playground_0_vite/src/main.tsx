@@ -4,7 +4,7 @@ import App from './App'
 // import "./css/tailwind.css";
 // import 'bootstrap/dist/css/bootstrap.css'
 import "./css/style.css";
-import { ThemesProvider } from './components/organisms/ThemeToggle/ThemesProvider';
+import { ThemesProvider } from './components/[tools]/ThemeToggle/ThemesProvider';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>

@@ -1,6 +1,6 @@
 @import './base.theme.dark.css';
+@import '../../components/[tools]/ThemeToggle/styles/themetoggle.theme.dark.css';
 @import '../../components/atoms/Button/styles/button.theme.dark.css';
 @import '../../components/molecules/HeaderBar/styles/headerbar.theme.dark.css';
 @import '../../components/molecules/Tabify/styles/tabify.theme.dark.css';
 @import '../../components/molecules/TopNavigation/styles/topnavigation.theme.dark.css';
-@import '../../components/organisms/ThemeToggle/styles/themetoggle.theme.dark.css';
