@@ -46,6 +46,29 @@ function App() {
     }
   };
 
+  useEffect(() => {
+    loadSiteCSS(sitecode);
+  }, [sitecode]);
+
+
+  const loadSiteCSS = (themeName: SiteOptions) => {
+    const themeLink = document.getElementById('site-link') as HTMLLinkElement;
+    if (themeLink) {
+      themeLink.href = getCSSURL(themeName, 'site');
+    }
+  };
+
+  useEffect(() => {
+    loadEventCSS(event);
+  }, [event]);
+
+  const loadEventCSS = (themeName: EventOptions) => {
+    const themeLink = document.getElementById('event-link') as HTMLLinkElement;
+    if (themeLink) {
+      themeLink.href = getCSSURL(themeName, 'event');
+    }
+  };
+  
   return <>
 
     { sitecode != 'BASE' && <link id="site-link" rel="stylesheet" href={getCSSURL(sitecode, 'site')} /> }

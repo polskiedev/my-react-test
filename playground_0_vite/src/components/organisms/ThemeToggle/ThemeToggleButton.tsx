@@ -44,35 +44,37 @@ const ThemeToggleButton: React.FC = () => {
   return (
     <>
       <div className={mainCB.build()}>
-        <div>
-          <label htmlFor="site-select">Select Site:</label>
-          <select id="site-select" value={site} onChange={handleSiteChange}>
-            {availableSites.map((siteCode) => (
-              <option key={siteCode} value={siteCode}>
-                {siteCode.charAt(0).toUpperCase() + siteCode.slice(1)}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div>
-          <label htmlFor="event-select">Select Event:</label>
-          <select id="event-select" value={event} onChange={handleEventChange}>
-            {availableEvents.map((eventName) => (
-              <option key={eventName} value={eventName}>
-                {eventName.charAt(0).toUpperCase() + eventName.slice(1)}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div>
-          <label htmlFor="theme-select">Select Theme:</label>
-          <select id="theme-select" value={theme} onChange={handleThemeChange}>
-            {availableThemes.map((themeName) => (
-              <option key={themeName} value={themeName}>
-                {themeName.charAt(0).toUpperCase() + themeName.slice(1)}
-              </option>
-            ))}
-          </select>
+        <div className="content">
+          <div className="theme-option">
+            <label htmlFor="site-select">Site: </label>
+            <select id="site-select" value={site} onChange={handleSiteChange}>
+              {availableSites.map((siteCode) => (
+                <option key={siteCode} value={siteCode}>
+                  {siteCode.charAt(0).toUpperCase() + siteCode.slice(1)}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="theme-option">
+            <label htmlFor="event-select">Event: </label>
+            <select id="event-select" value={event} onChange={handleEventChange}>
+              {availableEvents.map((eventName) => (
+                <option key={eventName} value={eventName}>
+                  {eventName.charAt(0).toUpperCase() + eventName.slice(1)}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="theme-option">
+            <label htmlFor="theme-select">Theme: </label>
+            <select id="theme-select" value={theme} onChange={handleThemeChange}>
+              {availableThemes.map((themeName) => (
+                <option key={themeName} value={themeName}>
+                  {themeName.charAt(0).toUpperCase() + themeName.slice(1)}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
       </div>
     </>

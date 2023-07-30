@@ -12,11 +12,20 @@ function str_repeat(str, count) {
 }
 
 function ThemeBuilder() {
+    const entries = {};
     const themeTypes = ['theme', 'site', 'event'];
 
     themeTypes.forEach((type) => {
-        CSSThemeBuilder(type);
+        let result = CSSThemeBuilder(type);
+        for (const key in result) {
+            if (result.hasOwnProperty(key)) {
+              const value = result[key];
+              entries[key] = value;
+            }
+          }
     });
+
+    return entries;
 }
 
 function CSSThemeBuilder(type) {
