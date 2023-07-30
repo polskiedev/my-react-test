@@ -40,11 +40,6 @@
         display: block;
     }
 
-    @keyframes moving {
-        from {transform: translateX(50px); opacity: 0; }
-        to {transform: translateX(0px); opacity: 1; }
-    }
-
     .content_box .content h2 {
         margin-bottom: 10px;
     }

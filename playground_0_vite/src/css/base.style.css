@@ -4,3 +4,8 @@
     --button-border-radius: 0.375rem;
     --brand-color: red;
 }
+
+@keyframes moving {
+    from {transform: translateX(50px); opacity: 0; }
+    to {transform: translateX(0px); opacity: 1; }
+}
