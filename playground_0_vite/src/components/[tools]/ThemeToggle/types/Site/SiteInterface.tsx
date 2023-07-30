@@ -9,4 +9,4 @@ export interface ContextType {
   toggleSite: (site: Options) => void;
 }
 
-export const _default: Options = 'BASE';
+export const _default: Options = 'VERAJOHN_COM';
