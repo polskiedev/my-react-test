@@ -1,0 +1,8 @@
+:root {
+    --event-bg: green;
+}
+
+
+[data-sitecode='VERAJOHN_COM'][data-event='CHRISTMAS'].page-wrapper {
+    background-color: var(--event-bg);
+}

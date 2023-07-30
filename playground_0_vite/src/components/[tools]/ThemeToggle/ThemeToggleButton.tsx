@@ -2,6 +2,8 @@ import React, { ChangeEvent, useState } from 'react';
 import { default as ClassBuilder } from './ThemeToggleClassBuilder';
 import { APP_ENV } from '../../../config/config';
 
+import Span from '../../atoms/Span/Span';
+
 import { useTheme, Options as ThemeOptions } from './types/Theme/ThemeProvider';
 import { useSite, Options as SiteOptions } from './types/Site/SiteProvider';
 import { useEvent, Options as EventOptions } from './types/Event/EventProvider';
@@ -59,15 +61,11 @@ const ThemeToggleButton: React.FC = () => {
         <div className="controls flex flex-row justify-end">
         {toggleButtons ? (
           <button onClick={handleToggleButtons}>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
+            <Span icon="circleplus"></Span>
           </button>
         ) : (
           <button onClick={handleToggleButtons}>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
+            <Span icon="circleminus"></Span>
           </button>
         )}
         </div>

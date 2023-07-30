@@ -14,6 +14,8 @@ const ButtonVariants = {
         gameinfo:   'icon-game-info',
         carouselnl: 'icon-carousel-nav-left',
         carouselnr: 'icon-carousel-nav-right',
+        circleplus: 'icon-circle-plus',
+        circleminus: 'icon-circle-minus',
         chevron:    'icon-chevron',
       }
     },

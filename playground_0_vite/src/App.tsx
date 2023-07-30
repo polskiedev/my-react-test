@@ -48,7 +48,8 @@ function App() {
 
   useEffect(() => {
     loadSiteCSS(sitecode);
-  }, [sitecode]);
+    loadEventCSS(event);
+  }, [sitecode, event]);
 
 
   const loadSiteCSS = (themeName: SiteOptions) => {
@@ -58,44 +59,42 @@ function App() {
     }
   };
 
-  useEffect(() => {
-    loadEventCSS(event);
-  }, [event]);
-
   const loadEventCSS = (themeName: EventOptions) => {
     const themeLink = document.getElementById('event-link') as HTMLLinkElement;
     if (themeLink) {
-      themeLink.href = getCSSURL(themeName, 'event');
+      themeLink.href = getCSSURL(`${sitecode}.${themeName}`, 'event');
     }
   };
 
   return <>
 
     { sitecode != 'BASE' && <link id="site-link" rel="stylesheet" href={getCSSURL(sitecode, 'site')} /> }
-    { event != 'NONE' && <link id="event-link" rel="stylesheet" href={getCSSURL(event, 'event')} /> }
+    { event != 'NONE' && <link id="event-link" rel="stylesheet" href={getCSSURL(`${sitecode}.${event}`, 'event')} /> }
     { theme && <link id="theme-link" rel="stylesheet" href={getCSSURL(theme, 'theme')} /> }
 
-    <div data-theme={theme} data-sitecode={sitecode} data-event={event}>
-      <SkeletonTheme baseColor="#202020" highlightColor="#444">
-      <Header />
-      
-      <main className="my-32">
-        <ThemeToggleButton/>
-        <Tabify></Tabify>
-        <section className="test-section mx-auto lg:max-w-[928px]">
-          <Accordion title="Accordion Component Title" content="1 Accordion Component Content">
-            <p>2 This is the content of the accordion.</p>
-          </Accordion>
-        </section>
-        <section className="mx-auto lg:max-w-[928px]">
-          <GameList label="Popular"></GameList>
-          <GameList label="New Games"></GameList>
-          <SiteTiles></SiteTiles>
-          Content
-        </section>
-      </main>
-      <Footer />
-      </SkeletonTheme>
+    <div className="page-wrapper" data-theme={theme} data-sitecode={sitecode} data-event={event}>
+      <div className="page-container">
+        <SkeletonTheme baseColor="#202020" highlightColor="#444">
+        <Header />
+        
+        <main className="my-32">
+          <ThemeToggleButton/>
+          <Tabify></Tabify>
+          <section className="test-section mx-auto lg:max-w-[928px]">
+            <Accordion title="Accordion Component Title" content="1 Accordion Component Content">
+              <p>2 This is the content of the accordion.</p>
+            </Accordion>
+          </section>
+          <section className="mx-auto lg:max-w-[928px]">
+            <GameList label="Popular"></GameList>
+            <GameList label="New Games"></GameList>
+            <SiteTiles></SiteTiles>
+            Content
+          </section>
+        </main>
+        <Footer />
+        </SkeletonTheme>
+      </div>
     </div>
   </>
 }

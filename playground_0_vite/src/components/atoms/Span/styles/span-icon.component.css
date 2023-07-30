@@ -2,6 +2,7 @@
     width: 24px;
     height: 24px;
     background-repeat: no-repeat;
+    display: block;
 }
 
 .--ac-span.icon-nav {
@@ -38,6 +39,14 @@
 
 .--ac-span.icon-carousel-nav-right {
     background-image: url(/src/assets/components/carousel-nav-right.svg);
+}
+
+.--ac-span.icon-circle-plus {
+    background-image: url(/src/assets/icons/icon-circle-plus.svg);
+}
+
+.--ac-span.icon-circle-minus {
+    background-image: url(/src/assets/icons/icon-circle-minus.svg);
 }
 
 .--ac-span.icon-chevron {

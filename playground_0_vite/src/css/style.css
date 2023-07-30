@@ -3,6 +3,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-body {
+
+.page-wrapper{
   background-color: var(--theme-bg);
 }
